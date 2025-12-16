@@ -1,7 +1,9 @@
 ---
-title: "Portfolio item number 1"
+title: "Preparation of a 20-year water master plan for Ol-Pejeta Conservancy (December 2018 to May 2019)"
 excerpt: "Short description of portfolio item number 1<br/><img src='/images/ol-pejeta.jpg'>"
 collection: portfolio
 ---
 
-This is an item in your portfolio. It can be have images or nice text. If you name the file .md, it will be parsed as markdown. If you name the file .html, it will be parsed as HTML. 
+Ol-Pejeta Conservancy is a local conservation organization that works to conserve wildlife, provide sanctuary for critically endangered wildlife species, and generate income through wildlife tourism and complementary enterprises for re-investment in conservation and communities. The conservancy is home to the last surviving species of the northern white rhino in the world.
+This project aimed at developing a water master plan to guide the conservancy to progressively improve its water security in an efficient and environmentally sensitive manner in the face of changing water supply imposed by changes in rainfall patterns.
+The project involved the assessment of existing water supply network, the efficiency of water use, wastewater and recycling, water storage and hydrological modelling and analysis of river flows for surface water abstraction.
