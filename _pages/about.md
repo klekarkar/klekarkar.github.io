@@ -1,13 +1,13 @@
 ---
 permalink: /
-title: "About me"
+title: "Hello there, I am Katoria"
 author_profile: true
 redirect_from: 
   - /about/
   - /about.html
 ---
 
-Hi, I am a PhD researcher in the Water and Climate Research Group at Vrije Universiteit. I specialize in hydrological modelling of the unsaturated zone, mainly to quantify climate impacts on soil moisture and groundwater recharge.
+I am a PhD researcher in the Water and Climate Research Group at Vrije Universiteit. I specialize in hydrological modelling of the unsaturated zone, mainly to quantify climate impacts on soil moisture and groundwater recharge.
 Previously, I graduated with an Msc. in Water Resources Engineering from KU Leuven (IUPWARE Programme) and a Bsc. in Civil Engineering from the University of Nairobi, Kenya.
 
 I have a professional working experience of 4 years in the field of water resources engineering which has mainly focused on marginalized and underdeveloped areas in Kenya.
