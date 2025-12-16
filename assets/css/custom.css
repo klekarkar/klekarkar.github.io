@@ -1,0 +1,29 @@
+body {
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial;
+  letter-spacing: 0.005em;
+}
+
+h1, h2, h3 {
+  letter-spacing: -0.015em;
+  line-height: 1.15;
+}
+
+/* Talks list polishing */
+.archive__item {
+  padding: 1.1rem 0;
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+}
+
+.archive__item-title a {
+  text-decoration: none;
+  border-bottom: 2px solid rgba(0,0,0,0.12);
+}
+
+.archive__item-title a:hover {
+  border-bottom-color: rgba(0,0,0,0.35);
+}
+
+.archive__item-excerpt p {
+  font-size: 0.95rem;
+  line-height: 1.65;
+}
