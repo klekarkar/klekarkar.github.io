@@ -1,7 +1,8 @@
 ---
-title: "Ol-Pejeta Conservancy Water masterplan"
+title: "2018-2019: Ol-Pejeta Conservancy Water masterplan"
 excerpt: "Preparation of a 20-year water master plan for Ol-Pejeta Conservancy
- <br/><img src='/images/ol-pejeta.jpg'>"
+<br/><img src='/images/ol-pejeta.jpg' style='max-width:450px;width:100%;height:auto;'/>"
+
 collection: portfolio
 ---
 
