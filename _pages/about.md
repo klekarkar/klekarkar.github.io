@@ -48,7 +48,7 @@ My working experience includes the development of sustainable water resources st
 
   <a href="/talks/" style="text-decoration:none;">
     <div style="border:1px solid #e5e7eb; border-radius:14px; overflow:hidden;">
-      <img src="/images/EGU_2024.jpg" alt="Talks and conferences" style="width:100%; height:100px; object-fit:cover; display:block;">
+      <img src="/images/EGU_2024.jpg" alt="Talks and conferences" style="width:100%; height:210px; object-fit:cover; display:block;">
       <div style="padding:12px;">
         <div style="font-weight:600;">Talks & communication</div>
         <div style="opacity:0.8; font-size:0.95em;">EGU • Conferences • Stakeholders</div>
