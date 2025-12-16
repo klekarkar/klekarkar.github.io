@@ -28,7 +28,7 @@ My working experience includes the development of sustainable water resources st
 
   <a href="/research/" style="text-decoration:none;">
     <div style="border:1px solid #e5e7eb; border-radius:14px; overflow:hidden;">
-      <img src="/images/highlight-research.jpg" alt="Research" style="width:100%; height:210px; object-fit:cover; display:block;">
+      <img src="/images/education.png" alt="Research" style="width:100%; height:210px; object-fit:cover; display:block;">
       <div style="padding:12px;">
         <div style="font-weight:600;">Research</div>
         <div style="opacity:0.8; font-size:0.95em;">Soil moisture • Recharge • Modelling</div>
