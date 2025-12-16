@@ -62,18 +62,14 @@
   }
 
   p, li, dl {
-    font-size: 0.75em;    // just a touch smaller than base
-    line-height: 1.7;     // easy to read paragraphs
+    font-size: 0.75em;
+    line-height: 1.7;
   }
-
-  /* ...rest of the block stays as you already have it ... */
-}
-
 
   /* paragraph indents */
   p {
     margin: 0 0 $indent-var;
-    text-align: justify;   // <= add this
+    text-align: justify;
 
     /* sibling indentation*/
     @if $paragraph-indent == true {
@@ -83,7 +79,6 @@
       }
     }
   }
-
 
   a {
     text-decoration: underline;
@@ -119,6 +114,7 @@
     padding-left: 1.25rem;
   }
 }
+
 
 .page__hero {
   position: relative;
