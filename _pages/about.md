@@ -14,7 +14,50 @@ I have a professional working experience of 4 years in the field of water resour
 My working experience includes the development of sustainable water resources strategies for water scarce areas to improve climate resilience, design and construction of water supply infrastructure, flood water harvesting and storage, and hydrological analyses for water abstraction and storage.
 
 # Career Highlights
-{% include career_timeline.html %}
+<div style="display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); gap:16px; margin: 1rem 0;">
+  
+  <a href="/cv/" style="text-decoration:none;">
+    <div style="border:1px solid #e5e7eb; border-radius:14px; overflow:hidden;">
+      <img src="/images/highlight-education.jpg" alt="Education" style="width:100%; height:210px; object-fit:cover; display:block;">
+      <div style="padding:12px;">
+        <div style="font-weight:600;">Education</div>
+        <div style="opacity:0.8; font-size:0.95em;">BSc Civil Eng. • MSc Water Resources</div>
+      </div>
+    </div>
+  </a>
+
+  <a href="/research/" style="text-decoration:none;">
+    <div style="border:1px solid #e5e7eb; border-radius:14px; overflow:hidden;">
+      <img src="/images/highlight-research.jpg" alt="Research" style="width:100%; height:210px; object-fit:cover; display:block;">
+      <div style="padding:12px;">
+        <div style="font-weight:600;">Research</div>
+        <div style="opacity:0.8; font-size:0.95em;">Soil moisture • Recharge • Modelling</div>
+      </div>
+    </div>
+  </a>
+
+  <a href="/portfolio/" style="text-decoration:none;">
+    <div style="border:1px solid #e5e7eb; border-radius:14px; overflow:hidden;">
+      <img src="/images/highlight-industry.jpg" alt="Industry projects" style="width:100%; height:210px; object-fit:cover; display:block;">
+      <div style="padding:12px;">
+        <div style="font-weight:600;">Industry & applied work</div>
+        <div style="opacity:0.8; font-size:0.95em;">Water planning • Infrastructure • NBS</div>
+      </div>
+    </div>
+  </a>
+
+  <a href="/talks/" style="text-decoration:none;">
+    <div style="border:1px solid #e5e7eb; border-radius:14px; overflow:hidden;">
+      <img src="/images/highlight-talks.jpg" alt="Talks and conferences" style="width:100%; height:210px; object-fit:cover; display:block;">
+      <div style="padding:12px;">
+        <div style="font-weight:600;">Talks & communication</div>
+        <div style="opacity:0.8; font-size:0.95em;">EGU • Conferences • Stakeholders</div>
+      </div>
+    </div>
+  </a>
+
+</div>
+
 
 <!-- A data-driven personal website
 ======
