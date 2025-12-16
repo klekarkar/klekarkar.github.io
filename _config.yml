@@ -33,21 +33,20 @@ author:
   email            : "katoria.lesaalon.lekarkar[at]vub[dot]be" # use [at] and [dot] to avoid email harvesters
 
   # Academic websites
-  academia         : # URL
-  arxiv            : # URL - Update with the correct link to your profile
-  googlescholar    : "https://scholar.google.com/citations?user=_rBmLxQAAAAJ&hl=en"
-  inspire-hep      : # URL
-  impactstory      : # URL
-  orcid            : "https://orcid.org/0000-0003-4527-5422"
-  semantic         : # URL
-<<<<<<< HEAD
-=======
-  ssrn             : # URL
-  pubmed           : "https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"
->>>>>>> 84d57c5773a99357c7754f5bbd37773a08c956f4
-  researchgate     : # URL
-  scopus           : # URL
-  zotero           : # URL
+# Academic websites
+  academia: ""
+  arxiv: ""
+  googlescholar: "https://scholar.google.com/citations?user=_rBmLxQAAAAJ&hl=en"
+  inspire-hep: ""
+  impactstory: ""
+  orcid: "https://orcid.org/0000-0003-4527-5422"
+  semantic: ""
+  ssrn: ""
+  pubmed: "https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"
+  researchgate: ""
+  scopus: ""
+  zotero: ""
+
 
 
   # Repositories and software development
