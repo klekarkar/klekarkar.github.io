@@ -1,0 +1,76 @@
+<div id="career-timeline" style="height: 360px; border: 1px solid #e5e7eb; border-radius: 12px;"></div>
+<p id="career-tip" style="margin-top:10px; opacity:0.8; font-size:0.95em;">
+  Tip: drag to pan, scroll to zoom, click an item for details.
+</p>
+
+<link rel="stylesheet" href="https://unpkg.com/vis-timeline@7.7.2/styles/vis-timeline-graph2d.min.css">
+<script src="https://unpkg.com/vis-timeline@7.7.2/standalone/umd/vis-timeline-graph2d.min.js"></script>
+
+<script>
+  // 1) Edit these items to match your CV
+  const items = new vis.DataSet([
+    {
+      id: 1,
+      content: "BSc Civil Engineering",
+      start: "2014-09-01",
+      end:   "2018-06-30",
+      title: "University of Nairobi (example dates) • Click for details",
+      url: "/cv/"
+    },
+    {
+      id: 2,
+      content: "MSc Water Resources (IUPWARE)",
+      start: "2019-09-01",
+      end:   "2021-06-30",
+      title: "KU Leuven • Click for details",
+      url: "/cv/"
+    },
+    {
+      id: 3,
+      content: "Professional experience (Water Resources)",
+      start: "2021-07-01",
+      end:   "2025-06-30",
+      title: "Projects: water supply, flood harvesting/storage, hydrological analysis • Click for details",
+      url: "/portfolio/"
+    },
+    {
+      id: 4,
+      content: "PhD – Water & Climate Research Group (VUB)",
+      start: "2024-09-01",
+      title: "Hydrological modelling (unsaturated zone, soil moisture, recharge) • Click for details",
+      url: "/research/"
+    }
+  ]);
+
+  // Optional: group lanes (Education / Research / Industry)
+  const groups = new vis.DataSet([
+    { id: 1, content: "Education" },
+    { id: 2, content: "Industry" },
+    { id: 3, content: "Research" }
+  ]);
+
+  // Assign groups (match ids above)
+  items.update({ id: 1, group: 1 });
+  items.update({ id: 2, group: 1 });
+  items.update({ id: 3, group: 2 });
+  items.update({ id: 4, group: 3 });
+
+  const container = document.getElementById("career-timeline");
+  const options = {
+    stack: true,
+    groupOrder: "content",
+    zoomMin: 1000 * 60 * 60 * 24 * 30,          // ~1 month
+    zoomMax: 1000 * 60 * 60 * 24 * 365 * 30,    // ~30 years
+    margin: { item: 12, axis: 8 },
+    tooltip: { followMouse: true }
+  };
+
+  const timeline = new vis.Timeline(container, items, groups, options);
+
+  // Click to open links (e.g., /cv/, /research/)
+  timeline.on("select", function (props) {
+    if (!props.items.length) return;
+    const item = items.get(props.items[0]);
+    if (item && item.url) window.location.href = item.url;
+  });
+</script>

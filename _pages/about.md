@@ -14,6 +14,7 @@ I have a professional working experience of 4 years in the field of water resour
 My working experience includes the development of sustainable water resources strategies for water scarce areas to improve climate resilience, design and construction of water supply infrastructure, flood water harvesting and storage, and hydrological analyses for water abstraction and storage.
 
 # Career Highlights
+{% include career_timeline.html %}
 
 <!-- A data-driven personal website
 ======
