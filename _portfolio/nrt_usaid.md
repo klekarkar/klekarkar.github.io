@@ -1,6 +1,6 @@
 ---
 title: "Sustainable water services for multiple uses within selected community conservancies in Kenya"
-excerpt: "improving the climate resilience and the water security situation in identified community conservancies in the arid and semi-arid regions of Northern Kenya.
+excerpt: "Improving the climate resilience and the water security situation in identified community conservancies in the arid and semi-arid regions of Northern Kenya.
          <br/><img src='/images/500x300.png'>"
 collection: portfolio
 ---
