@@ -1,15 +1,13 @@
 ---
-title: "2018-2019: Ol-Pejeta Conservancy Water masterplan"
-excerpt: >-
-  Preparation of a 20-year water resource management plan for multiple uses within the conservancy.
-  <br/>
-  <img
-    src="/images/opc/opc_cover.JPG"
-    style="width:100%; max-width:900px; height:400px; object-fit:cover; border-radius:15px; display:block; margin-top:10px;"
-  />
-
+title: "2018–2019: Ol-Pejeta Conservancy Water masterplan"
 collection: portfolio
+
+date: 2019-12-15   # used for sorting + display (pick end date)
+thumb: /images/opc/opc_cover.JPG
+tags: [Water planning, Hydrology, Kenya]
+excerpt: "Preparation of a 20-year water master plan for Ol-Pejeta Conservancy."
 ---
+
 
 Ol-Pejeta Conservancy is a local conservation organization that works to conserve wildlife, provide sanctuary for critically endangered wildlife species, and generate income through wildlife tourism and complementary enterprises for re-investment in conservation and communities. The conservancy is home to the last surviving species of the northern white rhino in the world.
 This project aimed at developing a water master plan to guide the conservancy to progressively improve its water security in an efficient and environmentally sensitive manner in the face of changing water supply imposed by changes in rainfall patterns.

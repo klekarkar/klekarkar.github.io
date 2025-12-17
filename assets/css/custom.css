@@ -60,3 +60,65 @@ h1, h2, h3 {
 @media (prefers-reduced-motion: reduce) {
   .auto-carousel .slides { transition: none; }
 }
+
+.project-feed { margin: 1rem 0; }
+
+.project-row{
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 18px;
+  padding: 18px 0;
+  border-bottom: 1px solid rgba(0,0,0,0.10);
+  align-items: start;
+}
+
+.project-thumb img{
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 14px;
+  display: block;
+}
+
+.project-date{
+  font-size: 0.9rem;
+  opacity: 0.75;
+  margin-bottom: 6px;
+}
+
+.project-title{
+  display: inline-block;
+  font-size: 1.25rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+.project-title { border-bottom: none !important; }
+.project-title:hover { text-decoration: underline; }
+.project-title { margin-top: 2px; }
+
+.project-excerpt{
+  margin-top: 8px;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+.project-tags{
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.project-tag{
+  display: inline-block;
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(0,0,0,0.12);
+  font-size: 0.9rem;
+  background: rgba(0,0,0,0.02);
+}
+
+@media (max-width: 720px){
+  .project-row{ grid-template-columns: 1fr; }
+  .project-thumb img{ height: 190px; }
+}
