@@ -1,5 +1,5 @@
 ---
-title: "2017: UNICEF Water, Sanitation and Hygiene (WASH) Project"
+title: "UNICEF Water, Sanitation and Hygiene (WASH) Project"
 collection: portfolio
 date: 2017-06-15   # used for sorting + display (pick end date)
 thumb: /images/unicef.webp

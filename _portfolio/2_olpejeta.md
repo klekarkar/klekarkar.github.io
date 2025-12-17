@@ -1,5 +1,5 @@
 ---
-title: "2018–2019: Ol-Pejeta Conservancy Water masterplan"
+title: "Ol-Pejeta Conservancy Water masterplan"
 collection: portfolio
 
 date: 2019-01-15   # used for sorting + display (pick end date)

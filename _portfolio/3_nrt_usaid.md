@@ -1,8 +1,8 @@
 ---
-title: "Jan. 2017 - Sept. 2020: Sustainable water services for multiple uses within selected community conservancies in Kenya"
+title: "Sustainable water services for multiple uses within selected community conservancies in Kenya"
 collection: portfolio
 
-date: 2018-01-15   # used for sorting + display (pick end date)
+date: 2019-06-15   # used for sorting + display (pick end date)
 thumb: /images/nrt/nrt_main_cover.JPG
 tags: [Water security, water supply, climate resilience]
 excerpt: "Improving the climate resilience and the water security situation in identified community conservancies in the arid and semi-arid regions of Northern Kenya."

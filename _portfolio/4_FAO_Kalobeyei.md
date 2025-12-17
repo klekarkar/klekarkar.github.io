@@ -1,5 +1,5 @@
 ---
-title: "Nov. 2017- Jan. 2018: FAO, Feasibility of agriculture on drylands"
+title: "FAO, Feasibility of agriculture on drylands"
 collection: portfolio
 
 date: 2017-11-01   # used for sorting + display (pick end date)
