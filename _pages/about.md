@@ -46,7 +46,7 @@ My working experience includes the development of sustainable water resources st
     </div>
   </a>
 
-  <a href="/research/" style="text-decoration:none;">
+  <a href="https://scholar.google.com/citations?user=_rBmLxQAAAAJ&hl=en" style="text-decoration:none;">
     <div style="border:1px solid #e5e7eb; border-radius:14px; overflow:hidden;">
       <img src="/images/research.png" alt="Research" style="width:100%; height:210px; object-fit:cover; display:block;">
       <div style="padding:12px;">
