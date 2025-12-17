@@ -26,7 +26,7 @@ My working experience includes the development of sustainable water resources st
           preload="metadata"
           style="width:100%; height:210px; object-fit:cover; display:block;"
         >
-          <source src="/images/water_zeb.mp4" type="video/mp4">
+          <source src="/images/water_zeb_credited.mp4" type="video/mp4">
         </video>
 
         <div style="padding:12px;">
