@@ -31,7 +31,7 @@ My working experience includes the development of sustainable water resources st
 
         <div style="padding:12px;">
           <div style="font-weight:600;">Industry & applied work</div>
-          <div style="opacity:0.8; font-size:0.95em;">Water planning • Design • NBS</div>
+          <div style="opacity:0.8; font-size:0.95em;">Water planning • Design • Adaptation </div>
         </div>
       </div>
   </a>
@@ -51,7 +51,7 @@ My working experience includes the development of sustainable water resources st
       <img src="/images/research.png" alt="Research" style="width:100%; height:210px; object-fit:cover; display:block;">
       <div style="padding:12px;">
         <div style="font-weight:600;">Research</div>
-        <div style="opacity:0.8; font-size:0.95em;">Hydrology • Climate Change • Modelling</div>
+        <div style="opacity:0.8; font-size:0.95em;">Hydrology • Climate Change • Open Science</div>
       </div>
     </div>
   </a>
