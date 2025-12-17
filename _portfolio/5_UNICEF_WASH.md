@@ -1,7 +1,6 @@
 ---
 title: "2017: UNICEF Water, Sanitation and Hygiene (WASH) Project"
-excerpt: "Revision of drawings for sanitation and water storage facilities in Kenya,
-<br/><img src='/images/ol-pejeta.jpg' style='max-width:450px;width:100%;height:auto;'/>"
+excerpt: "Revision of drawings for sanitation and water storage facilities in Kenya"
 
 collection: portfolio
 ---
