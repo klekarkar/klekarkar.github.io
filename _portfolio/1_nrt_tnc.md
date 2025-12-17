@@ -4,7 +4,7 @@ collection: portfolio
 
 date: 2020-02-01   # used for sorting + display (pick end date)
 thumb: /images/nrt/nrt_tnc_cover.jpg
-tags: [Water planning, Hydrology, Kenya]
+# tags: [Water planning, Hydrology, Kenya]
 excerpt: "Preparation of 5-year water resource management plans for two community conservancies in Samburu and Laikipia Counties."
 ---
 

@@ -4,7 +4,7 @@ collection: portfolio
 
 date: 2019-06-15   # used for sorting + display (pick end date)
 thumb: /images/nrt/nrt_main_cover.JPG
-tags: [Water security, water supply, climate resilience]
+# tags: [Water security, water supply, climate resilience]
 excerpt: "Improving the climate resilience and the water security situation in identified community conservancies in the arid and semi-arid regions of Northern Kenya."
 ---
 ---

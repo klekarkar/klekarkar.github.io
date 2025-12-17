@@ -4,7 +4,7 @@ collection: portfolio
 
 date: 2017-11-01   # used for sorting + display (pick end date)
 thumb: /images/kalobeyei_wfp.jpeg
-tags: [Food security, drylands, Kenya]
+# tags: [Food security, drylands, Kenya]
 excerpt: "Feasibility study into the viability of several water supply options for dryland agriculture for Kalobeyei settlement scheme."
 ---
 

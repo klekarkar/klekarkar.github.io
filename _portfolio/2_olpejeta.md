@@ -4,7 +4,7 @@ collection: portfolio
 
 date: 2019-01-15   # used for sorting + display (pick end date)
 thumb: /images/opc/opc_cover.JPG
-tags: [Water planning, Hydrology, Kenya]
+# tags: [Water planning, Hydrology, Kenya]
 excerpt: "Preparation of a 20-year water master plan for Ol-Pejeta Conservancy."
 ---
 
