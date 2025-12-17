@@ -1,7 +1,6 @@
 ---
 title: "Nov. 2017- Jan. 2018: FAO, Feasibility of agriculture on drylands"
 excerpt: "Feasibility study into the viability of several water supply options for dryland agriculture for Kalobeyei settlement scheme
-<br/><img src='/images/ol-pejeta.jpg' style='max-width:450px;width:100%;height:auto;'/>"
 
 collection: portfolio
 ---
