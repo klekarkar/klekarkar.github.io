@@ -1,0 +1,13 @@
+{% assign imgs = include.images %}
+{% if imgs and imgs.size > 0 %}
+<div class="auto-carousel" data-interval="{{ include.interval | default: 3500 }}">
+  <div class="slides">
+    {% for src in imgs %}
+      <img src="{{ src | relative_url }}"
+           alt="{{ include.alt | default: page.title }}"
+           loading="lazy"
+           {% if forloop.first %}class="active"{% endif %}>
+    {% endfor %}
+  </div>
+</div>
+{% endif %}

@@ -15,6 +15,10 @@ layout: compress
 
     {% include browser-upgrade.html %}
     {% include masthead.html %}
+      
+    {% if page.carousel and page.carousel.images %}
+    {% include carousel.html images=page.carousel.images interval=page.carousel.interval %}
+    {% endif %}
 
     {{ content }}
 
@@ -26,6 +30,9 @@ layout: compress
     </div>
 
     {% include scripts.html %}
-
+    <script src="{{ '/assets/js/carousel.js' | relative_url }}"></script>
   </body>
 </html>
+
+
+
