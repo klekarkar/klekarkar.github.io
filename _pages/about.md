@@ -15,6 +15,26 @@ My working experience includes the development of sustainable water resources st
 
 # Career Highlights
 <div style="display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); gap:16px; margin: 1rem 0;">
+
+  <a href="/portfolio/" style="text-decoration:none;">
+      <div style="border:1px solid #e5e7eb; border-radius:14px; overflow:hidden;">
+        <video
+          autoplay
+          muted
+          loop
+          playsinline
+          preload="metadata"
+          style="width:100%; height:210px; object-fit:cover; display:block;"
+        >
+          <source src="/images/water_zeb.mp4" type="video/mp4">
+        </video>
+
+        <div style="padding:12px;">
+          <div style="font-weight:600;">Industry & applied work</div>
+          <div style="opacity:0.8; font-size:0.95em;">Water planning • Infrastructure • NBS</div>
+        </div>
+      </div>
+  </a>
   
   <a href="/cv/" style="text-decoration:none;">
     <div style="border:1px solid #e5e7eb; border-radius:14px; overflow:hidden;">
@@ -35,27 +55,6 @@ My working experience includes the development of sustainable water resources st
       </div>
     </div>
   </a>
-
-  <a href="/portfolio/" style="text-decoration:none;">
-    <div style="border:1px solid #e5e7eb; border-radius:14px; overflow:hidden;">
-      <video
-        autoplay
-        muted
-        loop
-        playsinline
-        preload="metadata"
-        style="width:100%; height:210px; object-fit:cover; display:block;"
-      >
-        <source src="/images/water_zeb.mp4" type="video/mp4">
-      </video>
-
-      <div style="padding:12px;">
-        <div style="font-weight:600;">Industry & applied work</div>
-        <div style="opacity:0.8; font-size:0.95em;">Water planning • Infrastructure • NBS</div>
-      </div>
-    </div>
-  </a>
-
 
   <a href="/talks/" style="text-decoration:none;">
     <div style="border:1px solid #e5e7eb; border-radius:14px; overflow:hidden;">
