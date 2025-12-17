@@ -1,8 +1,12 @@
 ---
 title: "2018-2019: Ol-Pejeta Conservancy Water masterplan"
 excerpt: >-
-  Preparation of 5-year water resource management plans for two community conservancies in Samburu and Laikipia Counties
-  <br/><img src="/images/opc/opc_cover.JPG" />
+  Preparation of a 20-year water resource management plan for multiple uses within the conservancy.
+  <br/>
+  <img
+    src="/images/opc/opc_cover.JPG"
+    style="width:100%; max-width:900px; height:170px; object-fit:cover; border-radius:18px; display:block; margin-top:10px;"
+  />
 
 collection: portfolio
 ---
