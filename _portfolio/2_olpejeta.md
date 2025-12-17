@@ -13,8 +13,12 @@ The project involved the assessment of existing water supply network, the effici
 
 <div class="auto-carousel" data-interval="8000">
   <div class="slides">
-    <img src="/images/ol-pejeta-1.jpg" class="active" alt="Ol Pejeta 1" loading="lazy">
-    <img src="/images/ol-pejeta-2.jpg" alt="Ol Pejeta 2" loading="lazy">
-    <img src="/images/ol-pejeta-3.jpg" alt="Ol Pejeta 3" loading="lazy">
+    <img src="/images/opc/opc_1.JPG" class="active" alt="Ol Pejeta 1" loading="lazy">
+    <img src="/images/opc/opc_2.JPG" alt="Ol Pejeta 2" loading="lazy">
+    <img src="/images/opc/opc_3.JPG" alt="Ol Pejeta 3" loading="lazy">
+    <img src="/images/opc/opc_4.JPG" alt="Ol Pejeta 3" loading="lazy">
+    <img src="/images/opc/opc_5.JPG" alt="Ol Pejeta 3" loading="lazy">
+    <img src="/images/opc/opc_6.JPG" alt="Ol Pejeta 3" loading="lazy">
+    <img src="/images/opc/opc_7.JPG" alt="Ol Pejeta 3" loading="lazy">
   </div>
 </div>
