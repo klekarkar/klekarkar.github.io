@@ -16,10 +16,7 @@ author_profile: true
       </a>
 
       <div class="project-body">
-        {% if p.date %}
-          <div class="project-date">{{ p.date | date: "%d %B %Y" }}</div>
-        {% endif %}
-
+        <div class="project-date">{{ p.date | date: "%d %B %Y" }}</div>
         <a class="project-title" href="{{ base_path }}{{ p.url }}">{{ p.title }}</a>
 
         {% if p.excerpt %}
@@ -37,4 +34,3 @@ author_profile: true
     </article>
   {% endfor %}
 </div>
-
