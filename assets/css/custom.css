@@ -89,14 +89,19 @@ h1, h2, h3 {
 .project-title{
   display: inline-block;
   font-size: 1.25rem;
-  font-weight: 700;
-  text-decoration: none;
+  font-weight: 600;
+  color: #0b4f7a;          /* darker blue */
+  text-decoration: none;   /* no underline by default */
+  border-bottom: none !important;
 }
+
 .project-title{
   border-bottom: none !important;
   margin-top: 2px;
 }
-.project-title:hover{ text-decoration: underline; }
+.project-title:hover{
+  text-decoration: underline;  /* underline only on hover */
+}
 
 
 .project-excerpt{
