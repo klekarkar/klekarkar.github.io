@@ -130,3 +130,27 @@ h1, h2, h3 {
   .project-row{ grid-template-columns: 1fr; }
   .project-thumb img{ height: 190px; }
 }
+
+/* Portfolio list title color + underline only on hover */
+.project-row a.project-title{
+  color: #0b4f7a !important;
+  text-decoration: none !important;
+  border-bottom: none !important;
+}
+
+.project-row a.project-title:hover{
+  text-decoration: underline !important;
+}
+
+/* Remove theme "border underline" in the project list; underline only on hover */
+.project-row .archive__item-title a{
+  border-bottom: none !important;
+  text-decoration: none !important;
+}
+
+.project-row .archive__item-title a:hover{
+  border-bottom: none !important;   /* keep border off */
+  text-decoration: underline !important;
+}
+
+
