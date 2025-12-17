@@ -4,7 +4,7 @@ excerpt: >-
   Improving the climate resilience and the water security situation in identified community conservancies in the arid and semi-arid regions of Northern Kenya.
   <br/>
   <img
-    src="/images/nrt/nrt_main_cover.jpg"
+    src="/images/nrt/nrt_main_cover.JPG"
     style="width:100%; max-width:900px; height:400px; object-fit:cover; border-radius:15px; display:block; margin-top:10px;"
   />
 
