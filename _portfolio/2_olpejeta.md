@@ -6,9 +6,13 @@ collection: portfolio
 carousel:
   interval: 3500
   images:
-    - /images/ol-pejeta-1.jpg
-    - /images/ol-pejeta-2.jpg
-    - /images/ol-pejeta-3.jpg
+    - /images/opc/opc_1.JPG
+    - /images/opc/opc_2.JPG
+    - /images/opc/opc_3.JPG
+    - /images/opc/opc_4.JPG
+    - /images/opc/opc_5.JPG
+    - /images/opc/opc_6.JPG
+    - /images/opc/opc_7.JPG
 ---
 
 Ol-Pejeta Conservancy is a local conservation organization that works to conserve wildlife, provide sanctuary for critically endangered wildlife species, and generate income through wildlife tourism and complementary enterprises for re-investment in conservation and communities. The conservancy is home to the last surviving species of the northern white rhino in the world.
