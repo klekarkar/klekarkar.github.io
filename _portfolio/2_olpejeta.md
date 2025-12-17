@@ -2,7 +2,7 @@
 title: "2018-2019: Ol-Pejeta Conservancy Water masterplan"
 excerpt: >-
   Preparation of 5-year water resource management plans for two community conservancies in Samburu and Laikipia Counties
-  <br/><img src="/images/ol-pejeta.jpg" style="max-width:450px;width:100%;height:auto;"/>
+  <br/><img src="/images/opc/opc_cover.JPG" />
 
 collection: portfolio
 ---
@@ -13,12 +13,14 @@ The project involved the assessment of existing water supply network, the effici
 
 <div class="auto-carousel" data-interval="8000">
   <div class="slides">
-    <img src="/images/opc/opc_1.JPG" class="active" alt="Ol Pejeta 1" loading="lazy">
+    <img src="/images/opc/rhinos.JPG" alt="Ol Pejeta 1" loading="lazy">
     <img src="/images/opc/opc_2.JPG" alt="Ol Pejeta 2" loading="lazy">
     <img src="/images/opc/opc_3.JPG" alt="Ol Pejeta 3" loading="lazy">
-    <img src="/images/opc/opc_4.JPG" alt="Ol Pejeta 3" loading="lazy">
-    <img src="/images/opc/opc_5.JPG" alt="Ol Pejeta 3" loading="lazy">
-    <img src="/images/opc/opc_6.JPG" alt="Ol Pejeta 3" loading="lazy">
-    <img src="/images/opc/opc_7.JPG" alt="Ol Pejeta 3" loading="lazy">
+    <img src="/images/opc/opc_4.JPG" alt="Ol Pejeta 4" loading="lazy">
+    <img src="/images/opc/me.JPG" alt="Ol Pejeta 5" loading="lazy">
+    <img src="/images/opc/vehicle.JPG" alt="Ol Pejeta 6" loading="lazy">
+    <img src="/images/opc/lagoon.JPG" alt="Ol Pejeta 7" loading="lazy">
+    <img src="/images/opc/swim.JPG" alt="Ol Pejeta 6" loading="lazy">
+    <img src="/images/opc/lions.JPG" alt="Ol Pejeta 7" loading="lazy">
   </div>
 </div>
