@@ -8,15 +8,16 @@
 #      Markdown formatted page while the second is generated using JSON.
 
 main:
+
+  - title: "Project Experince"
+    url: /portfolio/
+    
   - title: "Research"
     #url: /publications/
     url: https://scholar.google.com/citations?user=_rBmLxQAAAAJ&hl=en
 
   - title: "Talks"
     url: /talks/    
-
-  - title: "Project Experince"
-    url: /portfolio/
   
   - title: "CV"
     url: /cv/
