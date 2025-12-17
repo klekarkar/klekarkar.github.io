@@ -11,7 +11,7 @@ Ol-Pejeta Conservancy is a local conservation organization that works to conserv
 This project aimed at developing a water master plan to guide the conservancy to progressively improve its water security in an efficient and environmentally sensitive manner in the face of changing water supply imposed by changes in rainfall patterns.
 The project involved the assessment of existing water supply network, the efficiency of water use, wastewater and recycling, water storage and hydrological modelling and analysis of river flows for surface water abstraction.
 
-<div class="auto-carousel" data-interval="8000">
+<div class="auto-carousel" data-interval="4000">
   <div class="slides">
     <img src="/images/opc/rhinos.JPG" alt="Ol Pejeta 1" loading="lazy">
     <img src="/images/opc/opc_2.JPG" alt="Ol Pejeta 2" loading="lazy">
