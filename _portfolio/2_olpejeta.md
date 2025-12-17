@@ -5,7 +5,7 @@ excerpt: >-
   <br/>
   <img
     src="/images/opc/opc_cover.JPG"
-    style="width:100%; max-width:900px; height:170px; object-fit:cover; border-radius:18px; display:block; margin-top:10px;"
+    style="width:100%; max-width:900px; height:300px; object-fit:cover; border-radius:18px; display:block; margin-top:10px;"
   />
 
 collection: portfolio
