@@ -29,7 +29,7 @@ h1, h2, h3 {
 }
 
 
-.auto-carousel { width: 100%; max-width: 900px; margin: 16px 0; }
+.auto-carousel { width: 100%; max-width: 900px; margin: 16px auto; }
 .auto-carousel .slides {
   position: relative;
   width: 100%;
@@ -46,6 +46,6 @@ h1, h2, h3 {
   height: 100%;
   object-fit: cover;
   opacity: 0;
-  transition: opacity 600ms ease;
+  transition: opacity 1400ms ease;
 }
 .auto-carousel img.active { opacity: 1; }

@@ -16,9 +16,6 @@ layout: compress
     {% include browser-upgrade.html %}
     {% include masthead.html %}
       
-    {% if page.carousel and page.carousel.images %}
-    {% include carousel.html images=page.carousel.images interval=page.carousel.interval %}
-    {% endif %}
 
     {{ content }}
 
