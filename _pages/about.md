@@ -46,7 +46,7 @@ My working experience includes the development of sustainable water resources st
         preload="metadata"
         style="width:100%; height:210px; object-fit:cover; display:block;"
       >
-        <source src="/images/ol-pejeta.jpg" type="video/mp4">
+        <source src="/images/applied_work.mp4" type="video/mp4">
       </video>
 
       <div style="padding:12px;">
