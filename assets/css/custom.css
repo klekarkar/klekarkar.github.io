@@ -164,5 +164,11 @@ h1, h2, h3 {
   margin-bottom: 0.4rem;
 }
 
+/* Main page text (paragraphs) */
+.page__content p{
+  font-size: 1.5rem;   /* try 1.0–1.15 */
+  line-height: 1.5;
+}
+
 
 

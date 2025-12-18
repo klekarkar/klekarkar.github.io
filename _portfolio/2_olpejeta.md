@@ -7,7 +7,7 @@ thumb: /images/opc/opc_cover.JPG
 # tags: [Water planning, Hydrology, Kenya]
 excerpt: "Preparation of a 20-year water master plan for Ol-Pejeta Conservancy."
 ---
-Ol-Pejeta Conservancy needed a long-term plan to improve water security for staff housing, tourism facilities, livestock, and wildlife—under increasing climate variability and growing demand. The goal was to develop a practical 20-year masterplan that prioritized interventions that are cost-effective and environmentally responsible.
+Ol-Pejeta Conservancy needed a long-term plan to improve water security for staff housing, tourism facilities, livestock, and wildlife under increasing climate variability and growing competing demands. The goal was to develop a practical 20-year masterplan that prioritized interventions that are cost-effective and environmentally responsible.
 
 ### Outcomes
 * Identified priority upgrades to improve reliability from critical supply sources during dry periods.
