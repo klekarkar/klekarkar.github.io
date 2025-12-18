@@ -156,7 +156,7 @@ h1, h2, h3 {
 /* Make bullet lists readable on project/blog pages */
 .page__content ul,
 .page__content ol{
-  font-size: 1.05rem;      /* try 1.05rem if you want slightly bigger */
+  font-size: 2.05rem;      /* try 1.05rem if you want slightly bigger */
   line-height: 1.7;
 }
 
