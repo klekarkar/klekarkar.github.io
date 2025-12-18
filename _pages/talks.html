@@ -11,6 +11,22 @@ author_profile: true
 
 {% endif %}
 
-{% for post in site.talks reversed %}
-  {% include archive-single-talk.html %}
-{% endfor %}
+<div class="talk-grid">
+  {% assign items = site.talks | sort: "date" | reverse %}
+  {% for t in items %}
+    <a class="talk-card" href="{{ t.url | relative_url }}">
+      <div class="talk-thumb">
+        <img
+          src="{{ t.thumb | default: t.header.teaser | default: '/images/talks/default.jpg' | relative_url }}"
+          alt="{{ t.title }}">
+      </div>
+
+      <div class="talk-meta">
+        <div class="talk-title">{{ t.title }}</div>
+        {% if t.date %}
+          <div class="talk-date">{{ t.date | date: "%d %B %Y" }}</div>
+        {% endif %}
+      </div>
+    </a>
+  {% endfor %}
+</div>
