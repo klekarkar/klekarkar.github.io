@@ -1,5 +1,5 @@
 ---
-title: "SWAT Conference 2023: Climate Change effect on Crop Water Use in Tropical Regions"
+title: "Boussinesq Lecture 2024: Monitoring water retention in restored nature areas with sensors"
 collection: talks
 thumb: /images/talks/bsnsq_2024.jpg
 type: "Oral Presentation"
