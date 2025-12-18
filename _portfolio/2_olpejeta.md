@@ -46,3 +46,6 @@ Ol-Pejeta Conservancy needed a long-term plan to improve water security for staf
 * Designed upgrades to existing water distribution network to limit disruptions
 
 * Built a planning framework to prioritize interventions by impact, feasibility, and risk.
+
+## About the Client
+Ol-Pejeta Conservancy is a organization that conserve wildlife, provide sanctuary for critically endangered wildlife species, and generate income through wildlife tourism and complementary enterprises for re-investment in conservation and communities. The conservancy is home to the last surviving species of the northern white rhino in the world. 
