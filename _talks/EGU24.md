@@ -2,6 +2,7 @@
 title: "A global dataset of soil moisture observations from microclimate sensors"
 collection: talks
 type: "Conference proceedings talk"
+thumb: /images/talks/egu-2024.jpg
 permalink: /talks/EGU24
 venue: "European Geosciences Union (EGU)"
 date: 2024-04-30"
