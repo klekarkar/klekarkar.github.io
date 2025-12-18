@@ -10,12 +10,11 @@ excerpt: "Preparation of a 20-year water master plan for Ol-Pejeta Conservancy."
 Ol-Pejeta Conservancy needed a long-term plan to improve water security for staff housing, tourism facilities, livestock, and wildlife—under increasing climate variability and growing demand. The goal was to develop a practical 20-year masterplan that prioritized interventions that are cost-effective and environmentally responsible.
 
 ### Outcomes
-
-* Produced a 20-year water masterplan with phased investments (short / medium / long term).
-
 * Identified priority upgrades to improve reliability from critical supply sources during dry periods.
 
 * Quantified water balance and supply–demand gaps under “normal” and “dry-year” and "exceptional" scenarios.
+
+* Prepared a 20-year water masterplan with phased investments (short / medium / long term).
 
 * Delivered maps and recommendations supporting implementation and budgeting decisions.
 
