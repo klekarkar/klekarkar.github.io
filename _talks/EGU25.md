@@ -4,9 +4,8 @@ collection: talks
 type: "Conference proceedings talk"
 thumb: /images/talks/EGU_2025.jpg
 permalink: /talks/EGU25
-venue: "European Geosciences Union (EGU)"
+venue: "Vienna, Austria"
 date: 2025-04-30"
-location: "Vienna, Austria"
 ---
 
 During this talk, I presented preliminary results of my ongoing research on coupling a conceptual hydrological model and in situ observations from low-cost soil moisture sensors to assess the effectiveness of local-scale nature-based water retention measures to retain more water in the soil.

@@ -8,5 +8,5 @@ venue: "Cape Town, SA"
 date: 2024-5-13
 ---
 
-This workshop was organized by the UNESCO IHP mainly focusing on the applications of open hardware and open software as sustainable technologies for water resources.
+This workshop was organized by the UNESCO IHP in Cape Town, South Africa. It focused on the applications of open hardware and open software as sustainable technologies for water resources.
 In my presentation, I talked about how low-cost soil moisture sensors can be used in conventional scientific approaches as well as in citizen science initiatives to tackle environmental problems such as droughts and floods.
