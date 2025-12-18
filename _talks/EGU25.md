@@ -1,5 +1,5 @@
 ---
-title: "A coupled mechanistic and in situ data approach to quantify the water retention potential of Nature-Based Solutions"
+title: "EGU 2025: Quantifying water retention potential of Nature-Based Solutions"
 collection: talks
 type: "Conference proceedings talk"
 permalink: /talks/EGU25

@@ -1,5 +1,5 @@
 ---
-title: "A global dataset of soil moisture observations from microclimate sensors"
+title: "EGU 2024: A global dataset of soil moisture from microclimate sensors"
 collection: talks
 type: "Conference proceedings talk"
 thumb: /images/talks/egu-2024.jpg
