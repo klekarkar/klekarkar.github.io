@@ -11,30 +11,21 @@ redirect_from:
 
 {% include base_path %}
 
-<div class="project-feed">
+<div class="post-grid">
   {% assign items = site.posts | sort: "date" | reverse %}
   {% for p in items %}
-    <article class="project-row">
-      <a class="project-thumb" href="{{ base_path }}{{ p.url }}">
-        <img src="{{ p.thumb | default: '/images/blog/default.jpg' | relative_url }}" alt="{{ p.title }}">
-      </a>
-
-      <div class="project-body">
-        <div class="project-date">{{ p.date | date: "%d %B %Y" }}</div>
-        <a class="project-title" href="{{ base_path }}{{ p.url }}">{{ p.title }}</a>
-
-        {% if p.excerpt %}
-          <div class="project-excerpt">{{ p.excerpt | markdownify }}</div>
-        {% endif %}
-
-        {% if p.tags %}
-          <div class="project-tags">
-            {% for t in p.tags %}
-              <span class="project-tag">{{ t }}</span>
-            {% endfor %}
-          </div>
-        {% endif %}
+    <a class="post-card" href="{{ p.url | relative_url }}">
+      <div class="post-thumb">
+        <img
+          src="{{ p.thumb | default: p.header.teaser | default: '/images/blog/default.jpg' | relative_url }}"
+          alt="{{ p.title }}">
       </div>
-    </article>
+
+      <div class="post-meta">
+        <div class="post-title">{{ p.title }}</div>
+        <div class="post-date">{{ p.date | date: "%d %B %Y" }}</div>
+      </div>
+    </a>
   {% endfor %}
 </div>
+
