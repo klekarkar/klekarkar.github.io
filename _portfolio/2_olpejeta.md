@@ -7,10 +7,17 @@ thumb: /images/opc/opc_cover.JPG
 # tags: [Water planning, Hydrology, Kenya]
 excerpt: "Preparation of a 20-year water master plan for Ol-Pejeta Conservancy."
 ---
+Ol-Pejeta Conservancy needed a long-term plan to improve water security for staff housing, tourism facilities, livestock, and wildlife—under increasing climate variability and growing demand. The goal was to develop a practical 20-year masterplan that prioritized interventions that are cost-effective and environmentally responsible.
 
-Ol-Pejeta Conservancy is a local conservation organization that works to conserve wildlife, provide sanctuary for critically endangered wildlife species, and generate income through wildlife tourism and complementary enterprises for re-investment in conservation and communities. The conservancy is home to the last surviving species of the northern white rhino in the world.
-This project aimed at developing a water master plan to guide the conservancy to progressively improve its water security in an efficient and environmentally sensitive manner in the face of changing water supply imposed by changes in rainfall patterns.
-The project involved the assessment of existing water supply network, the efficiency of water use, wastewater and recycling, water storage and hydrological modelling and analysis of river flows for surface water abstraction.
+### Outcomes
+
+* Produced a 20-year water masterplan with phased investments (short / medium / long term).
+
+* Identified priority upgrades to improve reliability from critical supply sources during dry periods.
+
+* Quantified water balance and supply–demand gaps under “normal” and “dry-year” and "exceptional" scenarios.
+
+* Delivered maps and recommendations supporting implementation and budgeting decisions.
 
 <div class="auto-carousel" data-interval="4000">
   <div class="slides">
@@ -25,3 +32,17 @@ The project involved the assessment of existing water supply network, the effici
     <img src="/images/opc/lions.JPG" alt="Ol Pejeta 7" loading="lazy">
   </div>
 </div>
+
+## What we did
+
+* Assessed existing water sources, abstraction points, storage, treatment, and distribution network.
+
+* Evaluated current water use, losses, and opportunities for demand management.
+
+* Analyzed river flow availability for surface abstraction and dry-season constraints on the Ewaso Nyiro river
+
+* Reviewed wastewater handling and reuse options to reduce pressure on freshwater sources.
+  
+* Designed upgrades to existing water distribution network to limit disruptions
+
+* Built a planning framework to prioritize interventions by impact, feasibility, and risk.
