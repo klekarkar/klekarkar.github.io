@@ -12,9 +12,9 @@ Ol-Pejeta Conservancy needed a long-term plan to improve water security for staf
 ### Outcomes
 * Identified priority upgrades to improve reliability from critical supply sources during dry periods.
 
-* Quantified water balance and supply–demand gaps under “normal” and “dry-year” and "exceptional" scenarios.
+* Quantified supply–demand gaps under “normal” and “dry” and "exceptional" scenarios.
 
-* Prepared a 20-year water masterplan with phased investments (short / medium / long term).
+* Prepared a 20-year water masterplan with phased investments (short/medium/long term).
 
 * Delivered maps and recommendations supporting implementation and budgeting decisions.
 
