@@ -157,7 +157,7 @@ h1, h2, h3 {
 .page__content ul,
 .page__content ol{
   font-size: 1.05rem;      /* try 1.05rem if you want slightly bigger */
-  line-height: 1.5;
+  line-height: 1.3;
 }
 
 .page__content li{
@@ -168,7 +168,7 @@ h1, h2, h3 {
 /* Main page text (paragraphs) */
 .page__content p{
   font-size: 1.05rem;   /* try 1.0–1.15 */
-  line-height: 1.5;
+  line-height: 1.3;
 }
 
 
