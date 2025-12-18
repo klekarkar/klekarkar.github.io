@@ -2,6 +2,7 @@
 title: "EGU 2025: Quantifying water retention potential of Nature-Based Solutions"
 collection: talks
 type: "Conference proceedings talk"
+thumb: /images/talks/EGU_2025.jpg
 permalink: /talks/EGU25
 venue: "European Geosciences Union (EGU)"
 date: 2025-04-30"
