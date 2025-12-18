@@ -5,7 +5,7 @@ var addressPoints = [
     16.3725042
   ],
   [
-    "SWAT Conference 2023: Climate Change effect on Crop Water Use in Tropical Regions<br />International SWAT Conference; Aarhus University, Denmark",
+    "SWAT Conference 2023: Climate Change effect on Crop Water Use<br />International SWAT Conference; Aarhus University, Denmark",
     56.1670905,
     10.2026177
   ],
