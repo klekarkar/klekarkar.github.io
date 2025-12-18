@@ -1,5 +1,5 @@
 ---
-title: "UNESCO IHP 2025: Climate Change effect on Crop Water Use in Tropical Regions"
+title: "UNESCO IHP 2025: Strengthening Open Hydrology and Citizen Science"
 collection: talks
 thumb: /images/talks/unesco_50th.jpg
 type: "Oral Presentation"
