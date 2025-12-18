@@ -5,7 +5,7 @@ thumb: /images/talks/unesco_50th.jpg
 type: "Oral Presentation"
 permalink: /talks/unesco_50th
 venue: "UNESCO HQ Paris"
-date: 2025-06-30
+date: 2025-06-10
 ---
 
 On the occasion of the celebration of the 50th anniversary of the UNESCO Intergovernmental Hydrological Programme, I presented the activities we were undertaking under the UNESCO Chair on Open Water Science and Education led by Prof. Ann van Griensven. I gave three different presentations.
