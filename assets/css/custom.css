@@ -153,4 +153,16 @@ h1, h2, h3 {
   text-decoration: underline !important;
 }
 
+/* Make bullet lists readable on project/blog pages */
+.page__content ul,
+.page__content ol{
+  font-size: 1rem;      /* try 1.05rem if you want slightly bigger */
+  line-height: 1.7;
+}
+
+.page__content li{
+  margin-bottom: 0.4rem;
+}
+
+
 
