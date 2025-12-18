@@ -1,0 +1,12 @@
+---
+title: "SWAT Conference 2023: Climate Change effect on Crop Water Use in Tropical Regions"
+collection: talks
+thumb: /images/talks/swat_2023.jpg
+type: "Oral Presentation"
+permalink: /talks/swat_2023
+venue: "International SWAT Conference"
+date: 2023-06-29
+location: "Aarhus University, Denmark"
+---
+
+I presented my Masters thesis study where we studied the effects of anthropogenic warming on the water use of crops in the Nyando area, Western Kenya. More details about the contents of the talk can be found in this [publication](https://www.sciencedirect.com/science/article/pii/S0378377424000313)
