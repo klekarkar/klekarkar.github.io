@@ -291,7 +291,7 @@ html, body{
 .post-date{
   margin-top: 6px;
   font-size: 0.92rem;
-  color: rgba(0,0,0,0.55);
+  color: rgba(104, 101, 101, 0.101);
 }
 
 /* underline only on hover */
@@ -329,7 +329,7 @@ html, body{
 .page__content a[href="/cv/"]:hover > div,
 .page__content a[href="https://scholar.google.com/citations?user=_rBmLxQAAAAJ&hl=en"]:hover > div,
 .page__content a[href="/year-archive/"]:hover > div{
-  box-shadow: 0 10px 28px rgba(7, 110, 86, 0.1);
+  box-shadow: 0 10px 28px #0b4f7a;
   transform: translateY(-2px);
 }
 
