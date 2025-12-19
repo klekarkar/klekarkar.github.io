@@ -1,5 +1,5 @@
 ---
-title: "Open Water Symposium 2024: Low cost technologies for hydrology"
+title: "Open Water Symposium 2024: Open hardware and Open Software Solutions for hydrology"
 collection: talks
 thumb: /images/talks/ows_2024.jpg
 type: "Oral Presentation"
