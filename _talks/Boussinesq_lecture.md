@@ -1,5 +1,5 @@
 ---
-title: "Boussinesq Lecture 2024: Monitoring water retention in restored nature areas with sensors"
+title: "Boussinesq Lecture 2024: Monitoring water retention in restored nature areas"
 collection: talks
 thumb: /images/talks/bsnsq_2024.jpg
 type: "Oral Presentation"
