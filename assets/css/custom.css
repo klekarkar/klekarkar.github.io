@@ -307,5 +307,46 @@ html, body{
   .post-thumb img{ height: 190px; }
 }
 
+/* Home tiles (Highlights): hover + colors */
+.page__content a[href="/portfolio/"],
+.page__content a[href="/cv/"],
+.page__content a[href="/research/"],
+.page__content a[href="/year-archive/"]{
+  text-decoration: none !important; /* no underline */
+  color: inherit !important;
+}
 
+/* The card container */
+.page__content a[href="/portfolio/"] > div,
+.page__content a[href="/cv/"] > div,
+.page__content a[href="/research/"] > div,
+.page__content a[href="/year-archive/"] > div{
+  transition: box-shadow 180ms ease, transform 180ms ease;
+}
 
+/* Hover effect (lift + shadow) */
+.page__content a[href="/portfolio/"]:hover > div,
+.page__content a[href="/cv/"]:hover > div,
+.page__content a[href="/research/"]:hover > div,
+.page__content a[href="/year-archive/"]:hover > div{
+  box-shadow: 0 10px 28px rgba(0,0,0,0.10);
+  transform: translateY(-2px);
+}
+
+/* Title (first line in the tile): darker blue, no underline */
+.page__content a[href="/portfolio/"] > div div[style*="font-weight:600"],
+.page__content a[href="/cv/"] > div div[style*="font-weight:600"],
+.page__content a[href="/research/"] > div div[style*="font-weight:600"],
+.page__content a[href="/year-archive/"] > div div[style*="font-weight:600"]{
+  color: #0b4f7a !important;
+  text-decoration: none !important;
+}
+
+/* Subtitle (second line): true black and a bit less faint */
+.page__content a[href="/portfolio/"] > div div[style*="opacity"],
+.page__content a[href="/cv/"] > div div[style*="opacity"],
+.page__content a[href="/research/"] > div div[style*="opacity"],
+.page__content a[href="/year-archive/"] > div div[style*="opacity"]{
+  color: #000 !important;
+  opacity: 0.85 !important;
+}
