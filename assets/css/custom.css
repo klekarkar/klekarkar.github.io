@@ -1,52 +1,81 @@
-h1, h2, h3 {
-  letter-spacing: -0.015em;
-  line-height: 1.15;
-}
+/* =========================
+   GLOBAL TYPOGRAPHY
+========================= */
 
-/* Inter everywhere + true black body text */
 html, body{
   font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial !important;
   color: #000 !important;
 }
 
-/* Make main page text black (theme often sets gray) */
+h1, h2, h3{
+  letter-spacing: -0.015em;
+  line-height: 1.15;
+}
+
+/* Make main page text true black (theme often sets gray) */
 .page__content,
 .page__content p,
-.page__content li{ color:#000 !important; }
+.page__content li{
+  color:#000 !important;
+}
+
+/* Main page text sizing */
+.page__content p{
+  font-size: 1.0rem;
+  line-height: 1.6;
+}
+
+/* Lists */
+.page__content ul,
+.page__content ol{
+  font-size: 1.0rem;
+  line-height: 1.6;
+}
+
+.page__content li{
+  margin-bottom: 0.4rem;
+}
 
 
-/* Talks list polishing */
-.archive__item {
+/* =========================
+   DEFAULT ARCHIVE ITEM (theme)
+========================= */
+
+.archive__item{
   padding: 1.1rem 0;
   border-bottom: 1px solid rgba(0,0,0,0.08);
 }
 
-.archive__item-title a {
+.archive__item-title a{
   text-decoration: none;
   border-bottom: 2px solid rgba(0,0,0,0.12);
 }
 
-.archive__item-title a:hover {
+.archive__item-title a:hover{
   border-bottom-color: rgba(0,0,0,0.35);
 }
 
-.archive__item-excerpt p {
+.archive__item-excerpt p{
   font-size: 0.95rem;
   line-height: 1.65;
 }
 
 
-.auto-carousel { width: 100%; max-width: 900px; margin: 16px auto; }
+/* =========================
+   AUTO CAROUSEL
+========================= */
 
-.auto-carousel {
+.auto-carousel{
+  width: 100%;
+  max-width: 900px;
+  margin: 16px auto;
   overflow: hidden;
   border-radius: 14px;
   border: 1px solid #e5e7eb;
   background: #f3f4f6;
 }
 
-/* the “track” */
-.auto-carousel .slides {
+.auto-carousel .slides{
   display: flex;
   width: 100%;
   aspect-ratio: 16 / 9;
@@ -54,8 +83,7 @@ html, body{
   transition: transform 600ms ease;
 }
 
-/* each slide */
-.auto-carousel img {
+.auto-carousel img{
   flex: 0 0 100%;
   width: 100%;
   height: 100%;
@@ -63,12 +91,16 @@ html, body{
   display: block;
 }
 
-/* optional: respect reduced motion */
-@media (prefers-reduced-motion: reduce) {
-  .auto-carousel .slides { transition: none; }
+@media (prefers-reduced-motion: reduce){
+  .auto-carousel .slides{ transition: none; }
 }
 
-.project-feed { margin: 1rem 0; }
+
+/* =========================
+   PROJECT LIST (portfolio/blog list style)
+========================= */
+
+.project-feed{ margin: 1rem 0; }
 
 .project-row{
   display: grid;
@@ -93,20 +125,19 @@ html, body{
   margin-bottom: 6px;
 }
 
-.project-title{
+.project-row a.project-title{
   display: inline-block;
   font-size: 1.25rem;
   font-weight: 600;
-  color: #0b4f7a;          /* darker blue */
-  text-decoration: none;   /* no underline by default */
+  color: #0b4f7a !important;
+  text-decoration: none !important;
   border-bottom: none !important;
+  margin-top: 2px;
 }
 
-
-.project-title:hover{
-  text-decoration: underline;  /* underline only on hover */
+.project-row a.project-title:hover{
+  text-decoration: underline !important;
 }
-
 
 .project-excerpt{
   margin-top: 8px;
@@ -135,47 +166,21 @@ html, body{
   .project-thumb img{ height: 190px; }
 }
 
-/* Portfolio list title color + underline only on hover */
-.project-row a.project-title{
-  color: #0b4f7a !important;
-  text-decoration: none !important;
-  border-bottom: none !important;
-}
-
-.project-row a.project-title:hover{
-  text-decoration: underline !important;
-}
-
-/* Remove theme "border underline" in the project list; underline only on hover */
+/* Prevent theme underline/border in this custom list row */
 .project-row .archive__item-title a{
   border-bottom: none !important;
   text-decoration: none !important;
 }
-
 .project-row .archive__item-title a:hover{
-  border-bottom: none !important;   /* keep border off */
+  border-bottom: none !important;
   text-decoration: underline !important;
 }
 
-/* Make bullet lists readable on project/blog pages */
-.page__content ul,
-.page__content ol{
-  font-size: 1.0rem;      /* try 1.05rem if you want slightly bigger */
-  line-height: 1.6;
-}
 
-.page__content li{
-  margin-bottom: 0.4rem;
-}
+/* =========================
+   TALKS GRID
+========================= */
 
-
-/* Main page text (paragraphs) */
-.page__content p{
-  font-size: 1.0rem;   /* try 1.0–1.15 */
-  line-height: 1.6;
-}
-
-/* ////////////////////////////////////////////////////////////////////////////////////////////////////// */
 .talk-grid{
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -185,18 +190,12 @@ html, body{
 
 .talk-card{
   display: block;
-  text-decoration: none;
   color: inherit;
   border: 1px solid rgba(0,0,0,0.10);
   border-radius: 16px;
   overflow: hidden;
   background: #fff;
-}
-
-.talk-card:hover{
-  box-shadow: 0 10px 28px rgba(0,0,0,0.10);
-  transform: translateY(-2px);
-  transition: box-shadow 180ms ease, transform 180ms ease;
+  text-decoration: none !important;
 }
 
 .talk-thumb img{
@@ -206,20 +205,31 @@ html, body{
   display: block;
 }
 
-.talk-meta{
-  padding: 12px 14px 14px;
-}
+.talk-meta{ padding: 12px 14px 14px; }
 
 .talk-title{
   font-weight: 650;
   font-size: 1.05rem;
   line-height: 1.25;
+  color: #0b4f7a;
+  text-decoration: none !important;
+  border-bottom: none !important;
 }
 
 .talk-date{
   margin-top: 6px;
   font-size: 0.92rem;
   color: rgba(0,0,0,0.55);
+}
+
+.talk-card:hover{
+  box-shadow: 0 10px 28px rgba(0,0,0,0.10);
+  transform: translateY(-2px);
+  transition: box-shadow 180ms ease, transform 180ms ease;
+}
+
+.talk-card:hover .talk-title{
+  text-decoration: underline !important;
 }
 
 @media (max-width: 900px){
@@ -229,18 +239,11 @@ html, body{
   .talk-grid{ grid-template-columns: 1fr; }
   .talk-thumb img{ height: 190px; }
 }
-.talk-title{ color: #0b4f7a; }   /* darker blue */
 
-/* Talks grid: no underline unless hover */
-.talk-card,
-.talk-card *{
-  text-decoration: none !important;
-  border-bottom: none !important;
-}
 
-.talk-card:hover .talk-title{
-  text-decoration: underline !important;
-}
+/* =========================
+   POSTS GRID
+========================= */
 
 .post-grid{
   display: grid;
@@ -251,23 +254,12 @@ html, body{
 
 .post-card{
   display: block;
-  text-decoration: none !important;
   color: inherit;
   border: 1px solid rgba(0,0,0,0.10);
   border-radius: 16px;
   overflow: hidden;
   background: #fff;
-}
-
-.post-card *{
   text-decoration: none !important;
-  border-bottom: none !important;
-}
-
-.post-card:hover{
-  box-shadow: 0 10px 28px #0b4f7a;
-  transform: translateY(-2px);
-  transition: box-shadow 180ms ease, transform 180ms ease;
 }
 
 .post-thumb img{
@@ -277,24 +269,29 @@ html, body{
   display: block;
 }
 
-.post-meta{
-  padding: 12px 14px 14px;
-}
+.post-meta{ padding: 12px 14px 14px; }
 
 .post-title{
   font-weight: 650;
   font-size: 1.05rem;
   line-height: 1.25;
   color: #0b4f7a;
+  text-decoration: none !important;
+  border-bottom: none !important;
 }
 
 .post-date{
   margin-top: 6px;
   font-size: 0.92rem;
-  color: rgba(104, 101, 101, 0.101);
+  color: rgba(0,0,0,0.55); /* <-- your old value was almost invisible */
 }
 
-/* underline only on hover */
+.post-card:hover{
+  box-shadow: 0 10px 28px rgba(0,0,0,0.10);
+  transform: translateY(-2px);
+  transition: box-shadow 180ms ease, transform 180ms ease;
+}
+
 .post-card:hover .post-title{
   text-decoration: underline !important;
 }
@@ -307,83 +304,46 @@ html, body{
   .post-thumb img{ height: 190px; }
 }
 
-/* ///////////////////////////////Home tiles (Highlights): hover + colors/////////////////////////////////// */
-.page__content a[href="/portfolio/"],
-.page__content a[href="/cv/"],
-.page__content a[href="/research/"],
-.page__content a[href="/year-archive/"]{
-  text-decoration: none !important; /* underline */
-  color: inherit !important;
-}
 
-/* The card container */
-.page__content a[href="/portfolio/"] > div,
-.page__content a[href="/cv/"] > div,
-.page__content a[href="/research/"] > div,
-.page__content a[href="/year-archive/"] > div{
-  transition: box-shadow 180ms ease, transform 180ms ease;
-}
+/* =========================
+   HOME HIGHLIGHTS TILES (your 2x2 cards)
+   - hover lift + stronger hierarchy
+   - arrow appears on hover
+========================= */
 
-/* Hover effect (lift + shadow) */
-.page__content a[href="/portfolio/"]:hover > div,
-.page__content a[href="/cv/"]:hover > div,
-.page__content a[href="https://scholar.google.com/citations?user=_rBmLxQAAAAJ&hl=en"]:hover > div,
-.page__content a[href="/year-archive/"]:hover > div{
-  box-shadow: 0 10px 28px #0b4f7a;
-  transform: translateY(-2px);
-}
-
-/* Title (first line in the tile): darker blue, no underline */
-.page__content a[href="/portfolio/"] > div div[style*="font-weight:600"],
-.page__content a[href="/cv/"] > div div[style*="font-weight:600"],
-.page__content a[href="https://scholar.google.com/citations?user=_rBmLxQAAAAJ&hl=en"] > div div[style*="font-weight:600"],
-.page__content a[href="/year-archive/"] > div div[style*="font-weight:600"]{
-  color: #0b4f7a !important;
-  text-decoration: none !important;
-}
-
-/* Subtitle (second line): true black and a bit less faint */
-.page__content a[href="/portfolio/"] > div div[style*="opacity"],
-.page__content a[href="/cv/"] > div div[style*="opacity"],
-.page__content a[href="https://scholar.google.com/citations?user=_rBmLxQAAAAJ&hl=en"] > div div[style*="opacity"],
-.page__content a[href="/year-archive/"] > div div[style*="opacity"]{
-  color: #0b4f7a !important;
-  opacity: 0.85 !important;
-}
-
-/* ===== Highlights (Home tiles) polish ===== */
-
-/* Target your highlight card container (robust: matches your inline card style) */
+/* Identify highlight cards by their inline style structure */
 .page__content a > div[style*="border:1px solid"][style*="border-radius"][style*="overflow:hidden"]{
   transition: box-shadow 180ms ease, transform 180ms ease;
+  cursor: pointer;
 }
 
-/* Lift + shadow on hover */
+/* Hover lift + shadow */
 .page__content a:hover > div[style*="border:1px solid"][style*="border-radius"][style*="overflow:hidden"]{
   box-shadow: 0 10px 28px rgba(0,0,0,0.10);
   transform: translateY(-2px);
 }
 
-/* Make the tile body "position: relative" so we can place the arrow */
+/* Card text area */
 .page__content a > div[style*="border:1px solid"][style*="border-radius"][style*="overflow:hidden"] > div[style*="padding:12px"]{
   position: relative;
-  padding-right: 34px !important; /* room for the arrow */
+  padding-right: 34px !important; /* room for arrow */
 }
 
-/* Title: bolder + darker */
+/* Title (first line): bolder + darker */
 .page__content a > div[style*="border:1px solid"][style*="border-radius"][style*="overflow:hidden"] > div[style*="padding:12px"] > div[style*="font-weight:600"]{
   font-weight: 750 !important;
-  color: #063a5c !important;  /* darker than before */
+  color: #063a5c !important;
+  text-decoration: none !important;
 }
 
-/* Subtitle: slightly smaller + lighter (but still readable) */
+/* Subtitle (second line): slightly smaller + lighter */
 .page__content a > div[style*="border:1px solid"][style*="border-radius"][style*="overflow:hidden"] > div[style*="padding:12px"] > div[style*="opacity"]{
   font-size: 0.95em !important;
-  opacity: 0.65 !important;
+  opacity: 0.70 !important;
   color: #000 !important;
 }
 
-/* Arrow cue: appears only on hover */
+/* Arrow cue appears only on hover */
 .page__content a > div[style*="border:1px solid"][style*="border-radius"][style*="overflow:hidden"] > div[style*="padding:12px"]::after{
   content: "→";
   position: absolute;
@@ -399,9 +359,4 @@ html, body{
 .page__content a:hover > div[style*="border:1px solid"][style*="border-radius"][style*="overflow:hidden"] > div[style*="padding:12px"]::after{
   opacity: 1;
   transform: translateX(0);
-}
-
-/* Optional: show hand cursor on card */
-.page__content a > div[style*="border:1px solid"][style*="border-radius"][style*="overflow:hidden"]{
-  cursor: pointer;
 }
