@@ -7,10 +7,10 @@ redirect_from:
   - /about.html
 ---
 
-I am a PhD researcher in the Water and Climate Research Group at Vrije Universiteit Brussel. My work involves modelling subsurface hydrology to quantify climate impacts on soil moisture and groundwater recharge, and to evaluate how nature-based solutions can mitigate drought risk.  
+I am a PhD researcher in the Water and Climate Research Group at Vrije Universiteit Brussel. In my research, I quantify climate impacts on soil moisture and groundwater recharge, and evaluate how nature-based solutions can mitigate drought risk.  
 <!-- Previously, I graduated with an Msc. in Water Resources Engineering from KU Leuven (IUPWARE Programme) and a Bsc. in Civil Engineering from the University of Nairobi, Kenya. -->
 
-I have a professional experience of 4 years in water projects which includes the development of strategies to improve climate resilience, design and construction of water supply infrastructure, and water harvesting and storage.
+I have 4 years of professional experience in the water sector, during which I have developed strategies for climate resilience, designed and supervised water supply infrastructure, and supported investment planning for water projects.
 
 # Start Here
 <div style="display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); gap:16px; margin: 1rem 0;">
