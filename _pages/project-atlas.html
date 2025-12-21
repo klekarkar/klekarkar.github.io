@@ -5,38 +5,20 @@ permalink: /project-atlas/
 author_profile: true
 ---
 
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nouislider@15.8.1/dist/nouislider.min.css">
-<script src="https://cdn.jsdelivr.net/npm/nouislider@15.8.1/dist/nouislider.min.js"></script>
-
-<div class="atlas">
-  <div class="atlas-bar">
-    <div class="atlas-title">Filter by project period</div>
-
-    <div class="atlas-range">
-      <span id="rangeLabel" class="atlas-range-label"></span>
-      <div id="yearSlider" class="atlas-slider"></div>
-    </div>
-  </div>
-
-  <div class="atlas-main">
-    <div id="map" class="atlas-map"></div>
-
-    <div class="atlas-side">
-      <div class="atlas-count" id="countLabel"></div>
-      <div id="cards" class="atlas-cards"></div>
-    </div>
-  </div>
-</div>
-
 <script>
-(async function () {
+document.addEventListener("DOMContentLoaded", async () => {
+  const countEl = document.getElementById("countLabel");
   try {
-    const res = await fetch("{{ '/assets/data/portfolio.json' | relative_url }}", { cache: "no-store" });
-    if (!res.ok) throw new Error("JSON fetch failed: " + res.status);
+    // Make sure libs exist
+    if (typeof L === "undefined") throw new Error("Leaflet (L) not loaded");
+    if (typeof noUiSlider === "undefined") throw new Error("noUiSlider not loaded");
+
+    const dataUrl = "{{ '/assets/data/portfolio.json' | absolute_url }}";
+    const res = await fetch(dataUrl, { cache: "no-store" });
+    if (!res.ok) throw new Error(`portfolio.json fetch failed: ${res.status}`);
+
     const items = await res.json();
+    if (!Array.isArray(items) || items.length === 0) throw new Error("portfolio.json is empty or not an array");
 
     const parsed = items.map(p => {
       const sy = new Date(p.start).getFullYear();
@@ -48,6 +30,7 @@ author_profile: true
     const minYear = Math.min(...years);
     const maxYear = Math.max(...years);
 
+    // Init map
     const map = L.map("map", { scrollWheelZoom: false }).setView([0, 20], 2);
     L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
       attribution: "&copy; OpenStreetMap contributors"
@@ -76,16 +59,12 @@ author_profile: true
         </a>
       `).join("");
 
-      document.getElementById("countLabel").textContent =
-        `${filtered.length} project${filtered.length === 1 ? "" : "s"} shown`;
+      countEl.textContent = `${filtered.length} project${filtered.length === 1 ? "" : "s"} shown`;
 
       markersLayer.clearLayers();
       const bounds = [];
 
       filtered.forEach(p => {
-        // handle null as well as empty
-        if (p.lat == null || p.lon == null || p.lat === "" || p.lon === "") return;
-
         const lat = Number(p.lat), lon = Number(p.lon);
         if (!Number.isFinite(lat) || !Number.isFinite(lon)) return;
 
@@ -106,6 +85,7 @@ author_profile: true
       if (bounds.length) map.fitBounds(bounds, { padding: [30, 30] });
     }
 
+    // Slider
     const slider = document.getElementById("yearSlider");
     noUiSlider.create(slider, {
       start: [minYear, maxYear],
@@ -123,8 +103,11 @@ author_profile: true
 
   } catch (err) {
     console.error(err);
-    const count = document.getElementById("countLabel");
-    if (count) count.textContent = "Atlas failed to load — check the browser console.";
+    if (countEl) {
+      countEl.textContent = "Atlas failed to load. Check console for details.";
+      countEl.style.color = "#b00020";
+      countEl.style.opacity = "1";
+    }
   }
-})();
+});
 </script>
