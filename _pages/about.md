@@ -13,7 +13,7 @@ Previously, I graduated with an Msc. in Water Resources Engineering from KU Leuv
 I have a professional working experience of 4 years in the field of water resources engineering which has mainly focused on marginalized and underdeveloped areas in Kenya.
 My working experience includes the development of sustainable water resources strategies for water scarce areas to improve climate resilience, design and construction of water supply infrastructure, flood water harvesting and storage, and hydrological analyses for water abstraction and storage.
 
-# Highlights
+# Start Here
 <div style="display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); gap:16px; margin: 1rem 0;">
 
   <a href="/portfolio/" style="text-decoration:none;">
@@ -41,7 +41,7 @@ My working experience includes the development of sustainable water resources st
       <img src="/images/education.png" alt="Education" style="width:100%; height:210px; object-fit:cover; display:block;">
       <div style="padding:12px;">
         <div style="font-weight:600;">Education</div>
-        <div style="opacity:0.8; font-size:0.95em;">PhD (Ongoing). • MSc. Water. • BSc Civil Eng.</div>
+        <div style="opacity:0.8; font-size:0.95em;">PhD researcher • MSc Water Resources • BSc Civil Eng.</div>
       </div>
     </div>
   </a>
