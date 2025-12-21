@@ -395,8 +395,8 @@ h1, h2, h3{
 .page__content a
   > div[style*="border:1px solid"][style*="border-radius"][style*="overflow:hidden"]
   > div[style*="padding:12px"]::after{
-  content: "Read more";
-  font-size: 0.92rem;
+  content: "Explore";
+  font-size: 0.80rem;
   font-weight: 600;
   letter-spacing: 0.01em;
   padding: 6px 10px;
