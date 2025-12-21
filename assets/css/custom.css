@@ -379,7 +379,7 @@ html, body{
 /* Subtitle: slightly smaller + lighter (but still readable) */
 .page__content a > div[style*="border:1px solid"][style*="border-radius"][style*="overflow:hidden"] > div[style*="padding:12px"] > div[style*="opacity"]{
   font-size: 0.95em !important;
-  opacity: 0.75 !important;
+  opacity: 0.65 !important;
   color: #000 !important;
 }
 
