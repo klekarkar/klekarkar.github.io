@@ -6,6 +6,12 @@ date: 2017-11-01   # used for sorting + display (pick end date)
 thumb: /images/kalobeyei_wfp.jpeg
 # tags: [Food security, drylands, Kenya]
 excerpt: "Feasibility study into the viability of several water supply options for dryland agriculture for Kalobeyei settlement scheme."
+
+location: "Turkana, Kenya"
+lat: -0.0500
+lon: 36.8000
+start: 2017-11-01
+end: 2018-01-31
 ---
 
 This project entailed a feasibility study into the viability of several water supply options for dryland agriculture for Kalobeyei settlement scheme that hosts close to 200,000 refugees, mainly from conflict- torn countries including South Sudan, Ethiopia, and other eastern African countries.
