@@ -416,66 +416,85 @@ h1, h2, h3{
   background: rgba(11, 79, 122, 0.10);
 }
 
-/* ===== Explore pill: a "runner" line that moves around the outline ===== */
+/* ===============================
+   Highlights: "Explore" pill with running border track
+   =============================== */
 
+/* Allow smooth animation of a custom angle variable (modern browsers) */
 @property --spin {
   syntax: "<angle>";
   inherits: false;
-  initial-value: 0deg;
+  initial-value: 0turn;
 }
 
-/* Base Explore pill (keep it looking normal when NOT hovered) */
-.page__content a
-  > div[style*="border:1px solid"][style*="border-radius"][style*="overflow:hidden"]
-  > div[style*="padding:12px"]::after{
-  /* keep your existing content: "Explore" (you already set it elsewhere) */
+/* Card hover: make hover feel a bit "darker/richer" */
+.page__content a > div[style*="border:1px solid"][style*="border-radius"][style*="overflow:hidden"]{
+  transition: box-shadow 180ms ease, transform 180ms ease, border-color 180ms ease;
+}
+.page__content a:hover > div[style*="border:1px solid"][style*="border-radius"][style*="overflow:hidden"]{
+  box-shadow: 0 12px 30px rgba(11,79,122,0.22);   /* darker/richer */
+  transform: translateY(-2px);
+  border-color: rgba(11,79,122,0.20) !important;
+}
 
+/* The text area inside the tile (where your title/subtitle live) */
+.page__content a > div[style*="border:1px solid"][style*="border-radius"][style*="overflow:hidden"]
+  > div[style*="padding:12px"]{
+  position: relative;
+  padding-right: 110px !important; /* space for the Explore pill */
+}
+
+/* The Explore pill itself */
+.page__content a > div[style*="border:1px solid"][style*="border-radius"][style*="overflow:hidden"]
+  > div[style*="padding:12px"]::after{
+  content: "Explore";
+  position: absolute;
+  right: 14px;
+  top: 12px;
+
+  display: inline-block;
+  padding: 6px 11px;
   border-radius: 999px;
-  border: 1px solid rgba(11, 79, 122, 0.25);
-  background: rgba(11, 79, 122, 0.06);
+
+  font-size: 0.92rem;
+  line-height: 1;
+  font-weight: 650;
+
+  color: #063a5c;
+  background: rgba(11,79,122,0.08);
+  border: 1px solid rgba(11,79,122,0.25);
+
+  /* Needed for the animated border trick */
+  --spin: 0turn;
+  background-clip: padding-box, border-box;
 }
 
-/* On hover: animate a small arc around the OUTLINE (like a runner) */
-.page__content a:hover
-  > div[style*="border:1px solid"][style*="border-radius"][style*="overflow:hidden"]
+/* On hover: animate a small "segment" running around the border */
+.page__content a:hover > div[style*="border:1px solid"][style*="border-radius"][style*="overflow:hidden"]
   > div[style*="padding:12px"]::after{
-
-  /* This creates:
-     - a normal pill fill (padding-box)
-     - a border "track" (faint)
-     - a moving "runner" segment around the border (conic-gradient)
-  */
   border: 2px solid transparent;
 
+  /* Two layers:
+     - inner fill (padding-box)
+     - animated conic border segment (border-box)
+  */
   background:
-    /* pill fill */
-    linear-gradient(rgba(11, 79, 122, 0.10), rgba(11, 79, 122, 0.10)) padding-box,
-
-    /* faint track around the outline */
-    conic-gradient(from 0deg,
-      rgba(11, 79, 122, 0.18) 0deg 360deg
-    ) border-box,
-
-    /* moving runner: strong head + fading tail */
+    linear-gradient(rgba(11,79,122,0.10), rgba(11,79,122,0.10)) padding-box,
     conic-gradient(from var(--spin),
-      rgba(11, 79, 122, 1.00) 0deg,
-      rgba(11, 79, 122, 1.00) 16deg,
-      rgba(11, 79, 122, 0.55) 28deg,
-      rgba(11, 79, 122, 0.00) 44deg,
-      rgba(11, 79, 122, 0.00) 360deg
+      rgba(11,79,122,1) 0 10%,
+      rgba(11,79,122,0) 10% 100%
     ) border-box;
 
-  animation: explore-runner 1.2s linear infinite;
+  animation: exploreTrack 1.2s linear infinite;
 }
 
-@keyframes explore-runner {
-  to { --spin: 360deg; }
+@keyframes exploreTrack{
+  to { --spin: 1turn; }
 }
 
 /* Respect reduced motion */
 @media (prefers-reduced-motion: reduce){
-  .page__content a:hover
-    > div[style*="border:1px solid"][style*="border-radius"][style*="overflow:hidden"]
+  .page__content a:hover > div[style*="border:1px solid"][style*="border-radius"][style*="overflow:hidden"]
     > div[style*="padding:12px"]::after{
     animation: none;
   }
