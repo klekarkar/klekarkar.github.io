@@ -9,7 +9,7 @@ excerpt: "Revision of drawings for sanitation and water storage facilities in Ke
 location: "Kenya"
 lat: -0.0500
 lon: 36.8000
-start: 2017-11-01
+start: 2017-06-01
 end: 2018-01-31
 ---
 
