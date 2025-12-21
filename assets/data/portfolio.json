@@ -3,20 +3,22 @@ layout: null
 permalink: /assets/data/portfolio.json
 ---
 
-[
 {% assign items = site.portfolio | sort: "date" | reverse %}
+{% assign empty_array = "" | split: "" %}
+
+[
 {% for p in items %}
   {
     "title": {{ p.title | jsonify }},
     "url": {{ p.url | relative_url | jsonify }},
     "thumb": {{ p.thumb | default: "/images/portfolio/default.jpg" | relative_url | jsonify }},
     "excerpt": {{ p.excerpt | strip_html | strip_newlines | jsonify }},
-    "tags": {{ p.tags | default: empty | jsonify }},
+    "tags": {{ p.tags | default: empty_array | jsonify }},
     "location": {{ p.location | default: "" | jsonify }},
-    "lat": {{ p.lat | default: "" | jsonify }},
-    "lon": {{ p.lon | default: "" | jsonify }},
-    "start": {{ p.start | default: p.date | date: "%Y-%m-%d" | jsonify }},
-    "end": {{ p.end | default: p.date | date: "%Y-%m-%d" | jsonify }},
+    "lat": {% if p.lat %}{{ p.lat | jsonify }}{% else %}null{% endif %},
+    "lon": {% if p.lon %}{{ p.lon | jsonify }}{% else %}null{% endif %},
+    "start": {{ (p.start | default: p.date) | date: "%Y-%m-%d" | jsonify }},
+    "end": {{ (p.end | default: p.date) | date: "%Y-%m-%d" | jsonify }},
     "date": {{ p.date | date: "%Y-%m-%d" | jsonify }}
   }{% unless forloop.last %},{% endunless %}
 {% endfor %}
