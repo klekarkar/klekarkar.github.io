@@ -60,8 +60,8 @@ My working experience includes the development of sustainable water resources st
     <div style="border:1px solid #e5e7eb; border-radius:14px; overflow:hidden;">
       <img src="/images/news.jpg" alt="Talks and conferences" style="width:100%; height:210px; object-fit:cover; display:block;">
       <div style="padding:12px;">
-        <div style="font-weight:600;">Latest News</div>
-        <div style="opacity:0.8; font-size:0.95em;">Career • Life </div>
+        <div style="font-weight:600;">Updates</div>
+        <div style="opacity:0.8; font-size:0.95em;"> Life </div>
       </div>
     </div>
   </a>
