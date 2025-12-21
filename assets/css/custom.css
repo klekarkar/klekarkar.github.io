@@ -1,17 +1,6 @@
 /* =========================
    GLOBAL TYPOGRAPHY
 ========================= */
-/* Light site background */
-body{
-  background: #c4c6ca;
-}
-
-/* Keep main content area white like a sheet */
-.initial-content{
-  background: #fff;
-  border-radius: 18px;
-}
-
 
 html, body{
   font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial !important;
@@ -45,6 +34,18 @@ h1, h2, h3{
 
 .page__content li{
   margin-bottom: 0.4rem;
+}
+
+
+
+/* About me page background */
+/* Intro card on About page */
+.intro-card{
+  background: rgba(11, 79, 122, 0.06);
+  border: 1px solid rgba(11, 79, 122, 0.18);
+  border-radius: 16px;
+  padding: 18px 20px;
+  margin: 14px 0 22px;
 }
 
 
