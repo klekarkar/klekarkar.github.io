@@ -303,18 +303,12 @@ h1, h2, h3{
   .post-grid{ grid-template-columns: 1fr; }
   .post-thumb img{ height: 190px; }
 }
+
 /* =========================
    HOME HIGHLIGHTS TILES (2x2 cards)
    - darker hover background
-   - Explore pill appears only on hover + animated color ring
+   - Explore pill appears only on hover + ring on hover
 ========================= */
-
-/* Allow animating the gradient angle (modern browsers) */
-@property --spin {
-  syntax: "<angle>";
-  inherits: false;
-  initial-value: 0deg;
-}
 
 /* Highlight card wrapper (your inline-styled tile container) */
 .page__content a > div[style*="border:1px solid"][style*="border-radius"][style*="overflow:hidden"]{
@@ -358,7 +352,7 @@ h1, h2, h3{
   color: #000 !important;
 }
 
-/* ---- Explore pill (hidden until hover) ---- */
+/* ---- Explore pill (exists always but hidden until hover) ---- */
 .page__content a > div[style*="border:1px solid"][style*="border-radius"][style*="overflow:hidden"]
   > div[style*="padding:12px"]::after{
   content: "Explore";
@@ -374,51 +368,27 @@ h1, h2, h3{
   line-height: 1;
 
   color: #063a5c;
+  background: rgba(11,79,122,0.08);
+  border: 1px solid rgba(11,79,122,0.25);
 
   /* hidden by default */
   opacity: 0;
   transform: translateY(-2px);
-  transition: opacity 180ms ease, transform 180ms ease;
+  transition: opacity 180ms ease, transform 180ms ease, box-shadow 180ms ease, background 180ms ease, border-color 180ms ease;
 
-  pointer-events: none; /* prevents flicker */
+  pointer-events: none; /* prevents weird hover flicker */
 }
 
-/* ---- On hover: show pill + animated color ring ---- */
+/* Show pill + ring only on hover */
 .page__content a:hover > div[style*="border:1px solid"][style*="border-radius"][style*="overflow:hidden"]
   > div[style*="padding:12px"]::after{
   opacity: 1;
   transform: translateY(0);
 
-  /* Create space for a gradient border */
-  border: 2px solid transparent;
+  background: rgba(11,79,122,0.10);
+  border-color: rgba(37, 219, 110, 0.35);
 
-  /* Two layers:
-     1) inner fill (padding-box)
-     2) animated gradient ring (border-box)
-  */
-  background:
-    linear-gradient(rgba(11,79,122,0.10), rgba(11,79,122,0.10)) padding-box,
-    conic-gradient(
-      from var(--spin),
-      #00c2ff,
-      #22c55e,
-      #a855f7,
-      #ff6a00,
-      #00c2ff
-    ) border-box;
-
-  animation: exploreSpin 1.2s linear infinite;
-}
-
-/* Animate the gradient angle */
-@keyframes exploreSpin{
-  to { --spin: 360deg; }
-}
-
-/* Reduced motion */
-@media (prefers-reduced-motion: reduce){
-  .page__content a:hover > div[style*="border:1px solid"][style*="border-radius"][style*="overflow:hidden"]
-    > div[style*="padding:12px"]::after{
-    animation: none;
-  }
+  /* one ring around */
+  box-shadow:
+    0 0 0 1.5px rgba(6,58,92,0.35);
 }
