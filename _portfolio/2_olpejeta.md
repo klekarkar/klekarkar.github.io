@@ -1,7 +1,7 @@
 ---
 title: "Ol-Pejeta Conservancy Water masterplan"
 date: 2019-01-15
-thumb: /images/portfolio/olpejeta.jpg
+thumb: /images/opc/opc_cover.JPG
 excerpt: "20-year masterplan to improve water security for staff housing, tourism and wildlife."
 tags: [Water planning, Hydrology, Kenya]
 
