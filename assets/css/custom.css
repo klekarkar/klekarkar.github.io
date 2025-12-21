@@ -416,3 +416,53 @@ h1, h2, h3{
   background: rgba(11, 79, 122, 0.10);
 }
 
+/* ===== Highlights CTA: circling line around "Explore" on hover ===== */
+
+/* Animate a conic-gradient border by rotating an angle custom property */
+@property --spin {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+
+/* This selector should match your Highlights "Explore" pill (the ::after) */
+.page__content a
+  > div[style*="border:1px solid"][style*="border-radius"][style*="overflow:hidden"]
+  > div[style*="padding:12px"]::after{
+  /* keep whatever you already have for the pill */
+  border-radius: 999px;
+}
+
+/* On hover: use a rotating conic-gradient border that looks like a "line" moving */
+.page__content a:hover
+  > div[style*="border:1px solid"][style*="border-radius"][style*="overflow:hidden"]
+  > div[style*="padding:12px"]::after{
+  /* keep the same pill fill */
+  background:
+    linear-gradient(rgba(11, 79, 122, 0.10), rgba(11, 79, 122, 0.10)) padding-box,
+
+    /* the "moving line" (small colored segment, rest transparent) */
+    conic-gradient(
+      from var(--spin),
+      rgba(11, 79, 122, 0.95) 0deg,
+      rgba(11, 79, 122, 0.95) 18deg,
+      rgba(11, 79, 122, 0.00) 18deg,
+      rgba(11, 79, 122, 0.00) 360deg
+    ) border-box;
+
+  border: 2px solid transparent;   /* required so the border-box gradient shows */
+  animation: explore-spin 1.1s linear infinite;
+}
+
+@keyframes explore-spin{
+  to { --spin: 360deg; }
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce){
+  .page__content a:hover
+    > div[style*="border:1px solid"][style*="border-radius"][style*="overflow:hidden"]
+    > div[style*="padding:12px"]::after{
+    animation: none;
+  }
+}
