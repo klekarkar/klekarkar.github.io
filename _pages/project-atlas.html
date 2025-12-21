@@ -5,162 +5,348 @@ permalink: /project-atlas/
 author_profile: true
 ---
 
+<!-- Leaflet -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+<!-- Marker clustering (recommended) -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css">
+<link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css">
+<script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+
+<div class="atlas">
+  <aside class="atlas-side">
+    <h2 style="margin-top:0;">Browse</h2>
+    <p style="opacity:.85; margin-top:.25rem;">
+      Search projects and click a result to zoom to its location.
+    </p>
+
+    <input id="atlasSearch" class="atlas-search" type="search" placeholder="Search title, location, tags…" autocomplete="off">
+
+    <div class="atlas-meta">
+      <span id="atlasCount" style="opacity:.8;">Loading…</span>
+      <button id="atlasClear" class="atlas-clear" type="button">Clear</button>
+    </div>
+
+    <div id="atlasList" class="atlas-list"></div>
+  </aside>
+
+  <section class="atlas-main">
+    <div class="atlas-mapWrap">
+      <div id="atlasMap" class="atlas-map"></div>
+    </div>
+  </section>
+</div>
+
+<style>
+  .atlas{
+    display:grid;
+    grid-template-columns: 360px 1fr;
+    gap: 16px;
+    margin-top: 1rem;
+  }
+  @media (max-width: 980px){
+    .atlas{ grid-template-columns: 1fr; }
+  }
+  .atlas-side{
+    border:1px solid #e5e7eb;
+    border-radius: 14px;
+    padding: 14px;
+    background: #fff;
+    min-height: 520px;
+  }
+  .atlas-search{
+    width:100%;
+    padding: 10px 12px;
+    border:1px solid #e5e7eb;
+    border-radius: 12px;
+    font-size: 0.95rem;
+    outline: none;
+  }
+  .atlas-search:focus{
+    border-color:#cbd5e1;
+    box-shadow: 0 0 0 3px rgba(148,163,184,.25);
+  }
+  .atlas-meta{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    margin-top: 10px;
+    gap: 10px;
+  }
+  .atlas-clear{
+    border:1px solid #e5e7eb;
+    background:#fff;
+    border-radius: 999px;
+    padding: 6px 10px;
+    cursor:pointer;
+    font-size: .9rem;
+  }
+  .atlas-clear:hover{ background:#f8fafc; }
+
+  .atlas-list{
+    margin-top: 12px;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    max-height: 430px;
+    overflow:auto;
+    padding-right: 4px;
+  }
+  .atlas-item{
+    display:flex;
+    gap:10px;
+    text-decoration:none;
+    color: inherit;
+    border:1px solid #e5e7eb;
+    border-radius: 14px;
+    overflow:hidden;
+    background:#fff;
+    cursor:pointer;
+  }
+  .atlas-item:hover{ background:#f8fafc; }
+  .atlas-thumb{
+    width: 86px;
+    height: 74px;
+    flex: 0 0 auto;
+    background:#f1f5f9;
+  }
+  .atlas-thumb img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+  }
+  .atlas-text{
+    padding:10px 10px 10px 0;
+    min-width: 0;
+  }
+  .atlas-title{
+    font-weight: 700;
+    line-height: 1.15;
+    margin-bottom: 4px;
+    font-size: .95rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .atlas-sub{
+    opacity:.8;
+    font-size: .9rem;
+    white-space: nowrap;
+    overflow:hidden;
+    text-overflow: ellipsis;
+  }
+  .atlas-tags{
+    margin-top: 6px;
+    display:flex;
+    flex-wrap:wrap;
+    gap:6px;
+  }
+  .atlas-tag{
+    font-size: .75rem;
+    padding: 2px 8px;
+    border-radius: 999px;
+    border:1px solid #e5e7eb;
+    background:#fff;
+    opacity:.9;
+  }
+
+  .atlas-mapWrap{
+    border:1px solid #e5e7eb;
+    border-radius: 14px;
+    overflow:hidden;
+    background:#fff;
+  }
+  .atlas-map{
+    height: 560px;
+    width: 100%;
+  }
+
+  /* Popup typography */
+  .leaflet-popup-content{ margin: 12px 14px; }
+  .popup-title{ font-weight:700; margin-bottom:4px; }
+  .popup-sub{ opacity:.75; margin-bottom:8px; }
+  .popup-link{ text-decoration:none; font-weight:600; }
+</style>
+
 <script>
-document.addEventListener("DOMContentLoaded", function () {
-  const countEl = document.getElementById("countLabel");
+document.addEventListener("DOMContentLoaded", async () => {
+  const searchEl = document.getElementById("atlasSearch");
+  const listEl   = document.getElementById("atlasList");
+  const countEl  = document.getElementById("atlasCount");
+  const clearEl  = document.getElementById("atlasClear");
 
-  (async function () {
-    try {
-      if (typeof L === "undefined") throw new Error("Leaflet (L) not loaded");
-      if (typeof noUiSlider === "undefined") throw new Error("noUiSlider not loaded");
+  // Map
+  const map = L.map("atlasMap", { scrollWheelZoom: false }).setView([20, 0], 2);
+  L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+    attribution: "&copy; OpenStreetMap contributors"
+  }).addTo(map);
 
-      const dataUrl = "{{ '/assets/data/portfolio.json' | absolute_url }}";
-      const res = await fetch(dataUrl, { cache: "no-store" });
-      if (!res.ok) throw new Error("portfolio.json fetch failed: " + res.status);
+  const cluster = L.markerClusterGroup();
+  cluster.addTo(map);
 
-      const items = await res.json();
-      if (!Array.isArray(items)) throw new Error("portfolio.json is not an array");
+  // Data + marker index
+  let items = [];
+  const markerById = new Map(); // id -> marker
+  const boundsAll = [];
 
-      const parsed = items.map(function (p) {
-        const sy = new Date(p.start).getFullYear();
-        const ey = new Date(p.end).getFullYear();
-        p.startYear = sy;
-        p.endYear = ey;
-        return p;
-      });
+  try {
+    const dataUrl = "{{ '/assets/data/portfolio.json' | relative_url }}";
+    const res = await fetch(dataUrl, { cache: "no-store" });
+    if (!res.ok) throw new Error("portfolio.json fetch failed: " + res.status);
 
-      const years = [];
-      parsed.forEach(function (p) {
-        if (Number.isFinite(p.startYear)) years.push(p.startYear);
-        if (Number.isFinite(p.endYear)) years.push(p.endYear);
-      });
+    const raw = await res.json();
+    if (!Array.isArray(raw)) throw new Error("portfolio.json is not an array");
 
-      const minYear = Math.min.apply(null, years);
-      const maxYear = Math.max.apply(null, years);
+    // normalize + keep only items with coordinates
+    items = raw
+      .map((p, idx) => ({
+        id: idx,
+        title: p.title || "Untitled",
+        url: p.url || "#",
+        thumb: p.thumb || "",
+        location: p.location || "",
+        excerpt: p.excerpt || "",
+        tags: Array.isArray(p.tags) ? p.tags : [],
+        lat: Number(p.lat),
+        lon: Number(p.lon)
+      }))
+      .filter(p => Number.isFinite(p.lat) && Number.isFinite(p.lon));
 
-      const map = L.map("map", { scrollWheelZoom: false }).setView([0, 20], 2);
-      L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-        attribution: "&copy; OpenStreetMap contributors"
-      }).addTo(map);
+    // create markers
+    items.forEach(p => {
+      const popupHtml = `
+        <div style="max-width:240px">
+          <div class="popup-title">${escapeHtml(p.title)}</div>
+          ${p.location ? `<div class="popup-sub">${escapeHtml(p.location)}</div>` : ""}
+          ${p.excerpt ? `<div style="margin-bottom:10px">${escapeHtml(p.excerpt)}</div>` : ""}
+          <a class="popup-link" href="${p.url}">Open project →</a>
+        </div>
+      `;
+      const m = L.marker([p.lat, p.lon]).bindPopup(popupHtml);
+      cluster.addLayer(m);
+      markerById.set(p.id, m);
+      boundsAll.push([p.lat, p.lon]);
+    });
 
-      const markersLayer = L.layerGroup().addTo(map);
+    if (boundsAll.length) map.fitBounds(boundsAll, { padding: [30, 30] });
 
-      function overlaps(p, lo, hi) {
-        return (p.startYear <= hi) && (p.endYear >= lo);
-      }
+    // initial render
+    renderList(items);
+    updateCount(items.length, items.length);
 
-      function render(lo, hi) {
-        document.getElementById("rangeLabel").textContent = lo + " — " + hi;
+  } catch (err) {
+    console.error(err);
+    countEl.textContent = "Failed to load projects (check console).";
+    countEl.style.color = "#b00020";
+  }
 
-        const filtered = parsed.filter(function (p) { return overlaps(p, lo, hi); });
-
-        const cards = document.getElementById("cards");
-        cards.innerHTML = "";
-
-        filtered.forEach(function (p) {
-          const a = document.createElement("a");
-          a.className = "atlas-card";
-          a.href = p.url;
-
-          const thumb = document.createElement("div");
-          thumb.className = "atlas-thumb";
-
-          const img = document.createElement("img");
-          img.src = p.thumb;
-          img.alt = p.title;
-
-          thumb.appendChild(img);
-
-          const meta = document.createElement("div");
-          meta.className = "atlas-meta";
-
-          const title = document.createElement("div");
-          title.className = "atlas-card-title";
-          title.textContent = p.title;
-
-          const sub = document.createElement("div");
-          sub.className = "atlas-card-sub";
-          sub.textContent = p.location || "";
-
-          const date = document.createElement("div");
-          date.className = "atlas-card-date";
-          date.textContent = p.startYear + "–" + p.endYear;
-
-          meta.appendChild(title);
-          meta.appendChild(sub);
-          meta.appendChild(date);
-
-          a.appendChild(thumb);
-          a.appendChild(meta);
-          cards.appendChild(a);
-        });
-
-        countEl.textContent =
-          filtered.length + " project" + (filtered.length === 1 ? "" : "s") + " shown";
-
-        markersLayer.clearLayers();
-        const bounds = [];
-
-        filtered.forEach(function (p) {
-          const lat = Number(p.lat);
-          const lon = Number(p.lon);
-          if (!Number.isFinite(lat) || !Number.isFinite(lon)) return;
-
-          const m = L.marker([lat, lon]).addTo(markersLayer);
-
-          const popupHtml =
-            '<div style="max-width:220px">' +
-              '<div style="font-weight:700; margin-bottom:6px">' + (p.title || "") + '</div>' +
-              '<div style="opacity:.75; margin-bottom:8px">' + (p.location || "") + '</div>' +
-              '<a href="' + p.url + '" style="color:#0b4f7a; text-decoration:none; font-weight:600">Open project →</a>' +
-            '</div>';
-
-          m.bindPopup(popupHtml);
-          bounds.push([lat, lon]);
-        });
-
-        if (bounds.length) map.fitBounds(bounds, { padding: [30, 30] });
-      }
-
-      const slider = document.getElementById("yearSlider");
-      noUiSlider.create(slider, {
-        start: [minYear, maxYear],
-        connect: true,
-        step: 1,
-        range: { min: minYear, max: maxYear },
-        format: { to: v => Math.round(v), from: v => Number(v) }
-      });
-
-      slider.noUiSlider.on("update", function (values) {
-        render(Number(values[0]), Number(values[1]));
-      });
-
-      render(minYear, maxYear);
-
-    } catch (err) {
-      console.error(err);
-      if (countEl) {
-        countEl.textContent = "Atlas failed to load. Check console for details.";
-        countEl.style.color = "#b00020";
-        countEl.style.opacity = "1";
-      }
+  // Search filtering (simple + fast)
+  function applyFilter() {
+    const q = (searchEl.value || "").trim().toLowerCase();
+    if (!q) {
+      renderList(items);
+      updateCount(items.length, items.length);
+      // show all markers
+      cluster.clearLayers();
+      items.forEach(p => cluster.addLayer(markerById.get(p.id)));
+      if (boundsAll.length) map.fitBounds(boundsAll, { padding: [30, 30] });
+      return;
     }
-  })();
+
+    const filtered = items.filter(p => {
+      const hay = [
+        p.title,
+        p.location,
+        p.excerpt,
+        (p.tags || []).join(" ")
+      ].join(" ").toLowerCase();
+      return hay.includes(q);
+    });
+
+    renderList(filtered);
+    updateCount(filtered.length, items.length);
+
+    // update markers
+    cluster.clearLayers();
+    const b = [];
+    filtered.forEach(p => {
+      const m = markerById.get(p.id);
+      if (m) cluster.addLayer(m);
+      b.push([p.lat, p.lon]);
+    });
+    if (b.length) map.fitBounds(b, { padding: [30, 30] });
+  }
+
+  searchEl.addEventListener("input", applyFilter);
+
+  clearEl.addEventListener("click", () => {
+    searchEl.value = "";
+    searchEl.focus();
+    applyFilter();
+  });
+
+  function renderList(list) {
+    listEl.innerHTML = "";
+
+    if (!list.length) {
+      const empty = document.createElement("div");
+      empty.style.opacity = ".75";
+      empty.style.padding = "10px 2px";
+      empty.textContent = "No projects match your search.";
+      listEl.appendChild(empty);
+      return;
+    }
+
+    list.forEach(p => {
+      const row = document.createElement("div");
+      row.className = "atlas-item";
+      row.setAttribute("role", "button");
+      row.setAttribute("tabindex", "0");
+
+      row.innerHTML = `
+        <div class="atlas-thumb">${p.thumb ? `<img src="${p.thumb}" alt="">` : ""}</div>
+        <div class="atlas-text">
+          <div class="atlas-title" title="${escapeHtml(p.title)}">${escapeHtml(p.title)}</div>
+          <div class="atlas-sub" title="${escapeHtml(p.location)}">${escapeHtml(p.location)}</div>
+          ${p.tags && p.tags.length ? `
+            <div class="atlas-tags">
+              ${p.tags.slice(0, 4).map(t => `<span class="atlas-tag">${escapeHtml(t)}</span>`).join("")}
+            </div>` : ""
+          }
+        </div>
+      `;
+
+      const open = () => {
+        const m = markerById.get(p.id);
+        if (!m) return;
+        map.setView([p.lat, p.lon], Math.max(map.getZoom(), 8), { animate: true });
+        // ensure popup opens even with clusters
+        cluster.zoomToShowLayer(m, () => m.openPopup());
+      };
+
+      row.addEventListener("click", open);
+      row.addEventListener("keydown", (e) => {
+        if (e.key === "Enter" || e.key === " ") { e.preventDefault(); open(); }
+      });
+
+      listEl.appendChild(row);
+    });
+  }
+
+  function updateCount(shown, total) {
+    countEl.textContent = `${shown} of ${total} shown`;
+    countEl.style.color = "";
+  }
+
+  function escapeHtml(str) {
+    return String(str)
+      .replaceAll("&", "&amp;")
+      .replaceAll("<", "&lt;")
+      .replaceAll(">", "&gt;")
+      .replaceAll('"', "&quot;")
+      .replaceAll("'", "&#039;");
+  }
 });
 </script>
-{% include base_path %}
-<div class="atlas-container">
-  <div class="atlas-sidebar">
-    <h2>Project Atlas</h2>
-    <p>Explore my projects by filtering through time and location. Use the slider below to select a range of years, and see the projects that were active during that period.</p>
-
-    <div id="yearSlider" class="atlas-slider"></div>
-    <div class="atlas-range-label">Years: <span id="rangeLabel"></span></div>
-    <div id="countLabel" class="atlas-count-label" style="opacity:0.7; margin-top:8px;">Loading...</div>
-  </div>
-
-  <div class="atlas-map" id="map"></div>
-
-  <div class="atlas-cards" id="cards"></div>
-</div>
-<style> </style>
