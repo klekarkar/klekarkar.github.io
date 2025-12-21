@@ -21,6 +21,10 @@ main:
   
   - title: "CV"
     url: /cv/
+  
+  - title: "Project Atlas"
+    url: /project-atlas/
+
 
   # - title: "Teaching"
   #   url: /teaching/ 

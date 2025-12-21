@@ -1,12 +1,17 @@
 ---
 title: "Ol-Pejeta Conservancy Water masterplan"
-collection: portfolio
+date: 2019-01-15
+thumb: /images/portfolio/olpejeta.jpg
+excerpt: "20-year masterplan to improve water security for staff housing, tourism and wildlife."
+tags: [Water planning, Hydrology, Kenya]
 
-date: 2019-01-15   # used for sorting + display (pick end date)
-thumb: /images/opc/opc_cover.JPG
-# tags: [Water planning, Hydrology, Kenya]
-excerpt: "Preparation of a 20-year water master plan for Ol-Pejeta Conservancy."
+location: "Laikipia, Kenya"
+lat: -0.0500
+lon: 36.8000
+start: 2018-01-01
+end: 2019-12-31
 ---
+
 Ol-Pejeta Conservancy needed a long-term plan to improve water security for staff housing, tourism facilities, livestock, and wildlife under increasing climate variability and growing competing demands. The goal was to develop a practical 20-year masterplan that prioritized interventions that are cost-effective and environmentally responsible.
 
 ### Outcomes
