@@ -3,6 +3,7 @@ layout: null
 permalink: /assets/data/portfolio.json
 ---
 
+
 {% assign items = site.portfolio | sort: "date" | reverse %}
 {% assign empty_array = "" | split: "" %}
 
