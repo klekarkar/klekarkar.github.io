@@ -390,6 +390,5 @@ h1, h2, h3{
 
   /* two rings (like your example) */
   box-shadow:
-    0 0 0 3px rgba(173, 7, 165, 0.30),
-    0 0 0 3px rgba(6,58,92,0.35);
+    0 0 0 1.5px rgba(6,58,92,0.35);
 }
