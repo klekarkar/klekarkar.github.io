@@ -404,6 +404,11 @@ h1, h2, h3{
 /* ===== Project Atlas ===== */
 .atlas { margin-top: 0.5rem; }
 
+.atlas{
+  grid-template-columns: 420px minmax(0, 1fr);
+}
+
+
 .atlas-bar{
   display: flex;
   align-items: center;
@@ -513,3 +518,6 @@ h1, h2, h3{
   .atlas-map{ height: 440px; }
   .atlas-side{ min-height: auto; }
 }
+
+.atlas-page .page__content .archive { max-width: none !important; }
+.atlas-page .page__content { padding-left: 0 !important; padding-right: 0 !important; }
