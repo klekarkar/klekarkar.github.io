@@ -2,7 +2,7 @@
 title: "Water supply in for Ishaqbin Community"
 collection: portfolio
 date: 2017-08-15   # used for sorting + display (pick end date)
-thumb: /images/nrt/ishaqbin.jpg
+thumb: /images/nrt/ishaqbin.png
 # tags: [Sanitation, Hygiene]
 excerpt: "RTopographic survey and design of water distribution system for multiple uses"
 
