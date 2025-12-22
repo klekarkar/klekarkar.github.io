@@ -83,7 +83,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     const m = markerById.get(p.id);
     if (!m) return;
 
-    const targetZoom = 6; // tweak as you like
+    const targetZoom = 4; // tweak as you like
 
     cluster.zoomToShowLayer(m, () => {
       map.flyTo(
