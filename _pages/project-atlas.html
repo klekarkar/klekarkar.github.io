@@ -3,29 +3,33 @@ layout: archive
 title: "Project Atlas"
 permalink: /project-atlas/
 author_profile: false
-classes: wide
+classes: wide atlas-page
 ---
 
 <!-- Leaflet -->
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
-<!-- Marker clustering (recommended) -->
+<!-- Marker clustering -->
 <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css">
 <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css">
 <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
 
 <div class="atlas">
   <aside class="atlas-side">
-    <h2 style="margin-top:0;">Browse</h2>
-    <p style="opacity:.85; margin-top:.25rem;">
-      Search projects and click a result to zoom to its location.
-    </p>
+    <h2 class="atlas-heading">Browse</h2>
+    <p class="atlas-lede">Search projects and click a result to zoom to its location.</p>
 
-    <input id="atlasSearch" class="atlas-search" type="search" placeholder="Search title, location, tags…" autocomplete="off">
+    <input
+      id="atlasSearch"
+      class="atlas-search"
+      type="search"
+      placeholder="Search title, location, tags…"
+      autocomplete="off"
+    >
 
     <div class="atlas-meta">
-      <span id="atlasCount" style="opacity:.8;">Loading…</span>
+      <span id="atlasCount" class="atlas-count">Loading…</span>
       <button id="atlasClear" class="atlas-clear" type="button">Clear</button>
     </div>
 
@@ -40,90 +44,123 @@ classes: wide
 </div>
 
 <style>
+  :root{
+    /* Tune this if your header is taller/shorter */
+    --atlas-vh-offset: 220px;
+    --atlas-radius: 14px;
+    --atlas-border: 1px solid #e5e7eb;
+    --atlas-gap: 16px;
+    --atlas-side-width: 400px;
+  }
+
   .atlas{
-    display:grid;
-    grid-template-columns: 400px 1fr;
-    gap: 16px;
+    display: grid;
+    grid-template-columns: var(--atlas-side-width) minmax(0, 1fr);
+    gap: var(--atlas-gap);
     margin-top: 1rem;
     align-items: stretch;
   }
 
-  @media (max-width: 980px){
-    .atlas{ grid-template-columns: 1fr; }
-  }
-  .atlas-side{
-    border:1px solid #e5e7eb;
-    border-radius: 14px;
-    padding: 14px;
+  .atlas-side,
+  .atlas-mapWrap{
+    border: var(--atlas-border);
+    border-radius: var(--atlas-radius);
     background: #fff;
-    min-height: 520px;
+    overflow: hidden;
   }
+
+  /* Sidebar */
+  .atlas-side{
+    padding: 14px;
+    min-height: calc(100vh - var(--atlas-vh-offset));
+  }
+
+  .atlas-heading{
+    margin: 0 0 6px 0;
+  }
+
+  .atlas-lede{
+    margin: 0 0 14px 0;
+    opacity: .85;
+  }
+
   .atlas-search{
-    width:100%;
+    width: 100%;
     padding: 10px 12px;
-    border:1px solid #e5e7eb;
+    border: var(--atlas-border);
     border-radius: 12px;
     font-size: 0.95rem;
     outline: none;
   }
+
   .atlas-search:focus{
-    border-color:#cbd5e1;
+    border-color: #cbd5e1;
     box-shadow: 0 0 0 3px rgba(148,163,184,.25);
   }
+
   .atlas-meta{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     margin-top: 10px;
     gap: 10px;
   }
+
+  .atlas-count{ opacity: .8; }
+
   .atlas-clear{
-    border:1px solid #e5e7eb;
-    background:#fff;
+    border: var(--atlas-border);
+    background: #fff;
     border-radius: 999px;
     padding: 6px 10px;
-    cursor:pointer;
+    cursor: pointer;
     font-size: .9rem;
   }
-  .atlas-clear:hover{ background:#f8fafc; }
+
+  .atlas-clear:hover{ background: #f8fafc; }
 
   .atlas-list{
     margin-top: 12px;
-    display:flex;
-    flex-direction:column;
-    gap:10px;
-    max-height: 430px;
-    overflow:auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-height: calc(100vh - var(--atlas-vh-offset) - 150px);
+    overflow: auto;
     padding-right: 4px;
   }
+
   .atlas-item{
-    display:flex;
-    gap:10px;
-    text-decoration:none;
+    display: flex;
+    gap: 10px;
     color: inherit;
-    border:1px solid #e5e7eb;
-    border-radius: 14px;
-    overflow:hidden;
-    background:#fff;
-    cursor:pointer;
+    border: var(--atlas-border);
+    border-radius: var(--atlas-radius);
+    overflow: hidden;
+    background: #fff;
+    cursor: pointer;
   }
-  .atlas-item:hover{ background:#f8fafc; }
+
+  .atlas-item:hover{ background: #f8fafc; }
+
   .atlas-thumb{
     width: 86px;
     height: 74px;
     flex: 0 0 auto;
-    background:#f1f5f9;
+    background: #f1f5f9;
   }
+
   .atlas-thumb img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    display:block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
   }
+
   .atlas-text{
-    padding:10px 10px 10px 0;
+    padding: 10px 10px 10px 0;
     min-width: 0;
   }
+
   .atlas-title{
     font-weight: 700;
     line-height: 1.15;
@@ -133,50 +170,59 @@ classes: wide
     overflow: hidden;
     text-overflow: ellipsis;
   }
+
   .atlas-sub{
-    opacity:.8;
+    opacity: .8;
     font-size: .9rem;
     white-space: nowrap;
-    overflow:hidden;
+    overflow: hidden;
     text-overflow: ellipsis;
   }
+
   .atlas-tags{
     margin-top: 6px;
-    display:flex;
-    flex-wrap:wrap;
-    gap:6px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
   }
+
   .atlas-tag{
     font-size: .75rem;
     padding: 2px 8px;
     border-radius: 999px;
-    border:1px solid #e5e7eb;
-    background:#fff;
-    opacity:.9;
+    border: var(--atlas-border);
+    background: #fff;
+    opacity: .9;
   }
 
-  .atlas-mapWrap{
-    border:1px solid #e5e7eb;
-    border-radius: 14px;
-    overflow:hidden;
-    background:#fff;
-  }
-
-  /* Fill most of the viewport */
-  .atlas-side{
-    min-height: calc(100vh - 220px); /* adjust 220px if your header is taller */
-  }
-
+  /* Map */
   .atlas-map{
-    height: calc(100vh - 220px);
+    height: calc(100vh - var(--atlas-vh-offset));
     width: 100%;
   }
 
   /* Popup typography */
   .leaflet-popup-content{ margin: 12px 14px; }
-  .popup-title{ font-weight:700; margin-bottom:4px; }
-  .popup-sub{ opacity:.75; margin-bottom:8px; }
-  .popup-link{ text-decoration:none; font-weight:600; }
+  .popup-title{ font-weight: 700; margin-bottom: 4px; }
+  .popup-sub{ opacity: .75; margin-bottom: 8px; }
+  .popup-link{ text-decoration: none; font-weight: 600; }
+
+  /* Mobile stack */
+  @media (max-width: 980px){
+    .atlas{
+      grid-template-columns: 1fr;
+    }
+    .atlas-side{
+      min-height: auto;
+    }
+    .atlas-map{
+      height: 60vh;
+      min-height: 420px;
+    }
+    .atlas-list{
+      max-height: 340px;
+    }
+  }
 </style>
 
 <script>
