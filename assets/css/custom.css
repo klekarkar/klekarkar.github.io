@@ -631,4 +631,27 @@ h1, h2, h3{
   .atlas-page .atlas { grid-template-columns: 1fr; }
 }
 
+/* === Project Atlas: break out of theme max-width wrappers === */
+.atlas-page #main,
+.atlas-page .initial-content,
+.atlas-page .container,
+.atlas-page .page__inner-wrap,
+.atlas-page .archive,
+.atlas-page .page__content {
+  max-width: none !important;
+  width: 100% !important;
+}
+
+/* Tighten side margins/padding on this page only */
+.atlas-page .page__content {
+  padding-left: 10px !important;
+  padding-right: 10px !important;
+}
+
+/* Make sure the atlas grid uses the full available width */
+.atlas-page .atlas{
+  margin: 0 !important;
+  grid-template-columns: 420px minmax(0, 1fr);
+}
+
 
