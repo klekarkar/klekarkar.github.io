@@ -15,33 +15,36 @@ classes: wide atlas-page
 <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css">
 <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
 
-<div class="atlas">
-  <aside class="atlas-side">
-    <h2 class="atlas-heading">Browse</h2>
-    <p class="atlas-lede">Search projects and click a result to zoom to its location.</p>
+<div class="atlas-shell">
+  <div class="atlas">
+    <aside class="atlas-side">
+      <h2 class="atlas-heading">Browse</h2>
+      <p class="atlas-lede">Search projects and click a result to zoom to its location.</p>
 
-    <input
-      id="atlasSearch"
-      class="atlas-search"
-      type="search"
-      placeholder="Search title, location, tags…"
-      autocomplete="off"
-    >
+      <input
+        id="atlasSearch"
+        class="atlas-search"
+        type="search"
+        placeholder="Search title, location, tags…"
+        autocomplete="off"
+      >
 
-    <div class="atlas-meta">
-      <span id="atlasCount" class="atlas-count">Loading…</span>
-      <button id="atlasClear" class="atlas-clear" type="button">Clear</button>
-    </div>
+      <div class="atlas-meta">
+        <span id="atlasCount" class="atlas-count">Loading…</span>
+        <button id="atlasClear" class="atlas-clear" type="button">Clear</button>
+      </div>
 
-    <div id="atlasList" class="atlas-list"></div>
-  </aside>
+      <div id="atlasList" class="atlas-list"></div>
+    </aside>
 
-  <section class="atlas-main">
-    <div class="atlas-mapWrap">
-      <div id="atlasMap" class="atlas-map"></div>
-    </div>
-  </section>
+    <section class="atlas-main">
+      <div class="atlas-mapWrap">
+        <div id="atlasMap" class="atlas-map"></div>
+      </div>
+    </section>
+  </div>
 </div>
+
 
 <style>
   :root{

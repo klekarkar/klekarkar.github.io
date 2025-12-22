@@ -411,7 +411,7 @@ h1, h2, h3{
 /* Layout */
 .atlas-page .atlas{
   display: grid;
-  grid-template-columns: 420px minmax(0, 1fr);
+  grid-template-columns: 380px minmax(0, 1fr);
   gap: 16px;
   margin-top: 0.75rem;
   align-items: stretch;
@@ -777,6 +777,29 @@ h1, h2, h3{
   .atlas-page .atlas-list{
     max-height: 340px;
   }
+}
+
+/* === Project Atlas: full-bleed breakout (guaranteed) === */
+.atlas-shell{
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+.atlas-shell .atlas{
+  display: grid;
+  grid-template-columns: 420px minmax(0, 1fr);
+  gap: 16px;
+  align-items: stretch;
+  width: 100%;
+  margin: 0;
+}
+
+.atlas-shell .atlas-map,
+.atlas-shell .atlas-mapWrap{
+  width: 100%;
 }
 
 
