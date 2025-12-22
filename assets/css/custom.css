@@ -684,5 +684,35 @@ h1, h2, h3{
   margin: 0 !important;
 }
 
+/* ===== Atlas: full-bleed layout (force) ===== */
+.atlas-page .initial-content,
+.atlas-page .container,
+.atlas-page .page,
+.atlas-page .page__inner-wrap,
+.atlas-page .archive,
+.atlas-page .page__content {
+  max-width: none !important;
+  width: 100% !important;
+}
+
+/* Remove the centering margins that keep it in the middle */
+.atlas-page .page__inner-wrap,
+.atlas-page .archive {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+/* Tighten page gutters more than other pages */
+.atlas-page .page__content {
+  padding-left: 8px !important;
+  padding-right: 8px !important;
+}
+
+/* Give map all remaining space */
+.atlas-page .atlas {
+  grid-template-columns: 420px minmax(0, 1fr);
+  width: 100%;
+  margin: 0 !important;
+}
 
 
