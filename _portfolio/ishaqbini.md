@@ -6,7 +6,7 @@ thumb: /images/nrt/ishaqbin.jpg
 # tags: [Sanitation, Hygiene]
 excerpt: "RTopographic survey and design of water distribution system for multiple uses"
 
-location: "Ishaqbini"
+location: "Ishaqbin, Kenya"
 lat: -1.838626
 lon: 40.235141
 start: 2017-03-01
