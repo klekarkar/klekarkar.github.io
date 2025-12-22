@@ -802,4 +802,27 @@ h1, h2, h3{
   width: 100%;
 }
 
+/* ===== Highlight current nav item (Minimal Mistakes / Greedy Nav) ===== */
+
+/* Works when theme marks current link with .active */
+.greedy-nav .visible-links a.active{
+  font-weight: 700;
+  color: #0b4f7a !important;
+  border-bottom: 2px solid rgba(11,79,122,0.55);
+  padding-bottom: 6px;
+}
+
+/* Fallback: if theme uses aria-current */
+.greedy-nav .visible-links a[aria-current="page"]{
+  font-weight: 700;
+  color: #0b4f7a !important;
+  border-bottom: 2px solid rgba(11,79,122,0.55);
+  padding-bottom: 6px;
+}
+
+/* Optional: keep hover consistent */
+.greedy-nav .visible-links a:hover{
+  border-bottom: 2px solid rgba(11,79,122,0.35);
+  padding-bottom: 6px;
+}
 
