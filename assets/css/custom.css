@@ -575,144 +575,208 @@ h1, h2, h3{
     max-height: 340px;
   }
 }
-
 /* =========================
-   PROJECT ATLAS: full-width + tighter margins
+   PROJECT ATLAS (search + list + map)
+   Page front matter: classes: wide atlas-page
 ========================= */
 
-/* Remove the theme's narrow content constraint on this page */
-.atlas-page .page__content .archive {
-  max-width: none !important;
+:root{
+  --atlas-side-width: 420px;   /* keep Browse size */
+  --atlas-gap: 16px;
+  --atlas-radius: 14px;
+  --atlas-border: 1px solid #e5e7eb;
+  --atlas-vh-offset: 220px;    /* adjust if header taller/shorter */
+  --atlas-gutter: 12px;        /* page side padding for atlas */
 }
 
-/* Tighten horizontal padding on this page */
-.atlas-page .page__content {
-  padding-left: 12px !important;
-  padding-right: 12px !important;
+/* Full-bleed breakout (FleetFeet-style), but only on the atlas page */
+.atlas-page .atlas{
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  padding-left: var(--atlas-gutter);
+  padding-right: var(--atlas-gutter);
+
+  display: grid;
+  grid-template-columns: var(--atlas-side-width) minmax(0, 1fr);
+  gap: var(--atlas-gap);
+  align-items: stretch;
 }
 
-/* If your theme adds an inner container with padding, kill it too */
-.atlas-page .archive__wrapper {
+/* (Optional) make page title align with full-bleed layout */
+.atlas-page .page__title{
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  padding-left: var(--atlas-gutter);
+  padding-right: var(--atlas-gutter);
+}
+
+/* Remove default content padding just for atlas page (we use atlas gutters instead) */
+.atlas-page .page__content{
   padding-left: 0 !important;
   padding-right: 0 !important;
 }
 
-/* Make the atlas grid start flush-left and let the map take remaining width */
-.atlas-page .atlas {
-  display: grid;
-  grid-template-columns: 420px minmax(0, 1fr);
-  gap: 16px;
+/* Containers */
+.atlas-page .atlas-side,
+.atlas-page .atlas-mapWrap{
+  border: var(--atlas-border);
+  border-radius: var(--atlas-radius);
+  background: #fff;
+  overflow: hidden;
+}
+
+/* Sidebar */
+.atlas-page .atlas-side{
+  padding: 14px;
+  min-height: calc(100vh - var(--atlas-vh-offset));
+}
+
+.atlas-page .atlas-heading{ margin: 0 0 6px 0; }
+.atlas-page .atlas-lede{ margin: 0 0 14px 0; opacity: .85; }
+
+.atlas-page .atlas-search{
   width: 100%;
-  margin: 0;              /* no centering margin */
-  justify-content: start; /* keep sidebar at left */
+  padding: 10px 12px;
+  border: var(--atlas-border);
+  border-radius: 12px;
+  font-size: 0.95rem;
+  outline: none;
 }
 
-/* Optional: slightly narrower gap */
-@media (min-width: 981px){
-  .atlas-page .atlas { gap: 14px; }
+.atlas-page .atlas-search:focus{
+  border-color: #cbd5e1;
+  box-shadow: 0 0 0 3px rgba(148,163,184,.25);
 }
 
-/* Keep map truly filling its column */
-.atlas-page .atlas-mapWrap,
-.atlas-page .atlas-map {
+.atlas-page .atlas-meta{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 10px;
+  gap: 10px;
+}
+
+.atlas-page .atlas-count{ opacity: .8; }
+
+.atlas-page .atlas-clear{
+  border: var(--atlas-border);
+  background: #fff;
+  border-radius: 999px;
+  padding: 6px 10px;
+  cursor: pointer;
+  font-size: .9rem;
+}
+.atlas-page .atlas-clear:hover{ background: #f8fafc; }
+
+/* List */
+.atlas-page .atlas-list{
+  margin-top: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-height: calc(100vh - var(--atlas-vh-offset) - 150px);
+  overflow: auto;
+  padding-right: 4px;
+}
+
+.atlas-page .atlas-item{
+  display: flex;
+  gap: 10px;
+  color: inherit;
+  border: var(--atlas-border);
+  border-radius: var(--atlas-radius);
+  overflow: hidden;
+  background: #fff;
+  cursor: pointer;
+}
+.atlas-page .atlas-item:hover{ background: #f8fafc; }
+
+.atlas-page .atlas-thumb{
+  width: 86px;
+  height: 74px;
+  flex: 0 0 auto;
+  background: #f1f5f9;
+}
+.atlas-page .atlas-thumb img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.atlas-page .atlas-text{
+  padding: 10px 10px 10px 0;
+  min-width: 0;
+}
+
+.atlas-page .atlas-title{
+  font-weight: 700;
+  line-height: 1.15;
+  margin-bottom: 4px;
+  font-size: .95rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.atlas-page .atlas-sub{
+  opacity: .8;
+  font-size: .9rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.atlas-page .atlas-tags{
+  margin-top: 6px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.atlas-page .atlas-tag{
+  font-size: .75rem;
+  padding: 2px 8px;
+  border-radius: 999px;
+  border: 1px solid rgba(0,0,0,0.12);
+  background: rgba(0,0,0,0.02);
+  opacity: .9;
+}
+
+/* Map */
+.atlas-page .atlas-map{
+  height: calc(100vh - var(--atlas-vh-offset));
   width: 100%;
 }
 
-/* If you want the map even more dominant without changing Browse size */
-@media (min-width: 1200px){
-  .atlas-page .atlas {
-    grid-template-columns: 400px minmax(0, 1fr); /* Browse stays ~same */
-  }
-}
+/* Popup */
+.atlas-page .leaflet-popup-content{ margin: 12px 14px; }
+.atlas-page .popup-title{ font-weight: 700; margin-bottom: 4px; }
+.atlas-page .popup-sub{ opacity: .75; margin-bottom: 8px; }
+.atlas-page .popup-link{ text-decoration: none; font-weight: 600; }
 
-/* Mobile stays stacked */
+/* Mobile */
 @media (max-width: 980px){
-  .atlas-page .page__content { padding-left: 12px !important; padding-right: 12px !important; }
-  .atlas-page .atlas { grid-template-columns: 1fr; }
-}
+  :root{ --atlas-side-width: 1fr; }
 
-/* === Project Atlas: break out of theme max-width wrappers === */
-.atlas-page #main,
-.atlas-page .initial-content,
-.atlas-page .container,
-.atlas-page .page__inner-wrap,
-.atlas-page .archive,
-.atlas-page .page__content {
-  max-width: none !important;
-  width: 100% !important;
-}
+  .atlas-page .atlas{
+    grid-template-columns: 1fr;
+  }
 
-/* Tighten side margins/padding on this page only */
-.atlas-page .page__content {
-  padding-left: 10px !important;
-  padding-right: 10px !important;
-}
+  .atlas-page .atlas-side{
+    min-height: auto;
+  }
 
-/* Make sure the atlas grid uses the full available width */
-.atlas-page .atlas{
-  margin: 0 !important;
-  grid-template-columns: 420px minmax(0, 1fr);
-}
+  .atlas-page .atlas-map{
+    height: 60vh;
+    min-height: 420px;
+  }
 
-/* ===== Project Atlas full-width override (Minimal Mistakes) ===== */
-/* Targets the page by the presence of your atlas container */
-#main .atlas {
-  width: 100%;
-}
-
-/* Remove theme max-width constraints in the chain above the atlas */
-#main:has(.atlas) .page__inner-wrap,
-#main:has(.atlas) .archive,
-#main:has(.atlas) .page__content,
-#main:has(.atlas) .initial-content,
-#main:has(.atlas) .container {
-  max-width: none !important;
-  width: 100% !important;
-}
-
-/* Tighten padding only on the atlas page */
-#main:has(.atlas) .page__content {
-  padding-left: 10px !important;
-  padding-right: 10px !important;
-}
-
-/* Make the map column take all remaining space */
-#main:has(.atlas) .atlas {
-  display: grid;
-  grid-template-columns: 420px minmax(0, 1fr);
-  gap: 16px;
-  margin: 0 !important;
-}
-
-/* ===== Atlas: full-bleed layout (force) ===== */
-.atlas-page .initial-content,
-.atlas-page .container,
-.atlas-page .page,
-.atlas-page .page__inner-wrap,
-.atlas-page .archive,
-.atlas-page .page__content {
-  max-width: none !important;
-  width: 100% !important;
-}
-
-/* Remove the centering margins that keep it in the middle */
-.atlas-page .page__inner-wrap,
-.atlas-page .archive {
-  margin-left: 0 !important;
-  margin-right: 0 !important;
-}
-
-/* Tighten page gutters more than other pages */
-.atlas-page .page__content {
-  padding-left: 8px !important;
-  padding-right: 8px !important;
-}
-
-/* Give map all remaining space */
-.atlas-page .atlas {
-  grid-template-columns: 420px minmax(0, 1fr);
-  width: 100%;
-  margin: 0 !important;
+  .atlas-page .atlas-list{
+    max-height: 340px;
+  }
 }
 
 
