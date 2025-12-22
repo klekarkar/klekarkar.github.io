@@ -8,8 +8,8 @@ thumb: /images/kalobeyei_wfp.jpeg
 excerpt: "Feasibility study into the viability of several water supply options for dryland agriculture for Kalobeyei settlement scheme."
 
 location: "Turkana, Kenya"
-lat: -0.0500
-lon: 36.8000
+lat: 3.764409
+lon: 34.736055
 start: 2017-11-01
 end: 2018-01-31
 ---
@@ -17,4 +17,3 @@ end: 2018-01-31
 This project entailed a feasibility study into the viability of several water supply options for dryland agriculture for Kalobeyei settlement scheme that hosts close to 200,000 refugees, mainly from conflict- torn countries including South Sudan, Ethiopia, and other eastern African countries.
 Tasks under the project included the exploration of several water supply options including roof water harvesting for irrigating small kitchen gardens and trees, in-situ rainwater harvesting technologies to enhance water availability in cropping areas, including trapezoidal bunds, contour bunds, zai pits (planting pits), micro-catchments and sunken/fertility beds.
 The project also explored the feasibility of small farm ponds (50-500m3) to support high value crops as well as the utilization of spate irrigation to produce quick maturing crops, low-cost earth dams, large dams, and groundwater exploration to meet domestic and irrigation demand.
-
