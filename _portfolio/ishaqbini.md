@@ -1,5 +1,5 @@
 ---
-title: "Water supply in for Ishaqbin Community"
+title: "Water supply design for Ishaqbin Community"
 collection: portfolio
 date: 2017-08-15   # used for sorting + display (pick end date)
 thumb: /images/nrt/ishaqbin.png
