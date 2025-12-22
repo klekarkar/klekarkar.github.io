@@ -9,6 +9,10 @@ document.addEventListener("DOMContentLoaded", async () => {
     attribution: "&copy; OpenStreetMap contributors"
   }).addTo(map);
 
+  setTimeout(() => map.invalidateSize(), 200);
+  window.addEventListener("resize", () => map.invalidateSize());
+
+
   const cluster = L.markerClusterGroup();
   cluster.addTo(map);
 

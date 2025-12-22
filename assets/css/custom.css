@@ -654,4 +654,35 @@ h1, h2, h3{
   grid-template-columns: 420px minmax(0, 1fr);
 }
 
+/* ===== Project Atlas full-width override (Minimal Mistakes) ===== */
+/* Targets the page by the presence of your atlas container */
+#main .atlas {
+  width: 100%;
+}
+
+/* Remove theme max-width constraints in the chain above the atlas */
+#main:has(.atlas) .page__inner-wrap,
+#main:has(.atlas) .archive,
+#main:has(.atlas) .page__content,
+#main:has(.atlas) .initial-content,
+#main:has(.atlas) .container {
+  max-width: none !important;
+  width: 100% !important;
+}
+
+/* Tighten padding only on the atlas page */
+#main:has(.atlas) .page__content {
+  padding-left: 10px !important;
+  padding-right: 10px !important;
+}
+
+/* Make the map column take all remaining space */
+#main:has(.atlas) .atlas {
+  display: grid;
+  grid-template-columns: 420px minmax(0, 1fr);
+  gap: 16px;
+  margin: 0 !important;
+}
+
+
 
