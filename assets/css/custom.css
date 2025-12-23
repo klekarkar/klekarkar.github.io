@@ -19,11 +19,13 @@ h1, h2, h3{
   color:#000 !important;
 }
 
+/* Main page text sizing */
 .page__content p{
   font-size: 1.0rem;
   line-height: 1.6;
 }
 
+/* Lists */
 .page__content ul,
 .page__content ol{
   font-size: 1.0rem;
@@ -35,10 +37,9 @@ h1, h2, h3{
 }
 
 
-/* =========================
-   INTRO CARD (About/Home)
-========================= */
 
+/* About me page background */
+/* Intro card on About page */
 .intro-card{
   background: rgba(11, 79, 122, 0.06);
   border: 1px solid rgba(11, 79, 122, 0.18);
@@ -294,7 +295,7 @@ h1, h2, h3{
 .post-date{
   margin-top: 6px;
   font-size: 0.92rem;
-  color: rgba(0,0,0,0.55);
+  color: rgba(0,0,0,0.55); /* <-- your old value was almost invisible */
 }
 
 .post-card:hover{
@@ -315,51 +316,19 @@ h1, h2, h3{
   .post-thumb img{ height: 190px; }
 }
 
-
 /* =========================
-   NAV: highlight current page
+   HOME HIGHLIGHTS TILES (2x2 cards)
+   - darker hover background
+   - Explore pill appears only on hover + ring on hover
 ========================= */
 
-.greedy-nav .visible-links a.active{
-  font-weight: 700;
-  color: #0b4f7a !important;
-  border-bottom: 2px solid rgba(11,79,122,0.55);
-  padding-bottom: 6px;
-}
-
-.greedy-nav .visible-links a[aria-current="page"]{
-  font-weight: 700;
-  color: #0b4f7a !important;
-  border-bottom: 2px solid rgba(11,79,122,0.55);
-  padding-bottom: 6px;
-}
-
-.greedy-nav .visible-links a:hover{
-  border-bottom: 2px solid rgba(11,79,122,0.35);
-  padding-bottom: 6px;
-}
-
-
-/* =========================
-   HOME TILES (2x2 cards)
-   - lift on hover
-   - Explore pill appears on hover
-   - animated blue/green ring + glow + subtle pulse
-========================= */
-
-/* Enable smooth animation of the angle variable */
-@property --spin {
-  syntax: "<angle>";
-  inherits: false;
-  initial-value: 0deg;
-}
-
-/* Tile wrapper (matches your inline style blocks) */
+/* Highlight card wrapper (your inline-styled tile container) */
 .page__content a > div[style*="border:1px solid"][style*="border-radius"][style*="overflow:hidden"]{
   transition: box-shadow 180ms ease, transform 180ms ease, border-color 180ms ease;
   cursor: pointer;
 }
 
+/* Lift + shadow + darker tint */
 .page__content a:hover > div[style*="border:1px solid"][style*="border-radius"][style*="overflow:hidden"]{
   box-shadow: 0 14px 34px rgba(0,0,0,0.14);
   transform: translateY(-2px);
@@ -370,23 +339,24 @@ h1, h2, h3{
 .page__content a > div[style*="border:1px solid"][style*="border-radius"][style*="overflow:hidden"]
   > div[style*="padding:12px"]{
   position: relative;
-  padding-right: 130px !important;
+  padding-right: 130px !important; /* room for Explore pill */
   transition: background 180ms ease;
 }
 
+/* Tint ONLY the text area on hover */
 .page__content a:hover > div[style*="border:1px solid"][style*="border-radius"][style*="overflow:hidden"]
   > div[style*="padding:12px"]{
   background: rgba(11,79,122,0.06) !important;
 }
 
-/* Title hierarchy */
+/* Title (first line) stronger hierarchy */
 .page__content a > div[style*="border:1px solid"][style*="border-radius"][style*="overflow:hidden"]
   > div[style*="padding:12px"] > div[style*="font-weight:600"]{
   font-weight: 750 !important;
   color: #063a5c !important;
 }
 
-/* Explore pill base (hidden until hover) */
+/* Base: pill exists but hidden */
 .page__content a > div[style*="border:1px solid"][style*="border-radius"][style*="overflow:hidden"]
   > div[style*="padding:12px"]::after{
   content: "Explore";
@@ -397,64 +367,31 @@ h1, h2, h3{
   padding: 7px 12px;
   border-radius: 999px;
 
-  font-size: 0.82rem;
+  font-size: 0.80rem;
   font-weight: 650;
   line-height: 1;
 
   color: #063a5c;
-
-  /* Calm fill + animated border ring (only animates on hover) */
-  background:
-    linear-gradient(rgba(11,79,122,0.10), rgba(11,79,122,0.10)) padding-box,
-    conic-gradient(
-      from var(--spin),
-      rgba(56,189,248,0.0) 0deg,
-      rgba(56,189,248,0.0) 250deg,
-      rgba(56,189,248,0.95) 285deg,
-      rgba(34,197,94,0.95) 320deg,
-      rgba(56,189,248,0.95) 360deg
-    ) border-box;
-
-  border: 2px solid transparent;
+  background: rgba(11,79,122,0.08);
 
   opacity: 0;
   transform: translateY(-2px);
+  transition: opacity 180ms ease, transform 180ms ease, border-color 180ms ease, background 180ms ease;
 
-  transition: opacity 180ms ease, transform 180ms ease, box-shadow 220ms ease;
-  box-shadow: none;
+  border: 2px solid transparent;   /* single outline, set on hover */
+  box-shadow: none !important;      /* prevents the “second border” */
 }
 
-/* Hover => show + animate */
+/* Hover: show pill + single border */
 .page__content a:hover > div[style*="border:1px solid"][style*="border-radius"][style*="overflow:hidden"]
   > div[style*="padding:12px"]::after{
   opacity: 1;
   transform: translateY(0);
-
-  animation: exploreRing 1.8s linear infinite, explorePulse 1.4s ease-in-out infinite;
-
-  box-shadow:
-    0 8px 22px rgba(11,79,122,0.18),
-    0 0 0 4px rgba(56,189,248,0.12),
-    0 0 0 8px rgba(34,197,94,0.06);
+  background: rgba(11,79,122,0.10);
+  border-color: rgba(37, 219, 110, 0.55);  /* your ring color */
 }
 
-@keyframes exploreRing {
-  to { --spin: 360deg; }
-}
-
-@keyframes explorePulse {
-  0%, 100% { transform: translateY(0) scale(1); }
-  50%      { transform: translateY(0) scale(1.03); }
-}
-
-@media (prefers-reduced-motion: reduce){
-  .page__content a:hover > div[style*="border:1px solid"][style*="border-radius"][style*="overflow:hidden"]
-    > div[style*="padding:12px"]::after{
-    animation: none;
-  }
-}
-
-/* Responsive tiles */
+/* Responsive: stack tiles vertically on small screens */
 @media (max-width: 600px) {
   .page__content a > div[style*="border:1px solid"][style*="border-radius"][style*="overflow:hidden"] {
     display: block;
@@ -463,23 +400,211 @@ h1, h2, h3{
   }
 }
 
-
 /* =========================
    PROJECT ATLAS (search + list + map)
-   Front matter: classes: wide atlas-page
+   Requires page front matter: classes: wide atlas-page
+========================= */
+
+.atlas-page .page__content .archive { max-width: none !important; }
+.atlas-page .page__content { padding-left: 0 !important; padding-right: 0 !important; }
+
+/* Layout */
+.atlas-page .atlas{
+  display: grid;
+  grid-template-columns: 380px minmax(0, 1fr);
+  gap: 16px;
+  margin-top: 0.75rem;
+  align-items: stretch;
+}
+
+/* Cards / containers */
+.atlas-page .atlas-side,
+.atlas-page .atlas-mapWrap{
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  background: #fff;
+  overflow: hidden;
+}
+
+/* Sidebar */
+.atlas-page .atlas-side{
+  padding: 14px;
+  min-height: calc(100vh - 220px);
+}
+
+.atlas-page .atlas-heading{ margin: 0 0 6px 0; }
+.atlas-page .atlas-lede{ margin: 0 0 14px 0; opacity: .85; }
+
+.atlas-page .atlas-search{
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  outline: none;
+}
+
+.atlas-page .atlas-search:focus{
+  border-color: #cbd5e1;
+  box-shadow: 0 0 0 3px rgba(148,163,184,.25);
+}
+
+.atlas-page .atlas-meta{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 10px;
+  gap: 10px;
+}
+
+.atlas-page .atlas-count{ opacity: .8; }
+
+.atlas-page .atlas-clear{
+  border: 1px solid #e5e7eb;
+  background: #fff;
+  border-radius: 999px;
+  padding: 6px 10px;
+  cursor: pointer;
+  font-size: .9rem;
+}
+
+.atlas-page .atlas-clear:hover{ background: #f8fafc; }
+
+/* List items */
+.atlas-page .atlas-list{
+  margin-top: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-height: calc(100vh - 220px - 150px);
+  overflow: auto;
+  padding-right: 4px;
+}
+
+.atlas-page .atlas-item{
+  display: flex;
+  gap: 10px;
+  color: inherit;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  overflow: hidden;
+  background: #fff;
+  cursor: pointer;
+}
+
+.atlas-page .atlas-item:hover{ background: #f8fafc; }
+
+.atlas-page .atlas-thumb{
+  width: 86px;
+  height: 74px;
+  flex: 0 0 auto;
+  background: #f1f5f9;
+}
+
+.atlas-page .atlas-thumb img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.atlas-page .atlas-text{
+  padding: 10px 10px 10px 0;
+  min-width: 0;
+}
+
+.atlas-page .atlas-title{
+  font-weight: 700;
+  line-height: 1.15;
+  margin-bottom: 4px;
+  font-size: .95rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.atlas-page .atlas-sub{
+  opacity: .8;
+  font-size: .9rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.atlas-page .atlas-tags{
+  margin-top: 6px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.atlas-page .atlas-tag{
+  font-size: .75rem;
+  padding: 2px 8px;
+  border-radius: 999px;
+  border: 1px solid rgba(0,0,0,0.12);
+  background: rgba(0,0,0,0.02);
+  opacity: .9;
+}
+
+/* Map */
+.atlas-page .atlas-map{
+  height: calc(100vh - 220px);
+  width: 100%;
+}
+
+/* Popup typography */
+.atlas-page .leaflet-popup-content{ margin: 12px 14px; }
+.atlas-page .popup-title{ font-weight: 700; margin-bottom: 4px; }
+.atlas-page .popup-sub{ opacity: .75; margin-bottom: 8px; }
+.atlas-page .popup-link{ text-decoration: none; font-weight: 600; }
+
+/* Mobile */
+@media (max-width: 980px){
+  .atlas-page .atlas{
+    grid-template-columns: 1fr;
+  }
+  .atlas-page .atlas-side{
+    min-height: auto;
+  }
+  .atlas-page .atlas-map{
+    height: 60vh;
+    min-height: 420px;
+  }
+  .atlas-page .atlas-list{
+    max-height: 340px;
+  }
+}
+/* =========================
+   PROJECT ATLAS (search + list + map)
+   Page front matter: classes: wide atlas-page
 ========================= */
 
 :root{
-  --atlas-vh-offset: 220px;        /* adjust if header taller */
-  --atlas-side-width: 400px;       /* Browse width */
+  --atlas-side-width: 420px;   /* keep Browse size */
   --atlas-gap: 16px;
   --atlas-radius: 14px;
   --atlas-border: 1px solid #e5e7eb;
-  --atlas-gutter: 12px;            /* page side padding for full-bleed */
+  --atlas-vh-offset: 220px;    /* adjust if header taller/shorter */
+  --atlas-gutter: 12px;        /* page side padding for atlas */
 }
 
-/* Full-bleed breakout container */
-.atlas-page .atlas-shell{
+/* Full-bleed breakout (FleetFeet-style), but only on the atlas page */
+.atlas-page .atlas{
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  padding-left: var(--atlas-gutter);
+  padding-right: var(--atlas-gutter);
+
+  display: grid;
+  grid-template-columns: var(--atlas-side-width) minmax(0, 1fr);
+  gap: var(--atlas-gap);
+  align-items: stretch;
+}
+
+/* (Optional) make page title align with full-bleed layout */
+.atlas-page .page__title{
   width: 100vw;
   margin-left: calc(50% - 50vw);
   margin-right: calc(50% - 50vw);
@@ -487,17 +612,13 @@ h1, h2, h3{
   padding-right: var(--atlas-gutter);
 }
 
-/* Atlas grid */
-.atlas-page .atlas{
-  display: grid;
-  grid-template-columns: var(--atlas-side-width) minmax(0, 1fr);
-  gap: var(--atlas-gap);
-  align-items: stretch;
-  width: 100%;
-  margin-top: 0.75rem;
+/* Remove default content padding just for atlas page (we use atlas gutters instead) */
+.atlas-page .page__content{
+  padding-left: 0 !important;
+  padding-right: 0 !important;
 }
 
-/* Panels */
+/* Containers */
 .atlas-page .atlas-side,
 .atlas-page .atlas-mapWrap{
   border: var(--atlas-border);
@@ -514,6 +635,20 @@ h1, h2, h3{
 
 .atlas-page .atlas-heading{ margin: 0 0 6px 0; }
 .atlas-page .atlas-lede{ margin: 0 0 14px 0; opacity: .85; }
+
+.atlas-page .atlas-search{
+  width: 100%;
+  padding: 10px 12px;
+  border: var(--atlas-border);
+  border-radius: 12px;
+  font-size: 0.95rem;
+  outline: none;
+}
+
+.atlas-page .atlas-search:focus{
+  border-color: #cbd5e1;
+  box-shadow: 0 0 0 3px rgba(148,163,184,.25);
+}
 
 .atlas-page .atlas-meta{
   display: flex;
@@ -534,59 +669,6 @@ h1, h2, h3{
   font-size: .9rem;
 }
 .atlas-page .atlas-clear:hover{ background: #f8fafc; }
-
-/* ===== Animated search ring wrapper ===== */
-
-.atlas-page .atlas-searchWrap{
-  --ring-spin: 0deg;
-
-  border-radius: 12px;
-  padding: 2px; /* ring thickness */
-  background:
-    linear-gradient(#fff, #fff) padding-box,
-    conic-gradient(
-      from var(--ring-spin),
-      rgba(56,189,248,0.0) 0deg,
-      rgba(56,189,248,0.0) 250deg,
-      rgba(56,189,248,0.95) 285deg,
-      rgba(34,197,94,0.95) 320deg,
-      rgba(56,189,248,0.95) 360deg
-    ) border-box;
-
-  border: 2px solid transparent;
-  transition: box-shadow 220ms ease;
-}
-
-/* input itself should NOT have a border (wrapper owns it) */
-.atlas-page .atlas-search{
-  width: 100%;
-  padding: 10px 12px;
-  border: 0;
-  outline: none;
-  border-radius: 10px; /* slightly smaller than wrapper */
-  background: #fff;
-  font-size: 0.95rem;
-}
-
-/* Only animate on hover/focus for “premium but not busy” */
-.atlas-page .atlas-searchWrap:hover,
-.atlas-page .atlas-searchWrap:focus-within{
-  animation: atlasRing 1.8s linear infinite;
-  box-shadow:
-    0 0 0 3px rgba(56,189,248,0.10),
-    0 0 0 6px rgba(34,197,94,0.06);
-}
-
-@keyframes atlasRing{
-  to { --ring-spin: 360deg; }
-}
-
-@media (prefers-reduced-motion: reduce){
-  .atlas-page .atlas-searchWrap:hover,
-  .atlas-page .atlas-searchWrap:focus-within{
-    animation: none;
-  }
-}
 
 /* List */
 .atlas-page .atlas-list{
@@ -669,7 +751,7 @@ h1, h2, h3{
   width: 100%;
 }
 
-/* Popup typography */
+/* Popup */
 .atlas-page .leaflet-popup-content{ margin: 12px 14px; }
 .atlas-page .popup-title{ font-weight: 700; margin-bottom: 4px; }
 .atlas-page .popup-sub{ opacity: .75; margin-bottom: 8px; }
@@ -696,3 +778,214 @@ h1, h2, h3{
     max-height: 340px;
   }
 }
+
+/* === Project Atlas: full-bleed breakout (guaranteed) === */
+.atlas-shell{
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+.atlas-shell .atlas{
+  display: grid;
+  grid-template-columns: 420px minmax(0, 1fr);
+  gap: 16px;
+  align-items: stretch;
+  width: 100%;
+  margin: 0;
+}
+
+.atlas-shell .atlas-map,
+.atlas-shell .atlas-mapWrap{
+  width: 100%;
+}
+
+/* ===== Highlight current nav item (Minimal Mistakes / Greedy Nav) ===== */
+
+/* Works when theme marks current link with .active */
+.greedy-nav .visible-links a.active{
+  font-weight: 700;
+  color: #0b4f7a !important;
+  border-bottom: 2px solid rgba(11,79,122,0.55);
+  padding-bottom: 6px;
+}
+
+/* Fallback: if theme uses aria-current */
+.greedy-nav .visible-links a[aria-current="page"]{
+  font-weight: 700;
+  color: #0b4f7a !important;
+  border-bottom: 2px solid rgba(11,79,122,0.55);
+  padding-bottom: 6px;
+}
+
+/* Optional: keep hover consistent */
+.greedy-nav .visible-links a:hover{
+  border-bottom: 2px solid rgba(11,79,122,0.35);
+  padding-bottom: 6px;
+}
+
+
+/* Enable smooth animation of the angle variable */
+@property --spin {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+
+/* Explore pill (your existing ::after) */
+.page__content a > div[style*="border:1px solid"][style*="border-radius"][style*="overflow:hidden"]
+  > div[style*="padding:12px"]::after{
+  content: "Explore";
+  position: absolute;
+  right: 14px;
+  top: 12px;
+
+  padding: 7px 12px;
+  border-radius: 999px;
+
+  font-size: 0.82rem;
+  font-weight: 650;
+  line-height: 1;
+
+
+  /* Hidden until hover (keep this if you want “appears on hover”) */
+  opacity: 0;
+  transform: translateY(-2px);
+
+  /* Smooth */
+  transition: opacity 180ms ease, transform 180ms ease, box-shadow 220ms ease;
+
+  /* Prevent theme double outlines */
+  box-shadow: none;
+}
+
+/* Hover tile => show pill + animate */
+.page__content a:hover > div[style*="border:1px solid"][style*="border-radius"][style*="overflow:hidden"]
+  > div[style*="padding:12px"]::after{
+  opacity: 1;
+  transform: translateY(0);
+
+  /* Spin + subtle pulse */
+  animation: exploreRing 1.8s linear infinite, explorePulse 1.4s ease-in-out infinite;
+
+  /* Soft “premium” glow (blue + green) */
+  box-shadow:
+    0 8px 22px rgba(11,79,122,0.18),
+    0 0 0 4px rgba(56,189,248,0.12),
+    0 0 0 8px rgba(34,197,94,0.06);
+}
+
+/* Travel around the edge */
+@keyframes exploreRing {
+  to { --spin: 360deg; }
+}
+
+/* Gentle breathing/pulse */
+@keyframes explorePulse {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50%      { transform: translateY(0) scale(1.03); }
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce){
+  .page__content a:hover > div[style*="border:1px solid"][style*="border-radius"][style*="overflow:hidden"]
+    > div[style*="padding:12px"]::after{
+    animation: none;
+  }
+}
+
+
+/* Enable smooth animation of the angle variable (supported in modern Chromium + Safari) */
+@property --spin {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+
+/* Wrapper draws the animated border */
+.atlas-page .atlas-searchWrap{
+  position: relative;
+  border-radius: 14px;           /* slightly larger than input */
+  padding: 2px;                  /* border thickness */
+}
+
+/* Base border (static, clean) */
+.atlas-page .atlas-searchWrap::before{
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: rgba(0,0,0,0.06);
+  opacity: 1;
+  pointer-events: none;
+}
+
+/* Animated “moving line” border layer (hidden until hover/focus) */
+.atlas-page .atlas-searchWrap::after{
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+
+  /* The ring: quiet most of the time + a bright travelling segment */
+  background: conic-gradient(
+    from var(--spin),
+    rgba(56,189,248,0.00) 0deg,
+    rgba(56,189,248,0.00) 250deg,
+    rgba(56,189,248,0.95) 285deg,
+    rgba(34,197,94,0.95) 320deg,
+    rgba(56,189,248,0.95) 360deg
+  );
+
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Make the input sit “inside” the ring */
+.atlas-page .atlas-search{
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  border: 0 !important;          /* wrapper handles the border */
+  border-radius: 12px;           /* slightly smaller than wrapper */
+  background: #fff;
+  padding: 10px 12px;
+  outline: none;
+}
+
+/* Hover/focus: show + animate ring + glow */
+.atlas-page .atlas-searchWrap:hover::after,
+.atlas-page .atlas-searchWrap:focus-within::after{
+  opacity: 1;
+  animation: atlasSearchRing 1.8s linear infinite;
+  filter: drop-shadow(0 0 10px rgba(56,189,248,0.18))
+          drop-shadow(0 0 14px rgba(34,197,94,0.10));
+}
+
+/* Gentle pulse (only when active) */
+.atlas-page .atlas-searchWrap:hover,
+.atlas-page .atlas-searchWrap:focus-within{
+  animation: atlasSearchPulse 1.6s ease-in-out infinite;
+}
+
+@keyframes atlasSearchRing{
+  to { --spin: 360deg; }
+}
+
+@keyframes atlasSearchPulse{
+  0%, 100% { transform: scale(1); }
+  50%      { transform: scale(1.01); }
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce){
+  .atlas-page .atlas-searchWrap:hover::after,
+  .atlas-page .atlas-searchWrap:focus-within::after,
+  .atlas-page .atlas-searchWrap:hover,
+  .atlas-page .atlas-searchWrap:focus-within{
+    animation: none;
+  }
+}
+
