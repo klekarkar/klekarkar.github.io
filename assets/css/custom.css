@@ -904,7 +904,7 @@ h1, h2, h3{
 /* Animate only on hover */
 .page__content a:hover > div[style*="border:1px solid"][style*="border-radius"][style*="overflow:hidden"]{
   border-color: transparent !important;    /* reveal gradient border */
-  animation: tileBorderSpin 1.6s linear infinite;
+  animation: tileBorderSpin 2.6s linear infinite;
 
   /* optional “premium” lift */
   box-shadow: 0 14px 34px rgba(0,0,0,0.14);
