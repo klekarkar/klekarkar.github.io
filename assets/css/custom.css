@@ -849,22 +849,6 @@ h1, h2, h3{
   font-weight: 650;
   line-height: 1;
 
-  /* Fill */
-  color: #063a5c;
-  background:
-    linear-gradient(rgba(11,79,122,0.10), rgba(11,79,122,0.10)) padding-box,
-    conic-gradient(
-      from var(--spin),
-      /* mostly calm blue */
-      rgba(56,189,248,0.0) 0deg,
-      rgba(56,189,248,0.0) 250deg,
-      /* bright “travelling” segment (blue→green) */
-      rgba(56,189,248,0.95) 285deg,
-      rgba(34,197,94,0.95) 320deg,
-      rgba(56,189,248,0.95) 360deg
-    ) border-box;
-
-  border: 2px solid transparent;
 
   /* Hidden until hover (keep this if you want “appears on hover”) */
   opacity: 0;
