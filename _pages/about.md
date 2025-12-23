@@ -19,47 +19,47 @@ redirect_from:
 
 ## Start Here
 
-<div class="home-tiles">
+<div style="display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); gap:16px; margin: 1rem 0;">
 
-  <a id="tile-industry" class="home-tile" href="/portfolio/" aria-label="Industry Experience">
-    <div class="home-tile__media">
-      <video autoplay muted loop playsinline preload="metadata">
+  <a id="tile-industry" href="/portfolio/" style="text-decoration:none;">
+    <div style="border:1px solid #e5e7eb; border-radius:14px; overflow:hidden;">
+      <video autoplay muted loop playsinline preload="metadata"
+        style="width:100%; height:210px; object-fit:cover; display:block;">
         <source src="/images/water_zeb_credited.mp4" type="video/mp4">
       </video>
-    </div>
-    <div class="home-tile__body">
-      <div class="home-tile__title">Industry Experience</div>
-      <span class="tile-explore" aria-hidden="true">Explore</span>
-    </div>
-  </a>
-
-  <a id="tile-education" class="home-tile" href="/cv/" aria-label="Education">
-    <div class="home-tile__media">
-      <img src="/images/education.png" alt="Education">
-    </div>
-    <div class="home-tile__body">
-      <div class="home-tile__title">Education</div>
-      <span class="tile-explore" aria-hidden="true">Explore</span>
+      <div style="padding:12px;">
+        <div style="font-weight:600;">Industry Experience</div>
+      </div>
     </div>
   </a>
 
-  <a id="tile-research" class="home-tile" href="https://scholar.google.com/citations?user=_rBmLxQAAAAJ&hl=en" aria-label="Research">
-    <div class="home-tile__media">
-      <img src="/images/research.png" alt="Research">
-    </div>
-    <div class="home-tile__body">
-      <div class="home-tile__title">Research</div>
-      <span class="tile-explore" aria-hidden="true">Explore</span>
+  <a id="tile-education" href="/cv/" style="text-decoration:none;">
+    <div style="border:1px solid #e5e7eb; border-radius:14px; overflow:hidden;">
+      <img src="/images/education.png" alt="Education"
+        style="width:100%; height:210px; object-fit:cover; display:block;">
+      <div style="padding:12px;">
+        <div style="font-weight:600;">Education</div>
+      </div>
     </div>
   </a>
 
-  <a id="tile-updates" class="home-tile" href="/year-archive/" aria-label="Updates">
-    <div class="home-tile__media">
-      <img src="/images/news.jpg" alt="Updates">
+  <a id="tile-research" href="https://scholar.google.com/citations?user=_rBmLxQAAAAJ&hl=en" style="text-decoration:none;">
+    <div style="border:1px solid #e5e7eb; border-radius:14px; overflow:hidden;">
+      <img src="/images/research.png" alt="Research"
+        style="width:100%; height:210px; object-fit:cover; display:block;">
+      <div style="padding:12px;">
+        <div style="font-weight:600;">Research</div>
+      </div>
     </div>
-    <div class="home-tile__body">
-      <div class="home-tile__title">Updates</div>
-      <span class="tile-explore" aria-hidden="true">Explore</span>
+  </a>
+
+  <a id="tile-updates" href="/year-archive/" style="text-decoration:none;">
+    <div style="border:1px solid #e5e7eb; border-radius:14px; overflow:hidden;">
+      <img src="/images/news.jpg" alt="Updates"
+        style="width:100%; height:210px; object-fit:cover; display:block;">
+      <div style="padding:12px;">
+        <div style="font-weight:600;">Updates</div>
+      </div>
     </div>
   </a>
 
@@ -69,12 +69,41 @@ redirect_from:
 
 ## Highlights
 
-<div class="home-highlight">
-  <div class="home-highlight__title">Project Atlas</div>
-  <div class="home-highlight__text">
-    Explore my project locations with a searchable list + interactive map.
+<div style="display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); gap:16px; margin: 1rem 0;">
+
+  <div style="border:1px solid #cfd4deff; border-radius:14px; padding:14px; background:#fff;">
+    <div style="font-weight:700; margin-bottom:6px;">Project Atlas</div>
+    <div style="opacity:.85; line-height:1.6;">
+      Explore my projects in an interactive map.
+    </div>
+    <div style="margin-top:10px;">
+      <a href="/project-atlas/" style="text-decoration:none; font-weight:600;">Explore the Atlas →</a>
+    </div>
   </div>
-  <div class="home-highlight__cta">
-    <a class="home-highlight__link" href="/project-atlas/">Open the Atlas →</a>
-  </div>
+
 </div>
+
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const card = document.querySelector(".intro-card");
+    if (!card) return;
+
+    const setPos = (e) => {
+      const r = card.getBoundingClientRect();
+      const x = ((e.clientX - r.left) / r.width) * 100;
+      const y = ((e.clientY - r.top) / r.height) * 100;
+      card.style.setProperty("--mx", x + "%");
+      card.style.setProperty("--my", y + "%");
+    };
+
+    card.addEventListener("mousemove", setPos);
+    card.addEventListener("mouseenter", setPos);
+
+    // reset to a nice default when leaving
+    card.addEventListener("mouseleave", () => {
+      card.style.setProperty("--mx", "50%");
+      card.style.setProperty("--my", "35%");
+    });
+  });
+</script>
