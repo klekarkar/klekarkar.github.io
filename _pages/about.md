@@ -69,6 +69,8 @@ redirect_from:
 
 ## Highlights
 
+<div style="display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); gap:16px; margin: 1rem 0;">
+
   <div style="border:1px solid #e5e7eb; border-radius:14px; padding:14px; background:#fff;">
     <div style="font-weight:700; margin-bottom:6px;">Project Atlas</div>
     <div style="opacity:.85; line-height:1.6;">
