@@ -2,7 +2,8 @@
 permalink: /
 title: "Hello there, I am Katoria"
 author_profile: true
-redirect_from: 
+classes: wide
+redirect_from:
   - /about/
   - /about.html
 ---
@@ -17,52 +18,46 @@ redirect_from:
   </p>
 </div>
 
-
 # Start Here
+
 <div style="display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); gap:16px; margin: 1rem 0;">
 
   <a href="/portfolio/" style="text-decoration:none;">
-      <div style="border:1px solid #e5e7eb; border-radius:14px; overflow:hidden;">
-        <video
-          autoplay
-          muted
-          loop
-          playsinline
-          preload="metadata"
-          style="width:100%; height:210px; object-fit:cover; display:block;"
-        >
-          <source src="/images/water_zeb_credited.mp4" type="video/mp4">
-        </video>
-
-        <div style="padding:12px;">
-          <div style="font-weight:600;">Industry Experience</div>
-        </div>
+    <div style="border:1px solid #e5e7eb; border-radius:14px; overflow:hidden;">
+      <video autoplay muted loop playsinline preload="metadata"
+        style="width:100%; height:210px; object-fit:cover; display:block;">
+        <source src="/images/water_zeb_credited.mp4" type="video/mp4">
+      </video>
+      <div style="padding:12px;">
+        <div style="font-weight:600;">Industry Experience</div>
       </div>
+    </div>
   </a>
-  
+
   <a href="/cv/" style="text-decoration:none;">
     <div style="border:1px solid #e5e7eb; border-radius:14px; overflow:hidden;">
-      <img src="/images/education.png" alt="Education" style="width:100%; height:210px; object-fit:cover; display:block;">
+      <img src="/images/education.png" alt="Education"
+        style="width:100%; height:210px; object-fit:cover; display:block;">
       <div style="padding:12px;">
         <div style="font-weight:600;">Education</div>
-        <div style="opacity:0.8; font-size:0.95em;"> </div>
       </div>
     </div>
   </a>
 
   <a href="https://scholar.google.com/citations?user=_rBmLxQAAAAJ&hl=en" style="text-decoration:none;">
     <div style="border:1px solid #e5e7eb; border-radius:14px; overflow:hidden;">
-      <img src="/images/research.png" alt="Research" style="width:100%; height:210px; object-fit:cover; display:block;">
+      <img src="/images/research.png" alt="Research"
+        style="width:100%; height:210px; object-fit:cover; display:block;">
       <div style="padding:12px;">
         <div style="font-weight:600;">Research</div>
-
       </div>
     </div>
   </a>
 
   <a href="/year-archive/" style="text-decoration:none;">
     <div style="border:1px solid #e5e7eb; border-radius:14px; overflow:hidden;">
-      <img src="/images/news.jpg" alt="Talks and conferences" style="width:100%; height:210px; object-fit:cover; display:block;">
+      <img src="/images/news.jpg" alt="Talks and conferences"
+        style="width:100%; height:210px; object-fit:cover; display:block;">
       <div style="padding:12px;">
         <div style="font-weight:600;">Updates</div>
       </div>
@@ -71,47 +66,150 @@ redirect_from:
 
 </div>
 
+<!-- ===== Home: Atlas Preview + Research Pipeline ===== -->
 
-<!-- A data-driven personal website
-======
-Like many other Jekyll-based GitHub Pages templates, Academic Pages makes you separate the website's content from its form. The content & metadata of your website are in structured Markdown files, while various other files constitute the theme, specifying how to transform that content & metadata into HTML pages. You keep these various Markdown (.md), YAML (.yml), HTML, and CSS files in a public GitHub repository. Each time you commit and push an update to the repository, the [GitHub pages](https://pages.github.com/) service creates static HTML pages based on these files, which are hosted on GitHub's servers free of charge.
+<!-- Leaflet (homepage mini-map only) -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
-Many of the features of dynamic content management systems (like Wordpress) can be achieved in this fashion, using a fraction of the computational resources and with far less vulnerability to hacking and DDoSing. You can also modify the theme to your heart's content without touching the content of your site. If you get to a point where you've broken something in Jekyll/HTML/CSS beyond repair, your Markdown files describing your talks, publications, etc. are safe. You can rollback the changes or even delete the repository and start over - just be sure to save the Markdown files! You can also write scripts that process the structured data on the site, such as [this one](https://github.com/academicpages/academicpages.github.io/blob/master/talkmap.ipynb) that analyzes metadata in pages about talks to display [a map of every location you've given a talk](https://academicpages.github.io/talkmap.html).
+<section class="home-showcase">
+  <div class="home-showcase__grid">
 
-For those users that need more advanced functionality, the template also supports the following popular tools:
-- [MathJax](https://www.mathjax.org/) for mathematical equations
-- [Mermaid](https://mermaid.js.org/) for diagraming
-- [Plotly](https://plotly.com/javascript/) for plotting
+    <!-- Research pipeline -->
+    <div class="home-card">
+      <div class="home-card__head">
+        <h2 class="home-card__title">Research pipeline</h2>
+        <div class="home-card__sub">From data to impact (hover / tap steps)</div>
+      </div>
 
-Getting started
-======
-1. Register a GitHub account if you don't have one and confirm your e-mail (required!)
-2. Fork [this template](https://github.com/academicpages/academicpages.github.io) by clicking the "Use this template" button in the top right. 
-3. Go to the repository's settings (rightmost item in the tabs that start with "Code", should be below "Unwatch"). Rename the repository "[your GitHub username].github.io", which will also be your website's URL.
-4. Set site-wide configuration and create content & metadata (see below -- also see [this set of diffs](https://archive.is/3TPas) showing what files were changed to set up [an example site](https://getorg-testacct.github.io) for a user with the username "getorg-testacct")
-5. Upload any files (like PDFs, .zip files, etc.) to the files/ directory. They will appear at https://[your GitHub username].github.io/files/example.pdf.  
-6. Check status by going to the repository settings, in the "GitHub pages" section
+      <ol class="pipeline" aria-label="Research pipeline">
+        <li class="pipeline__step">
+          <div class="pipeline__dot"></div>
+          <div class="pipeline__box">
+            <div class="pipeline__label">Data</div>
+            <div class="pipeline__detail">Satellite + in situ + reanalysis. Quality checks and harmonization.</div>
+          </div>
+        </li>
 
-Site-wide configuration
-------
-The main configuration file for the site is in the base directory in [_config.yml](https://github.com/academicpages/academicpages.github.io/blob/master/_config.yml), which defines the content in the sidebars and other site-wide features. You will need to replace the default variables with ones about yourself and your site's github repository. The configuration file for the top menu is in [_data/navigation.yml](https://github.com/academicpages/academicpages.github.io/blob/master/_data/navigation.yml). For example, if you don't have a portfolio or blog posts, you can remove those items from that navigation.yml file to remove them from the header. 
+        <li class="pipeline__step">
+          <div class="pipeline__dot"></div>
+          <div class="pipeline__box">
+            <div class="pipeline__label">Modeling</div>
+            <div class="pipeline__detail">Hydrological / land-surface modeling + statistical learning.</div>
+          </div>
+        </li>
 
-Create content & metadata
-------
-For site content, there is one Markdown file for each type of content, which are stored in directories like _publications, _talks, _posts, _teaching, or _pages. For example, each talk is a Markdown file in the [_talks directory](https://github.com/academicpages/academicpages.github.io/tree/master/_talks). At the top of each Markdown file is structured data in YAML about the talk, which the theme will parse to do lots of cool stuff. The same structured data about a talk is used to generate the list of talks on the [Talks page](https://academicpages.github.io/talks), each [individual page](https://academicpages.github.io/talks/2012-03-01-talk-1) for specific talks, the talks section for the [CV page](https://academicpages.github.io/cv), and the [map of places you've given a talk](https://academicpages.github.io/talkmap.html) (if you run this [python file](https://github.com/academicpages/academicpages.github.io/blob/master/talkmap.py) or [Jupyter notebook](https://github.com/academicpages/academicpages.github.io/blob/master/talkmap.ipynb), which creates the HTML for the map based on the contents of the _talks directory).
+        <li class="pipeline__step">
+          <div class="pipeline__dot"></div>
+          <div class="pipeline__box">
+            <div class="pipeline__label">Validation</div>
+            <div class="pipeline__detail">Benchmarking and consistency checks across scales and products.</div>
+          </div>
+        </li>
 
-**Markdown generator**
+        <li class="pipeline__step">
+          <div class="pipeline__dot"></div>
+          <div class="pipeline__box">
+            <div class="pipeline__label">Insights</div>
+            <div class="pipeline__detail">Drought characteristics, persistence, and land-surface memory.</div>
+          </div>
+        </li>
 
-The repository includes [a set of Jupyter notebooks](https://github.com/academicpages/academicpages.github.io/tree/master/markdown_generator
-) that converts a CSV containing structured data about talks or presentations into individual Markdown files that will be properly formatted for the Academic Pages template. The sample CSVs in that directory are the ones I used to create my own personal website at stuartgeiger.com. My usual workflow is that I keep a spreadsheet of my publications and talks, then run the code in these notebooks to generate the Markdown files, then commit and push them to the GitHub repository.
+        <li class="pipeline__step">
+          <div class="pipeline__dot"></div>
+          <div class="pipeline__box">
+            <div class="pipeline__label">Impact</div>
+            <div class="pipeline__detail">Actionable outputs for monitoring, planning, and risk assessment.</div>
+          </div>
+        </li>
+      </ol>
 
-How to edit your site's GitHub repository
-------
-Many people use a git client to create files on their local computer and then push them to GitHub's servers. If you are not familiar with git, you can directly edit these configuration and Markdown files directly in the github.com interface. Navigate to a file (like [this one](https://github.com/academicpages/academicpages.github.io/blob/master/_talks/2012-03-01-talk-1.md) and click the pencil icon in the top right of the content preview (to the right of the "Raw | Blame | History" buttons). You can delete a file by clicking the trashcan icon to the right of the pencil icon. You can also create new files or upload files by navigating to a directory and clicking the "Create new file" or "Upload files" buttons. 
+      <div class="home-card__cta">
+        <a class="home-btn" href="/portfolio/">Project experience →</a>
+        <a class="home-btn home-btn--ghost" href="https://scholar.google.com/citations?user=_rBmLxQAAAAJ&hl=en">Research →</a>
+      </div>
+    </div>
 
-Example: editing a Markdown file for a talk
-![Editing a Markdown file for a talk](/images/editing-talk.png)
+    <!-- Atlas preview -->
+    <div class="home-card">
+      <div class="home-card__head">
+        <h2 class="home-card__title">Project Atlas preview</h2>
+        <div class="home-card__sub">A quick glance at where projects happened</div>
+      </div>
 
-For more info
-------
-More info about configuring Academic Pages can be found in [the guide](https://academicpages.github.io/markdown/), the [growing wiki](https://github.com/academicpages/academicpages.github.io/wiki), and you can always [ask a question on GitHub](https://github.com/academicpages/academicpages.github.io/discussions). The [guides for the Minimal Mistakes theme](https://mmistakes.github.io/minimal-mistakes/docs/configuration/) (which this theme was forked from) might also be helpful. -->
+      <div class="home-atlas">
+        <div id="homeAtlasMap" class="home-atlas__map" aria-label="Project Atlas preview map"></div>
+      </div>
+
+      <div class="home-card__cta">
+        <a class="home-btn" href="/project-atlas/">Explore the Atlas →</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<script>
+  (async function () {
+    try {
+      if (typeof L === "undefined") return;
+
+      const map = L.map("homeAtlasMap", {
+        scrollWheelZoom: false,
+        dragging: true,
+        zoomControl: true
+      }).setView([10, 10], 2);
+
+      L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+        attribution: "&copy; OpenStreetMap contributors"
+      }).addTo(map);
+
+      const dataUrl = "{{ '/assets/data/portfolio.json' | relative_url }}";
+      const res = await fetch(dataUrl, { cache: "no-store" });
+      if (!res.ok) throw new Error("portfolio.json fetch failed: " + res.status);
+
+      const raw = await res.json();
+      if (!Array.isArray(raw)) throw new Error("portfolio.json not an array");
+
+      const items = raw
+        .map(p => ({
+          title: p.title || "Untitled",
+          url: p.url || "#",
+          location: p.location || "",
+          lat: Number(p.lat),
+          lon: Number(p.lon)
+        }))
+        .filter(p => Number.isFinite(p.lat) && Number.isFinite(p.lon))
+        .slice(0, 12);
+
+      const bounds = [];
+
+      items.forEach(p => {
+        const popup =
+          '<div style="max-width:220px">' +
+            '<div style="font-weight:700; margin-bottom:4px;">' + escapeHtml(p.title) + '</div>' +
+            (p.location ? '<div style="opacity:.75; margin-bottom:8px;">' + escapeHtml(p.location) + '</div>' : '') +
+            '<a href="' + p.url + '" style="text-decoration:none; font-weight:600;">Open →</a>' +
+          '</div>';
+
+        L.circleMarker([p.lat, p.lon], { radius: 6 }).addTo(map).bindPopup(popup);
+        bounds.push([p.lat, p.lon]);
+      });
+
+      if (bounds.length) map.fitBounds(bounds, { padding: [18, 18] });
+
+      setTimeout(() => map.invalidateSize(), 200);
+
+      function escapeHtml(str) {
+        return String(str)
+          .replaceAll("&", "&amp;")
+          .replaceAll("<", "&lt;")
+          .replaceAll(">", "&gt;")
+          .replaceAll('"', "&quot;")
+          .replaceAll("'", "&#039;");
+      }
+    } catch (e) {
+      console.error(e);
+    }
+  })();
+</script>
