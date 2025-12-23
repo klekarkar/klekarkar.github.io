@@ -834,64 +834,36 @@ h1, h2, h3{
 .intro-card{
   position: relative;
   overflow: hidden;
-  border-radius: 16px; /* keep your shape */
+  border-radius: 16px;
   transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
-  will-change: transform;
 }
 
-/* soft spotlight layer */
-.intro-card::before{
-  content:"";
-  position:absolute;
-  inset:-2px;
-  pointer-events:none;
-  opacity:0;
-  transition: opacity 180ms ease;
-  background:
-    radial-gradient(700px circle at var(--mx, 50%) var(--my, 35%),
-      rgba(11,79,122,0.18),
-      rgba(11,79,122,0.08) 35%,
-      transparent 62%);
-}
-
-/* ultra-subtle sheen streak */
 .intro-card::after{
   content:"";
   position:absolute;
-  top:-40%;
-  left:-60%;
-  width: 140%;
-  height: 140%;
+  inset:-1px;
   pointer-events:none;
-  opacity: 0;
-  transform: rotate(12deg) translateX(-10%);
+  opacity:0;
   transition: opacity 180ms ease, transform 240ms ease;
   background: linear-gradient(
-    90deg,
+    115deg,
     transparent 0%,
-    rgba(255,255,255,0.22) 35%,
+    rgba(255,255,255,0.25) 35%,
     transparent 70%
   );
+  transform: translateX(-12%);
   mix-blend-mode: soft-light;
 }
 
 .intro-card:hover{
-  transform: translateY(-2px);
-  border-color: rgba(11,79,122,0.28);
-  box-shadow: 0 16px 40px rgba(0,0,0,0.10);
-}
-
-.intro-card:hover::before{
-  opacity:1;
+  transform: translateY(-1px);
+  border-color: rgba(11,79,122,0.22);
+  box-shadow:
+    0 10px 26px rgba(0,0,0,0.08),
+    0 0 0 3px rgba(11,79,122,0.08);
 }
 
 .intro-card:hover::after{
-  opacity: 0.55;
-  transform: rotate(12deg) translateX(12%);
-}
-
-/* keyboard accessibility */
-.intro-card:focus-within{
-  outline: none;
-  box-shadow: 0 0 0 3px rgba(11,79,122,0.18), 0 16px 40px rgba(0,0,0,0.10);
+  opacity: 0.7;
+  transform: translateX(10%);
 }
