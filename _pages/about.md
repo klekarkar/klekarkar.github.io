@@ -20,9 +20,18 @@ redirect_from:
 
 # Start Here
 
-<div style="display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); gap:16px; margin: 1rem 0;">
+<!-- Quick navigation chips -->
+<div class="home-chips" aria-label="Quick navigation">
+  <button class="home-chip" type="button" data-target="tile-industry">Industry</button>
+  <button class="home-chip" type="button" data-target="tile-education">Education</button>
+  <button class="home-chip" type="button" data-target="tile-research">Research</button>
+  <button class="home-chip" type="button" data-target="tile-updates">Updates</button>
+</div>
 
-  <a href="/portfolio/" style="text-decoration:none;">
+<!-- 2×2 tiles -->
+<div class="home-tiles" style="display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); gap:16px; margin: 1rem 0;">
+
+  <a id="tile-industry" href="/portfolio/" style="text-decoration:none;">
     <div style="border:1px solid #e5e7eb; border-radius:14px; overflow:hidden;">
       <video autoplay muted loop playsinline preload="metadata"
         style="width:100%; height:210px; object-fit:cover; display:block;">
@@ -34,7 +43,7 @@ redirect_from:
     </div>
   </a>
 
-  <a href="/cv/" style="text-decoration:none;">
+  <a id="tile-education" href="/cv/" style="text-decoration:none;">
     <div style="border:1px solid #e5e7eb; border-radius:14px; overflow:hidden;">
       <img src="/images/education.png" alt="Education"
         style="width:100%; height:210px; object-fit:cover; display:block;">
@@ -44,7 +53,7 @@ redirect_from:
     </div>
   </a>
 
-  <a href="https://scholar.google.com/citations?user=_rBmLxQAAAAJ&hl=en" style="text-decoration:none;">
+  <a id="tile-research" href="https://scholar.google.com/citations?user=_rBmLxQAAAAJ&hl=en" style="text-decoration:none;">
     <div style="border:1px solid #e5e7eb; border-radius:14px; overflow:hidden;">
       <img src="/images/research.png" alt="Research"
         style="width:100%; height:210px; object-fit:cover; display:block;">
@@ -54,9 +63,9 @@ redirect_from:
     </div>
   </a>
 
-  <a href="/year-archive/" style="text-decoration:none;">
+  <a id="tile-updates" href="/year-archive/" style="text-decoration:none;">
     <div style="border:1px solid #e5e7eb; border-radius:14px; overflow:hidden;">
-      <img src="/images/news.jpg" alt="Talks and conferences"
+      <img src="/images/news.jpg" alt="Updates"
         style="width:100%; height:210px; object-fit:cover; display:block;">
       <div style="padding:12px;">
         <div style="font-weight:600;">Updates</div>
@@ -149,6 +158,7 @@ redirect_from:
   </div>
 </section>
 
+<!-- Atlas preview map script -->
 <script>
   (async function () {
     try {
@@ -157,7 +167,7 @@ redirect_from:
       const map = L.map("homeAtlasMap", {
         scrollWheelZoom: false,
         dragging: true,
-        zoomControl: true
+        zoomControl: false
       }).setView([10, 10], 2);
 
       L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
@@ -192,7 +202,10 @@ redirect_from:
             '<a href="' + p.url + '" style="text-decoration:none; font-weight:600;">Open →</a>' +
           '</div>';
 
-        L.circleMarker([p.lat, p.lon], { radius: 6 }).addTo(map).bindPopup(popup);
+        L.circleMarker([p.lat, p.lon], { radius: 6, weight: 2, opacity: 1, fillOpacity: 0.25 })
+          .addTo(map)
+          .bindPopup(popup);
+
         bounds.push([p.lat, p.lon]);
       });
 
@@ -212,4 +225,26 @@ redirect_from:
       console.error(e);
     }
   })();
+</script>
+
+<!-- Chips: scroll + pulse highlight -->
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const chips = document.querySelectorAll(".home-chip");
+
+    chips.forEach(chip => {
+      chip.addEventListener("click", () => {
+        const id = chip.getAttribute("data-target");
+        const el = document.getElementById(id);
+        if (!el) return;
+
+        el.scrollIntoView({ behavior: "smooth", block: "center" });
+
+        const card = el.querySelector('div[style*="border:1px solid"]') || el;
+        card.classList.remove("home-tile-pulse");
+        void card.offsetWidth; // restart animation
+        card.classList.add("home-tile-pulse");
+      });
+    });
+  });
 </script>
