@@ -990,10 +990,9 @@ h1, h2, h3{
 }
 
 /* Fade the "Published:" date line on single pages */
-.page__meta,
-.page__meta p,
-.page__meta .page__date,
-.page__meta time {
+.page__date{
   opacity: 0.65;
+  font-size: 0.95rem;
 }
+
 
