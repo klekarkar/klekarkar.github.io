@@ -867,3 +867,74 @@ h1, h2, h3{
   opacity: 0.7;
   transform: translateX(10%);
 }
+
+/* =========================
+   HOME TILES: animated travelling border on hover
+========================= */
+
+/* Target your existing tiles (those inline-styled boxes) */
+.page__content a > div[style*="border:1px solid"][style*="border-radius"][style*="overflow:hidden"]{
+  position: relative;
+  border-radius: 14px;
+  overflow: hidden;
+  /* keep your current transitions if you want */
+}
+
+/* the animated border "ring" */
+.page__content a > div[style*="border:1px solid"][style*="border-radius"][style*="overflow:hidden"]::before{
+  content:"";
+  position:absolute;
+  inset: -2px;                 /* slightly outside */
+  border-radius: inherit;
+  padding: 2px;                /* border thickness */
+  opacity: 0;                  /* off by default */
+  pointer-events: none;
+
+  /* travelling line made with conic-gradient */
+  background:
+    conic-gradient(
+      from var(--spin, 0turn),
+      rgba(0,0,0,0) 0deg,
+      rgba(0,0,0,0) 280deg,
+      #22c55e 300deg,
+      #38bdf8 320deg,
+      #a78bfa 340deg,
+      #fb7185 360deg
+    );
+
+  /* mask to keep only the border ring (hollow center) */
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+
+  filter: blur(0px);
+  transition: opacity 160ms ease;
+}
+
+/* animate only on hover (recommended) */
+.page__content a:hover > div[style*="border:1px solid"][style*="border-radius"][style*="overflow:hidden"]::before{
+  opacity: 1;
+  animation: tileBorderSpin 1.6s linear infinite;
+}
+
+/* Optional: a slightly softer glow */
+.page__content a:hover > div[style*="border:1px solid"][style*="border-radius"][style*="overflow:hidden"]{
+  box-shadow: 0 14px 34px rgba(0,0,0,0.14);
+  transform: translateY(-2px);
+  transition: box-shadow 180ms ease, transform 180ms ease, border-color 180ms ease;
+}
+
+/* The "travelling" happens by rotating the conic gradient */
+@keyframes tileBorderSpin{
+  to { --spin: 1turn; }
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce){
+  .page__content a:hover > div[style*="border:1px solid"][style*="border-radius"][style*="overflow:hidden"]::before{
+    animation: none;
+    opacity: 1;
+  }
+}
