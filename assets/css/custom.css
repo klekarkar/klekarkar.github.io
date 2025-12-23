@@ -868,73 +868,58 @@ h1, h2, h3{
   transform: translateX(10%);
 }
 
-/* =========================
-   HOME TILES: animated travelling border on hover
-========================= */
+/* Allow animation of the CSS variable */
+@property --spin {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
 
-/* Target your existing tiles (those inline-styled boxes) */
+/* Target your existing home tiles (the inline-styled divs) */
 .page__content a > div[style*="border:1px solid"][style*="border-radius"][style*="overflow:hidden"]{
   position: relative;
   border-radius: 14px;
   overflow: hidden;
-  /* keep your current transitions if you want */
-}
 
-/* the animated border "ring" */
-.page__content a > div[style*="border:1px solid"][style*="border-radius"][style*="overflow:hidden"]::before{
-  content:"";
-  position:absolute;
-  inset: -2px;                 /* slightly outside */
-  border-radius: inherit;
-  padding: 2px;                /* border thickness */
-  opacity: 0;                  /* off by default */
-  pointer-events: none;
+  /* keep a normal border by default */
+  border: 2px solid #e5e7eb !important;
 
-  /* travelling line made with conic-gradient */
+  /* important: background-clip setup (2 layers) */
   background:
-    conic-gradient(
-      from var(--spin, 0turn),
+    linear-gradient(#fff, #fff) padding-box,
+    conic-gradient(from var(--spin),
       rgba(0,0,0,0) 0deg,
-      rgba(0,0,0,0) 280deg,
-      #22c55e 300deg,
-      #38bdf8 320deg,
-      #a78bfa 340deg,
+      rgba(0,0,0,0) 285deg,
+      #22c55e 305deg,
+      #38bdf8 325deg,
+      #a78bfa 345deg,
       #fb7185 360deg
-    );
+    ) border-box;
 
-  /* mask to keep only the border ring (hollow center) */
-  -webkit-mask:
-    linear-gradient(#000 0 0) content-box,
-    linear-gradient(#000 0 0);
-  -webkit-mask-composite: xor;
-          mask-composite: exclude;
-
-  filter: blur(0px);
-  transition: opacity 160ms ease;
+  /* hide the gradient border until hover */
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
 }
 
-/* animate only on hover (recommended) */
-.page__content a:hover > div[style*="border:1px solid"][style*="border-radius"][style*="overflow:hidden"]::before{
-  opacity: 1;
-  animation: tileBorderSpin 1.6s linear infinite;
-}
-
-/* Optional: a slightly softer glow */
+/* Animate only on hover */
 .page__content a:hover > div[style*="border:1px solid"][style*="border-radius"][style*="overflow:hidden"]{
+  border-color: transparent !important;    /* reveal gradient border */
+  animation: tileBorderSpin 1.6s linear infinite;
+
+  /* optional “premium” lift */
   box-shadow: 0 14px 34px rgba(0,0,0,0.14);
   transform: translateY(-2px);
-  transition: box-shadow 180ms ease, transform 180ms ease, border-color 180ms ease;
+  transition: box-shadow 180ms ease, transform 180ms ease;
 }
 
-/* The "travelling" happens by rotating the conic gradient */
-@keyframes tileBorderSpin{
-  to { --spin: 1turn; }
+/* The travelling effect */
+@keyframes tileBorderSpin {
+  to { --spin: 360deg; }
 }
 
-/* Respect reduced motion */
+/* Reduced motion */
 @media (prefers-reduced-motion: reduce){
-  .page__content a:hover > div[style*="border:1px solid"][style*="border-radius"][style*="overflow:hidden"]::before{
+  .page__content a:hover > div[style*="border:1px solid"][style*="border-radius"][style*="overflow:hidden"]{
     animation: none;
-    opacity: 1;
   }
 }
