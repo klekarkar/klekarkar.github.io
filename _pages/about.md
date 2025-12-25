@@ -18,6 +18,7 @@ redirect_from:
 </div>
 
 ## Start Here
+
 <div class="home-tiles">
   <a id="tile-industry" class="home-tile" href="{{ '/portfolio/' | relative_url }}">
     <div class="home-tile-media">
@@ -58,12 +59,9 @@ redirect_from:
   </a>
 </div>
 
----
-
 ## Highlights
 
 <div style="display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); gap:16px; margin: 1rem 0;">
-
   <div style="border:1px solid #cfd4deff; border-radius:14px; padding:14px; background:#fff;">
     <div style="font-weight:700; margin-bottom:6px;">Project Atlas</div>
     <div style="opacity:.85; line-height:1.6;">
@@ -73,30 +71,20 @@ redirect_from:
       <a href="/project-atlas/" style="text-decoration:none; font-weight:600;">Explore the Atlas →</a>
     </div>
   </div>
-
 </div>
 
-
 <script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const card = document.querySelector(".intro-card");
-    if (!card) return;
-
-    const setPos = (e) => {
-      const r = card.getBoundingClientRect();
+  document.addEventListener("mousemove", (e) => {
+    const ids = ["tile-industry","tile-education","tile-research","tile-updates"];
+    ids.forEach((id) => {
+      const el = document.getElementById(id);
+      if (!el) return;
+      const r = el.getBoundingClientRect();
+      if (e.clientX < r.left || e.clientX > r.right || e.clientY < r.top || e.clientY > r.bottom) return;
       const x = ((e.clientX - r.left) / r.width) * 100;
       const y = ((e.clientY - r.top) / r.height) * 100;
-      card.style.setProperty("--mx", x + "%");
-      card.style.setProperty("--my", y + "%");
-    };
-
-    card.addEventListener("mousemove", setPos);
-    card.addEventListener("mouseenter", setPos);
-
-    // reset to a nice default when leaving
-    card.addEventListener("mouseleave", () => {
-      card.style.setProperty("--mx", "50%");
-      card.style.setProperty("--my", "35%");
+      el.style.setProperty("--mx", x + "%");
+      el.style.setProperty("--my", y + "%");
     });
   });
 </script>
