@@ -25,7 +25,7 @@ redirect_from:
     <div style="border:1px solid #e5e7eb; border-radius:14px; overflow:hidden;">
       <video autoplay muted loop playsinline preload="metadata"
         style="width:100%; height:210px; object-fit:cover; display:block;">
-        <source src="/images/water_zeb_credited.mp4" type="video/mp4">
+        <source src="/images/water_river.mp4" type="video/mp4">
       </video>
       <div style="padding:12px;">
         <div style="font-weight:600;">Industry Experience</div>
