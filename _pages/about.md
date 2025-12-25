@@ -18,51 +18,44 @@ redirect_from:
 </div>
 
 ## Start Here
-
-<div style="display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); gap:16px; margin: 1rem 0;">
-
-<a id="tile-industry" href="{{ '/portfolio/' | relative_url }}" style="text-decoration:none;">
-  <div style="border:1px solid #e5e7eb; border-radius:14px; overflow:hidden;">
-    <video autoplay muted loop playsinline preload="metadata"
-      style="width:100%; height:210px; object-fit:cover; display:block;">
-      <source src="{{ '/images/water_river.mp4' | relative_url }}" type="video/mp4">
-    </video>
-    <div style="padding:12px;">
-      <div style="font-weight:600;">Industry Experience</div>
+<div class="home-tiles">
+  <a id="tile-industry" class="home-tile" href="{{ '/portfolio/' | relative_url }}">
+    <div class="home-tile-media">
+      <video autoplay muted loop playsinline preload="metadata">
+        <source src="{{ '/images/water_river.mp4' | relative_url }}" type="video/mp4">
+      </video>
     </div>
-  </div>
-</a>
-
-  <a id="tile-education" href="/cv/" style="text-decoration:none;">
-    <div style="border:1px solid #e5e7eb; border-radius:14px; overflow:hidden;">
-      <img src="/images/education.png" alt="Education"
-        style="width:100%; height:210px; object-fit:cover; display:block;">
-      <div style="padding:12px;">
-        <div style="font-weight:600;">Education</div>
-      </div>
+    <div class="home-tile-body">
+      <div class="home-tile-title">Industry Experience</div>
     </div>
   </a>
 
-  <a id="tile-research" href="https://scholar.google.com/citations?user=_rBmLxQAAAAJ&hl=en" style="text-decoration:none;">
-    <div style="border:1px solid #e5e7eb; border-radius:14px; overflow:hidden;">
-      <img src="/images/research.png" alt="Research"
-        style="width:100%; height:210px; object-fit:cover; display:block;">
-      <div style="padding:12px;">
-        <div style="font-weight:600;">Research</div>
-      </div>
+  <a id="tile-education" class="home-tile" href="{{ '/cv/' | relative_url }}">
+    <div class="home-tile-media">
+      <img src="{{ '/images/education.png' | relative_url }}" alt="Education">
+    </div>
+    <div class="home-tile-body">
+      <div class="home-tile-title">Education</div>
     </div>
   </a>
 
-  <a id="tile-updates" href="/year-archive/" style="text-decoration:none;">
-    <div style="border:1px solid #e5e7eb; border-radius:14px; overflow:hidden;">
-      <img src="/images/news.jpg" alt="Updates"
-        style="width:100%; height:210px; object-fit:cover; display:block;">
-      <div style="padding:12px;">
-        <div style="font-weight:600;">Updates</div>
-      </div>
+  <a id="tile-research" class="home-tile" href="https://scholar.google.com/citations?user=_rBmLxQAAAAJ&hl=en">
+    <div class="home-tile-media">
+      <img src="{{ '/images/research.png' | relative_url }}" alt="Research">
+    </div>
+    <div class="home-tile-body">
+      <div class="home-tile-title">Research</div>
     </div>
   </a>
 
+  <a id="tile-updates" class="home-tile" href="{{ '/year-archive/' | relative_url }}">
+    <div class="home-tile-media">
+      <img src="{{ '/images/news.jpg' | relative_url }}" alt="Updates">
+    </div>
+    <div class="home-tile-body">
+      <div class="home-tile-title">Updates</div>
+    </div>
+  </a>
 </div>
 
 ---

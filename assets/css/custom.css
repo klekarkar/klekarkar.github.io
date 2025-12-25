@@ -995,4 +995,169 @@ h1, h2, h3{
   font-size: 0.95rem;
 }
 
+/* =========================
+   HOME TILES: Explore pill + hologram hover
+   Applies to: #tile-industry, #tile-education, #tile-research, #tile-updates
+========================= */
+
+#tile-industry,
+#tile-education,
+#tile-research,
+#tile-updates{
+  position: relative;
+  display: block;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  overflow: hidden;
+  background: #fff;
+  color: inherit;
+  text-decoration: none !important;
+
+  transform: translateZ(0);
+  transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;
+}
+
+/* Ensure inner content sits under overlays */
+#tile-industry > * ,
+#tile-education > * ,
+#tile-research > * ,
+#tile-updates > *{
+  position: relative;
+  z-index: 1;
+}
+
+/* ------- Explore pill (same behavior as before) ------- */
+#tile-industry::after,
+#tile-education::after,
+#tile-research::after,
+#tile-updates::after{
+  content: "Explore";
+  position: absolute;
+  right: 14px;
+  top: 12px;
+
+  padding: 7px 12px;
+  border-radius: 999px;
+
+  font-size: 0.80rem;
+  font-weight: 650;
+  line-height: 1;
+
+  color: #063a5c;
+  background: rgba(11,79,122,0.08);
+
+  opacity: 0;
+  transform: translateY(-2px);
+  transition: opacity 180ms ease, transform 180ms ease, border-color 180ms ease, background 180ms ease;
+
+  border: 2px solid transparent;
+  box-shadow: none !important;
+
+  z-index: 4;              /* above hologram layers */
+  pointer-events: none;
+}
+
+/* Show pill on hover */
+#tile-industry:hover::after,
+#tile-education:hover::after,
+#tile-research:hover::after,
+#tile-updates:hover::after{
+  opacity: 1;
+  transform: translateY(0);
+  background: rgba(11,79,122,0.10);
+  border-color: rgba(37, 219, 110, 0.55);
+}
+
+/* ------- Hologram shimmer layer (uses ::before) ------- */
+#tile-industry::before,
+#tile-education::before,
+#tile-research::before,
+#tile-updates::before{
+  content: "";
+  position: absolute;
+  inset: -35%;
+  background: linear-gradient(
+    120deg,
+    rgba(0, 255, 255, 0.00) 0%,
+    rgba(0, 255, 255, 0.18) 18%,
+    rgba(255, 0, 255, 0.16) 40%,
+    rgba(255, 255, 0, 0.14) 60%,
+    rgba(0, 255, 255, 0.00) 80%
+  );
+  transform: translateY(-12%) rotate(12deg);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 220ms ease, transform 520ms ease;
+  mix-blend-mode: screen;
+  z-index: 3;              /* under Explore pill */
+}
+
+/* ------- Spotlight that follows mouse (optional vars) ------- */
+#tile-industry .home-tile-media,
+#tile-education .home-tile-media,
+#tile-research .home-tile-media,
+#tile-updates .home-tile-media{
+  position: relative;
+}
+
+#tile-industry .home-tile-media::after,
+#tile-education .home-tile-media::after,
+#tile-research .home-tile-media::after,
+#tile-updates .home-tile-media::after{
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at var(--mx, 50%) var(--my, 35%),
+    rgba(255,255,255,0.22),
+    rgba(255,255,255,0.00) 45%
+  );
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 220ms ease;
+  z-index: 2;
+}
+
+/* Hover states */
+#tile-industry:hover,
+#tile-education:hover,
+#tile-research:hover,
+#tile-updates:hover{
+  transform: scale(1.03);
+  border-color: rgba(11,79,122,0.35);
+  box-shadow: 0 14px 34px rgba(0,0,0,0.14);
+}
+
+#tile-industry:hover::before,
+#tile-education:hover::before,
+#tile-research:hover::before,
+#tile-updates:hover::before{
+  opacity: 1;
+  transform: translateY(18%) rotate(12deg);
+}
+
+#tile-industry:hover .home-tile-media::after,
+#tile-education:hover .home-tile-media::after,
+#tile-research:hover .home-tile-media::after,
+#tile-updates:hover .home-tile-media::after{
+  opacity: 1;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce){
+  #tile-industry,
+  #tile-education,
+  #tile-research,
+  #tile-updates,
+  #tile-industry::before,
+  #tile-education::before,
+  #tile-research::before,
+  #tile-updates::before,
+  #tile-industry::after,
+  #tile-education::after,
+  #tile-research::after,
+  #tile-updates::after{
+    transition: none !important;
+  }
+}
 
