@@ -33,7 +33,6 @@ redirect_from:
   </div>
 </a>
 
-
   <a id="tile-education" href="/cv/" style="text-decoration:none;">
     <div style="border:1px solid #e5e7eb; border-radius:14px; overflow:hidden;">
       <img src="/images/education.png" alt="Education"
