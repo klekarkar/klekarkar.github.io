@@ -327,47 +327,53 @@ h1, h2, h3{
   opacity: 0.65;
   font-size: 0.95rem;
 }
-
 /* =========================
-   PROJECT ATLAS
+   PROJECT ATLAS (full-bleed + layout)
    Page front matter: classes: wide atlas-page
 ========================= */
 
 :root{
-  --atlas-side-width: 420px;
+  --atlas-side-width: 400px;    /* sidebar width */
   --atlas-gap: 16px;
   --atlas-radius: 14px;
   --atlas-border: 1px solid #e5e7eb;
+
+  /* How much vertical space header/title take */
   --atlas-vh-offset: 220px;
+
+  /* side gutters for full-bleed content */
   --atlas-gutter: 12px;
 }
 
-.atlas-page .page__content{
-  padding-left: 0 !important;
-  padding-right: 0 !important;
-}
-
-.atlas-page .atlas{
+/* 1) Break out of the theme’s centered max-width wrapper */
+.atlas-page .atlas-shell{
   width: 100vw;
   margin-left: calc(50% - 50vw);
   margin-right: calc(50% - 50vw);
   padding-left: var(--atlas-gutter);
   padding-right: var(--atlas-gutter);
+}
 
+/* 2) Make sure theme wrappers don’t clamp width */
+.atlas-page .page__content .archive{
+  max-width: none !important;
+}
+.atlas-page .page__content{
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+/* 3) The actual atlas grid */
+.atlas-page .atlas{
+  width: 100%;
+  margin: 0;
   display: grid;
   grid-template-columns: var(--atlas-side-width) minmax(0, 1fr);
   gap: var(--atlas-gap);
   align-items: stretch;
 }
 
-.atlas-page .page__title{
-  width: 100vw;
-  margin-left: calc(50% - 50vw);
-  margin-right: calc(50% - 50vw);
-  padding-left: var(--atlas-gutter);
-  padding-right: var(--atlas-gutter);
-}
-
+/* Cards */
 .atlas-page .atlas-side,
 .atlas-page .atlas-mapWrap{
   border: var(--atlas-border);
@@ -376,10 +382,17 @@ h1, h2, h3{
   overflow: hidden;
 }
 
+/* Sidebar */
 .atlas-page .atlas-side{
   padding: 14px;
   min-height: calc(100vh - var(--atlas-vh-offset));
 }
+
+.atlas-page .atlas-heading{ margin: 0 0 6px 0; }
+.atlas-page .atlas-lede{ margin: 0 0 14px 0; opacity: .85; }
+
+/* Search */
+.atlas-page .atlas-searchWrap{ margin-bottom: 0; }
 
 .atlas-page .atlas-search{
   width: 100%;
@@ -395,6 +408,7 @@ h1, h2, h3{
   box-shadow: 0 0 0 3px rgba(148,163,184,.25);
 }
 
+/* Meta row */
 .atlas-page .atlas-meta{
   display: flex;
   align-items: center;
@@ -402,6 +416,8 @@ h1, h2, h3{
   margin-top: 10px;
   gap: 10px;
 }
+
+.atlas-page .atlas-count{ opacity: .8; }
 
 .atlas-page .atlas-clear{
   border: var(--atlas-border);
@@ -413,6 +429,7 @@ h1, h2, h3{
 }
 .atlas-page .atlas-clear:hover{ background: #f8fafc; }
 
+/* List */
 .atlas-page .atlas-list{
   margin-top: 12px;
   display: flex;
@@ -441,6 +458,7 @@ h1, h2, h3{
   flex: 0 0 auto;
   background: #f1f5f9;
 }
+
 .atlas-page .atlas-thumb img{
   width: 100%;
   height: 100%;
@@ -487,22 +505,37 @@ h1, h2, h3{
   opacity: .9;
 }
 
+/* Map fills remaining width + viewport height */
 .atlas-page .atlas-map{
   height: calc(100vh - var(--atlas-vh-offset));
   width: 100%;
 }
 
+/* Popup typography */
 .atlas-page .leaflet-popup-content{ margin: 12px 14px; }
 .atlas-page .popup-title{ font-weight: 700; margin-bottom: 4px; }
 .atlas-page .popup-sub{ opacity: .75; margin-bottom: 8px; }
 .atlas-page .popup-link{ text-decoration: none; font-weight: 600; }
 
+/* Mobile */
 @media (max-width: 980px){
-  .atlas-page .atlas{ grid-template-columns: 1fr; }
-  .atlas-page .atlas-side{ min-height: auto; }
-  .atlas-page .atlas-map{ height: 60vh; min-height: 420px; }
-  .atlas-page .atlas-list{ max-height: 340px; }
+  :root{ --atlas-side-width: 1fr; }
+
+  .atlas-page .atlas{
+    grid-template-columns: 1fr;
+  }
+  .atlas-page .atlas-side{
+    min-height: auto;
+  }
+  .atlas-page .atlas-map{
+    height: 60vh;
+    min-height: 420px;
+  }
+  .atlas-page .atlas-list{
+    max-height: 340px;
+  }
 }
+
 
 /* =========================
    HOME TILES (2x2 grid)
