@@ -1,5 +1,5 @@
 ---
-layout: archive
+layout: single
 title: "Project Atlas"
 permalink: /project-atlas/
 author_profile: false
@@ -7,39 +7,23 @@ classes: wide atlas-page
 ---
 
 <!-- Leaflet -->
-<link
-  rel="stylesheet"
-  href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-/>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
 <!-- Marker clustering -->
-<link
-  rel="stylesheet"
-  href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css"
-/>
-<link
-  rel="stylesheet"
-  href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css"
-/>
+<link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css">
+<link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css">
 <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
 
 <div class="atlas-shell">
   <div class="atlas">
     <aside class="atlas-side">
       <h2 class="atlas-heading">Browse</h2>
-      <p class="atlas-lede">
-        Search projects and click a result to zoom to its location.
-      </p>
+      <p class="atlas-lede">Search projects and click a result to zoom to its location.</p>
 
       <div class="atlas-searchWrap">
-        <input
-          id="atlasSearch"
-          class="atlas-search"
-          type="search"
-          placeholder="Search title, location, tags…"
-          autocomplete="off"
-        />
+        <input id="atlasSearch" class="atlas-search" type="search"
+               placeholder="Search title, location, tags…" autocomplete="off">
       </div>
 
       <div class="atlas-meta">

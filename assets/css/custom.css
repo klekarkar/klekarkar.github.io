@@ -510,6 +510,10 @@ h1, h2, h3{
   height: calc(100vh - var(--atlas-vh-offset));
   width: 100%;
 }
+.atlas-page .atlas-item.is-active{
+  box-shadow: 0 0 0 2px rgba(11,79,122,0.35);
+  background: rgba(11,79,122,0.04);
+}
 
 /* Popup typography */
 .atlas-page .leaflet-popup-content{ margin: 12px 14px; }
