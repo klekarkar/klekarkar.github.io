@@ -4,7 +4,7 @@ collection: portfolio
 date: 2023-03-15   # used for sorting + display (pick end date)
 thumb: /images/nrt/ishaqbin.png
 # tags: [Sanitation, Hygiene]
-excerpt: "Topographic survey and design of water distribution system for multiple uses"
+excerpt: "Assessing effectiveness of nature-based solutions by combining observations and a mechanistic model"
 
 location: "Boechout, Belgium"
 lat: 51.169146
