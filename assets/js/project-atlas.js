@@ -89,6 +89,8 @@ document.addEventListener("DOMContentLoaded", () => {
   setTimeout(invalidate, 150);
   window.addEventListener("resize", invalidate);
 
+  window.addEventListener("load", () => map.invalidateSize());
+
   // -------- Data + State --------
   let items = [];
   const markerById = new Map(); // id -> marker
