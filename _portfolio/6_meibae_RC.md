@@ -22,15 +22,21 @@ The conservancy needed a permanent cost-effective supply of water for the ranger
 
 <div class="auto-carousel" data-interval="4000">
   <div class="slides">
-    <img src="/images/meibae/rock_before.JPG" alt="Meibae 1" loading="lazy">
-    <img src="/images/meibae/rock_form_00.JPG" alt="Meibae 2" loading="lazy">
+    <img src="/images/meibae/rock_before.JPG" alt="Meibae start" loading="lazy">
+    <img src="/images/meibae/rock_formwork.JPG" alt="Meibae formwork" loading="lazy">
+    <img src="/images/meibae/rock_mid.JPG" alt="Meibae progress" loading="lazy">
+    <img src="/images/meibae/rock_95.JPG" alt="Meibae almost done" loading="lazy">
+    <img src="/images/meibae/rock_full.JPG" alt="Meibae finished" loading="lazy">
+  </div>
+</div>
+
+<div class="auto-carousel" data-interval="4000">
+  <div class="slides">
+    <img src="/images/meibae/tank_mid.JPG" alt="Meibae 1" loading="lazy">
+    <img src="/images/meibae/tank_roof_form.JPG" alt="Meibae 2" loading="lazy">
     <img src="/images/meibae/rock_formwork.JPG" alt="Meibae 3" loading="lazy">
-    <img src="/images/meibae/rock_mid.JPG" alt="Meibae 4" loading="lazy">
-    <img src="/images/meibae/rock_95.JPG" alt="Meibae 5" loading="lazy">
-    <img src="/images/meibae/rock_full.JPG" alt="Meibae 6" loading="lazy">
-    <img src="/images/meibae/lagoon.JPG" alt="Meibae 7" loading="lazy">
-    <img src="/images/meibae/swim.JPG" alt="Meibae 6" loading="lazy">
-    <img src="/images/meibae/lions.JPG" alt="Meibae 7" loading="lazy">
+    <img src="/images/meibae/tank_finished.JPG" alt="Meibae 4" loading="lazy">
+    <img src="/images/meibae/both.JPG" alt="Meibae 5" loading="lazy">
   </div>
 </div>
 
