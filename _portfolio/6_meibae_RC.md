@@ -1,15 +1,15 @@
 ---
-title: "Ol-Pejeta Conservancy Water masterplan"
-date: 2018-0-15
+title: "Water supply for Meibae Conservancy headquaters"
+date: 2018-06-15
 thumb: /images/opc/opc_cover.JPG
-excerpt: "20-year masterplan to improve water security for staff housing, tourism and wildlife."
+excerpt: "Design and construction of rock catchment system."
 # tags: [Water planning, Hydrology, Kenya]
 
-location: "Laikipia, Kenya"
+location: "Samburu, Kenya"
 lat: 0.765971
 lon: 37.155750
-start: 2018-01-01
-end: 2019-12-31
+start: 2018-06-01
+end: 2019-11-30
 ---
 
 The conservancy needed a permanent cost-effective supply of water for the rangers' camp to replace the Ewaso Nyiro water supply which had become seasonal. The existing supply system from the river had broken down. After assessing various options, a decision was arrived at to construct a rock catchment and a large storage tank to harvest and store rainwater.
