@@ -14,10 +14,21 @@ end: 2019-11-30
 
 The conservancy needed a permanent cost-effective supply of water for the rangers' camp to replace an existing supply pipe supply which had become prone to breakdowns that interrupted supply. After assessing various options, a decision was arrived at to construct a rock catchment and a large storage tank to harvest and store rainwater. A rock catchment is essentially a reservoir on a rock constructed to collect rain water in a similar way as guttering a roof.
 
-### Outcomes
+## Outcomes
+
 * Engineering design for a rock catchment reservoir and storage tank
 * A rock catchment reservoir and a masonry tank with 150,000 litres of storage
 * A solar-powered pumping system to deliver water to the camp
+
+
+## What we did
+
+* Feasibility study for different water supply options including groundwater and pipeline sytem
+* Evaluated reliability of water supply under different preciciptation scenarios to guarantee supply even during dry periods
+* Topographic survey and engineering design for a rock catchment system
+* Costing for the rock catchment system and tender evaluations to select winning bids for the project
+* Construction supervision to project completion
+* Hand over and monitoring
 
 
 <figure class="carousel-figure">
@@ -44,15 +55,6 @@ The conservancy needed a permanent cost-effective supply of water for the ranger
   <figcaption class="carousel-caption">Storage tank construction and final system .</figcaption>
 </figure>
 
-
-## What we did
-
-* Feasibility study for different water supply options including groundwater and pipeline sytem
-* Evaluated reliability of water supply under different preciciptation scenarios to guarantee supply even during dry periods
-* Topographic survey and engineering design for a rock catchment system
-* Costing for the rock catchment system and tender evaluations to select winning bids for the project
-* Construction supervision to project completion
-* Hand over and monitoring
 
 ## About the Client
 Meibae conservancy lies within Wamba West Sub-county of Samburu County, Kenya. It covers 115,900 hectares with a population of roughly 12,500 people. The conservancy is a community-led wildlife conservation focused on protecting wildlife and improving local nomadic pastoralist livelihoods.

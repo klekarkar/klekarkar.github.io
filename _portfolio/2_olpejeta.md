@@ -23,19 +23,6 @@ Ol-Pejeta Conservancy needed a long-term plan to improve water security for staf
 
 * Delivered maps and recommendations supporting implementation and budgeting decisions.
 
-<div class="auto-carousel" data-interval="4000">
-  <div class="slides">
-    <img src="/images/opc/rhinos.JPG" alt="Ol Pejeta 1" loading="lazy">
-    <img src="/images/opc/opc_2.JPG" alt="Ol Pejeta 2" loading="lazy">
-    <img src="/images/opc/opc_3.JPG" alt="Ol Pejeta 3" loading="lazy">
-    <img src="/images/opc/opc_4.JPG" alt="Ol Pejeta 4" loading="lazy">
-    <img src="/images/opc/me.JPG" alt="Ol Pejeta 5" loading="lazy">
-    <img src="/images/opc/vehicle.JPG" alt="Ol Pejeta 6" loading="lazy">
-    <img src="/images/opc/lagoon.JPG" alt="Ol Pejeta 7" loading="lazy">
-    <img src="/images/opc/swim.JPG" alt="Ol Pejeta 6" loading="lazy">
-    <img src="/images/opc/lions.JPG" alt="Ol Pejeta 7" loading="lazy">
-  </div>
-</div>
 
 ## What we did
 
@@ -50,6 +37,22 @@ Ol-Pejeta Conservancy needed a long-term plan to improve water security for staf
 * Designed upgrades to existing water distribution network to limit disruptions
 
 * Built a planning framework to prioritize interventions by impact, feasibility, and risk.
+
+<div class="auto-carousel" data-interval="4000">
+  <div class="slides">
+    <img src="/images/opc/rhinos.JPG" alt="Ol Pejeta 1" loading="lazy">
+    <img src="/images/opc/opc_2.JPG" alt="Ol Pejeta 2" loading="lazy">
+    <img src="/images/opc/opc_3.JPG" alt="Ol Pejeta 3" loading="lazy">
+    <img src="/images/opc/opc_4.JPG" alt="Ol Pejeta 4" loading="lazy">
+    <img src="/images/opc/me.JPG" alt="Ol Pejeta 5" loading="lazy">
+    <img src="/images/opc/vehicle.JPG" alt="Ol Pejeta 6" loading="lazy">
+    <img src="/images/opc/lagoon.JPG" alt="Ol Pejeta 7" loading="lazy">
+    <img src="/images/opc/swim.JPG" alt="Ol Pejeta 6" loading="lazy">
+    <img src="/images/opc/lions.JPG" alt="Ol Pejeta 7" loading="lazy">
+  </div>
+</div>
+
+
 
 ## About the Client
 Ol-Pejeta Conservancy is a wildlife conservation organization based in Kenya. The conservancy sits on 360 square kilometres of land primarily for wildife conservation but also includes secluded areas as sanctuaries for critically endangered wildlife species.The conservancy generates income through wildlife tourism and complementary enterprises for re-investment in conservation and local neighbouring communities. The conservancy is home to the last surviving species of the northern white rhino in the world. 
