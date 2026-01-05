@@ -24,7 +24,6 @@ The conservancy needed a permanent cost-effective supply of water for the ranger
   <div class="auto-carousel" data-interval="4000">
     <div class="slides">
       <img src="/images/meibae/rock_before.JPG" alt="Meibae start" loading="lazy">
-      <img src="/images/meibae/rock_formwork.JPG" alt="Meibae formwork" loading="lazy">
       <img src="/images/meibae/rock_mid.JPG" alt="Meibae progress" loading="lazy">
       <img src="/images/meibae/rock_95.JPG" alt="Meibae almost done" loading="lazy">
       <img src="/images/meibae/rock_full.JPG" alt="Meibae finished" loading="lazy">
@@ -38,7 +37,6 @@ The conservancy needed a permanent cost-effective supply of water for the ranger
     <div class="slides">
       <img src="/images/meibae/tank_mid.JPG" alt="Tank construction progress" loading="lazy">
       <img src="/images/meibae/tank_roof_form.JPG" alt="Tank roof formwork" loading="lazy">
-      <img src="/images/meibae/rock_formwork.JPG" alt="Site works" loading="lazy">
       <img src="/images/meibae/tank_finished.JPG" alt="Finished tank" loading="lazy">
       <img src="/images/meibae/both.JPG" alt="Rock catchment and tank" loading="lazy">
     </div>
