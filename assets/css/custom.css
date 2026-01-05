@@ -9,11 +9,14 @@ html, body{
 }
 
 /* Optional: nicer heading weight/spacing with Poppins */
-h1, h2, h3{
+/* Headings */
+h1, h2, h3, h4{
   letter-spacing: -0.015em;
-  line-height: 1.15;
+  line-height: 1.25;
   font-weight: 600;
+  color: #0b4f7a; /* navy */
 }
+
 
 
 /* Make main page text true black (theme often sets gray) */
