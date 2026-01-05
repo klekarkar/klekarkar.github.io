@@ -51,7 +51,7 @@ redirect_from:
 
   <a id="tile-updates" class="home-tile" href="{{ '/year-archive/' | relative_url }}">
     <div class="home-tile-media">
-      <img src="{{ '/images/news.jpg' | relative_url }}" alt="Updates">
+      <img src="{{ '/images/news.png' | relative_url }}" alt="Updates">
     </div>
     <div class="home-tile-body">
       <div class="home-tile-title">Updates</div>
