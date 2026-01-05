@@ -1,7 +1,7 @@
 ---
 title: "Water supply for Meibae Conservancy headquaters"
 date: 2018-06-15
-thumb: /images/opc/opc_cover.JPG
+thumb: /images/meibae/meibae_cover.JPG
 excerpt: "Design and construction of rock catchment system."
 # tags: [Water planning, Hydrology, Kenya]
 
@@ -22,15 +22,15 @@ The conservancy needed a permanent cost-effective supply of water for the ranger
 
 <div class="auto-carousel" data-interval="4000">
   <div class="slides">
-    <img src="/images/opc/rhinos.JPG" alt="Ol Pejeta 1" loading="lazy">
-    <img src="/images/opc/opc_2.JPG" alt="Ol Pejeta 2" loading="lazy">
-    <img src="/images/opc/opc_3.JPG" alt="Ol Pejeta 3" loading="lazy">
-    <img src="/images/opc/opc_4.JPG" alt="Ol Pejeta 4" loading="lazy">
-    <img src="/images/opc/me.JPG" alt="Ol Pejeta 5" loading="lazy">
-    <img src="/images/opc/vehicle.JPG" alt="Ol Pejeta 6" loading="lazy">
-    <img src="/images/opc/lagoon.JPG" alt="Ol Pejeta 7" loading="lazy">
-    <img src="/images/opc/swim.JPG" alt="Ol Pejeta 6" loading="lazy">
-    <img src="/images/opc/lions.JPG" alt="Ol Pejeta 7" loading="lazy">
+    <img src="/images/meibae/rock_before.JPG" alt="Ol Pejeta 1" loading="lazy">
+    <img src="/images/meibae/rock_form_00.JPG" alt="Ol Pejeta 2" loading="lazy">
+    <img src="/images/meibae/rock_formwork.JPG" alt="Ol Pejeta 3" loading="lazy">
+    <img src="/images/meibae/rock_mid.JPG" alt="Ol Pejeta 4" loading="lazy">
+    <img src="/images/meibae/me.JPG" alt="Ol Pejeta 5" loading="lazy">
+    <img src="/images/meibae/vehicle.JPG" alt="Ol Pejeta 6" loading="lazy">
+    <img src="/images/meibae/lagoon.JPG" alt="Ol Pejeta 7" loading="lazy">
+    <img src="/images/meibae/swim.JPG" alt="Ol Pejeta 6" loading="lazy">
+    <img src="/images/meibae/lions.JPG" alt="Ol Pejeta 7" loading="lazy">
   </div>
 </div>
 
