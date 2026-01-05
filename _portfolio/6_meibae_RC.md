@@ -57,4 +57,4 @@ The conservancy needed a permanent cost-effective supply of water for the ranger
 
 
 ## About the Client
-Meibae conservancy lies within Wamba West Sub-county of Samburu County, Kenya. It covers 115,900 hectares with a population of roughly 12,500 people. The conservancy is a community-led wildlife conservation focused on protecting wildlife and improving local nomadic pastoralist livelihoods.
+Meibae is a community-led wildlife conservancy focused on protecting wildlife and improving local nomadic pastoralist livelihoods. It lies within Wamba West Sub-county of Samburu County, Kenya and covers 115,900 hectares with a population of roughly 12,500 people.
