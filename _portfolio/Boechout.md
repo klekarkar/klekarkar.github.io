@@ -2,7 +2,7 @@
 title: "Water retention potential of a nature conservation area"
 collection: portfolio
 date: 2023-03-15   # used for sorting + display (pick end date)
-thumb: /images/nrt/ishaqbin.png
+thumb: /images/boechout_cover.jpg
 # tags: [Sanitation, Hygiene]
 excerpt: "Assessing effectiveness of nature-based solutions by combining observations and a mechanistic model"
 
