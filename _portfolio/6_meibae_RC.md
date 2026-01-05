@@ -12,7 +12,7 @@ start: 2018-06-01
 end: 2019-11-30
 ---
 
-The conservancy needed a permanent cost-effective supply of water for the rangers' camp to replace the Ewaso Nyiro water supply which had become seasonal. The existing supply system from the river had broken down. After assessing various options, a decision was arrived at to construct a rock catchment and a large storage tank to harvest and store rainwater.
+The conservancy needed a permanent cost-effective supply of water for the rangers' camp to replace an existing supply pipe supply which had become prone to breakdowns that interrupted supply. After assessing various options, a decision was arrived at to construct a rock catchment and a large storage tank to harvest and store rainwater. A rock catchment is essentially a reservoir on a rock constructed to collect rain water in a similar way as guttering a roof.
 
 ### Outcomes
 * Engineering design for a rock catchment reservoir and storage tank
@@ -29,7 +29,7 @@ The conservancy needed a permanent cost-effective supply of water for the ranger
       <img src="/images/meibae/rock_full.JPG" alt="Meibae finished" loading="lazy">
     </div>
   </div>
-  <figcaption class="carousel-caption">Rock catchment construction — key stages from site prep to completion.</figcaption>
+  <figcaption class="carousel-caption">Stages of Rock catchment construction from site prep to completion.</figcaption>
 </figure>
 
 <figure class="carousel-figure">
@@ -41,7 +41,7 @@ The conservancy needed a permanent cost-effective supply of water for the ranger
       <img src="/images/meibae/both.JPG" alt="Rock catchment and tank" loading="lazy">
     </div>
   </div>
-  <figcaption class="carousel-caption">Storage tank construction and final system layout at the conservancy headquarters.</figcaption>
+  <figcaption class="carousel-caption">Storage tank construction and final system .</figcaption>
 </figure>
 
 
