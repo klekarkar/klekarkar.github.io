@@ -1,7 +1,7 @@
 ---
 title: "Ol-Pejeta Conservancy Water masterplan"
 date: 2019-01-15
-thumb: /images/opc/opc_cover.JPG
+thumb: /images/opc/opc_cover_new.JPG
 excerpt: "20-year masterplan to improve water security for staff housing, tourism and wildlife."
 # tags: [Water planning, Hydrology, Kenya]
 
@@ -40,15 +40,14 @@ Ol-Pejeta Conservancy needed a long-term plan to improve water security for staf
 
 <div class="auto-carousel" data-interval="4000">
   <div class="slides">
-    <img src="/images/opc/rhinos.JPG" alt="Ol Pejeta 1" loading="lazy">
     <img src="/images/opc/opc_2.JPG" alt="Ol Pejeta 2" loading="lazy">
+    <img src="/images/opc/trough.JPG" alt="Ol Pejeta 7" loading="lazy">
     <img src="/images/opc/opc_3.JPG" alt="Ol Pejeta 3" loading="lazy">
     <img src="/images/opc/opc_4.JPG" alt="Ol Pejeta 4" loading="lazy">
     <img src="/images/opc/me.JPG" alt="Ol Pejeta 5" loading="lazy">
     <img src="/images/opc/vehicle.JPG" alt="Ol Pejeta 6" loading="lazy">
     <img src="/images/opc/lagoon.JPG" alt="Ol Pejeta 7" loading="lazy">
-    <img src="/images/opc/swim.JPG" alt="Ol Pejeta 6" loading="lazy">
-    <img src="/images/opc/lions.JPG" alt="Ol Pejeta 7" loading="lazy">
+    <img src="/images/opc/rhinos.JPG" alt="Ol Pejeta 1" loading="lazy">
   </div>
 </div>
 
