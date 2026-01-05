@@ -1,5 +1,5 @@
 ---
-title: "Water supply for Meibae Conservancy headquaters"
+title: "Water supply for Meibae Conservancy Headquaters"
 date: 2018-06-15
 thumb: /images/meibae/meibae_cover.JPG
 excerpt: "Design and construction of rock catchment system."
