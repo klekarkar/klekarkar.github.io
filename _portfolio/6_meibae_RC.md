@@ -20,32 +20,38 @@ The conservancy needed a permanent cost-effective supply of water for the ranger
 * A solar-powered pumping system to deliver water to the camp
 
 
-<div class="auto-carousel" data-interval="4000">
-  <div class="slides">
-    <img src="/images/meibae/rock_before.JPG" alt="Meibae start" loading="lazy">
-    <img src="/images/meibae/rock_formwork.JPG" alt="Meibae formwork" loading="lazy">
-    <img src="/images/meibae/rock_mid.JPG" alt="Meibae progress" loading="lazy">
-    <img src="/images/meibae/rock_95.JPG" alt="Meibae almost done" loading="lazy">
-    <img src="/images/meibae/rock_full.JPG" alt="Meibae finished" loading="lazy">
+<figure class="carousel-figure">
+  <div class="auto-carousel" data-interval="4000">
+    <div class="slides">
+      <img src="/images/meibae/rock_before.JPG" alt="Meibae start" loading="lazy">
+      <img src="/images/meibae/rock_formwork.JPG" alt="Meibae formwork" loading="lazy">
+      <img src="/images/meibae/rock_mid.JPG" alt="Meibae progress" loading="lazy">
+      <img src="/images/meibae/rock_95.JPG" alt="Meibae almost done" loading="lazy">
+      <img src="/images/meibae/rock_full.JPG" alt="Meibae finished" loading="lazy">
+    </div>
   </div>
-</div>
+  <figcaption class="carousel-caption">Rock catchment construction — key stages from site prep to completion.</figcaption>
+</figure>
 
-<div class="auto-carousel" data-interval="4000">
-  <div class="slides">
-    <img src="/images/meibae/tank_mid.JPG" alt="Meibae 1" loading="lazy">
-    <img src="/images/meibae/tank_roof_form.JPG" alt="Meibae 2" loading="lazy">
-    <img src="/images/meibae/rock_formwork.JPG" alt="Meibae 3" loading="lazy">
-    <img src="/images/meibae/tank_finished.JPG" alt="Meibae 4" loading="lazy">
-    <img src="/images/meibae/both.JPG" alt="Meibae 5" loading="lazy">
+<figure class="carousel-figure">
+  <div class="auto-carousel" data-interval="4000">
+    <div class="slides">
+      <img src="/images/meibae/tank_mid.JPG" alt="Tank construction progress" loading="lazy">
+      <img src="/images/meibae/tank_roof_form.JPG" alt="Tank roof formwork" loading="lazy">
+      <img src="/images/meibae/rock_formwork.JPG" alt="Site works" loading="lazy">
+      <img src="/images/meibae/tank_finished.JPG" alt="Finished tank" loading="lazy">
+      <img src="/images/meibae/both.JPG" alt="Rock catchment and tank" loading="lazy">
+    </div>
   </div>
-</div>
+  <figcaption class="carousel-caption">Storage tank construction and final system layout at the conservancy headquarters.</figcaption>
+</figure>
+
 
 ## What we did
 
 * Feasibility study for different water supply options including groundwater and pipeline sytem
 * Evaluated reliability of water supply under different preciciptation scenarios to guarantee supply even during dry periods
 * Topographic survey and engineering design for a rock catchment system
-
 * Costing for the rock catchment system and tender evaluations to select winning bids for the project
 * Construction supervision to project completion
 * Hand over and monitoring

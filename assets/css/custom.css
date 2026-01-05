@@ -98,6 +98,18 @@ h1, h2, h3{
   .auto-carousel .slides{ transition: none; }
 }
 
+.carousel-figure{
+  margin: 16px 0;
+}
+
+.carousel-caption{
+  margin-top: 8px;
+  font-size: 0.95rem;
+  opacity: 0.85;
+  line-height: 1.5;
+}
+
+
 /* =========================
    PROJECT LIST (portfolio/blog list style)
 ========================= */
