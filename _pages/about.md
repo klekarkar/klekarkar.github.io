@@ -25,7 +25,6 @@ redirect_from:
     <div class="home-tile-media tile-stats" data-animate="true">
       <div class="donut" aria-label="Industry summary">
         <div class="ring ring-1" data-pct="92" aria-hidden="true"></div>
-        <div class="ring ring-2" data-pct="85" aria-hidden="true"></div>
 
         <div class="donut-center">
           <div class="donut-row">
