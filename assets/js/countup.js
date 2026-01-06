@@ -6,7 +6,7 @@
     });
   }
 
-  function animateCount(el, target, decimals, prefix, suffix, duration = 2100) {
+  function animateCount(el, target, decimals, prefix, suffix, duration = 3000) {
     const reduceMotion = window.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches;
 
     if (reduceMotion) {
@@ -42,7 +42,7 @@
       const prefix = el.dataset.prefix || "";
       const suffix = el.dataset.suffix || "";
 
-      animateCount(el, target, decimals, prefix, suffix, 2100);
+      animateCount(el, target, decimals, prefix, suffix, 3000);
     });
   }
 
