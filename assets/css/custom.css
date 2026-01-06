@@ -63,59 +63,81 @@ h1, h2, h3, h4{
   margin: 14px 0 22px;
 }
 
-
 /* =========================
-   INDUSTRY TILE: donut + counters
+   INDUSTRY TILE: donut + synced counters
 ========================= */
 
-.tile-stats{
+.home-tile-media.tile-stats{
   display: grid;
   place-items: center;
-  background: radial-gradient(circle at 30% 20%, rgba(11,79,122,0.08), rgba(255,255,255,0.0) 60%),
-              #ffffff;
+  height: 210px;          /* match your tile media height */
+  overflow: hidden;       /* prevents any spill into title area */
+  padding: 14px;          /* gives breathing room so it never touches edges */
+  background:
+    radial-gradient(circle at 30% 20%, rgba(11,79,122,0.08), rgba(255,255,255,0) 60%),
+    #fff;
 }
 
-/* Donut container */
 .donut{
   position: relative;
-  width: min(240px, 80%);
+  width: min(180px, 78%); /* KEY: keep under 210px height */
   aspect-ratio: 1 / 1;
   border-radius: 999px;
 }
 
-/* Rings */
+/* Each ring draws a TRACK (static) + PROGRESS (animated) */
 .ring{
   position: absolute;
   inset: 0;
   border-radius: 999px;
-  --pct: 0;
-  transition: --pct 900ms ease;
+  --pct: 0;              /* animated 0 -> data-pct */
+  --ring: rgba(11,79,122,0.95);
+  --track: rgba(0,0,0,0.08);
 }
 
-/* Outer ring */
+/* Outer ring thickness */
 .ring-1{
-  background:
-    conic-gradient(from 180deg,
-      rgba(11,79,122,0.95) calc(var(--pct) * 1%),
-      rgba(0,0,0,0.08) 0
-    );
-  -webkit-mask: radial-gradient(circle, transparent 58%, #000 59%);
-          mask: radial-gradient(circle, transparent 58%, #000 59%);
+  --ring: rgba(11,79,122,0.95);
 }
 
-/* Inner ring */
+/* Inner ring is inset + slightly different color */
 .ring-2{
   inset: 16%;
-  background:
-    conic-gradient(from 180deg,
-      rgba(200, 60, 210, 0.85) calc(var(--pct) * 1%),
-      rgba(0,0,0,0.08) 0
-    );
+  --ring: rgba(200, 60, 210, 0.85);
+}
+
+/* Track */
+.ring::before{
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: var(--track);
+
+  /* ring cutout */
   -webkit-mask: radial-gradient(circle, transparent 58%, #000 59%);
           mask: radial-gradient(circle, transparent 58%, #000 59%);
 }
 
-/* Center content */
+/* Progress (starts empty, fills in) */
+.ring::after{
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+
+  /* Only the progress arc is colored; rest is transparent */
+  background: conic-gradient(
+    from 180deg,
+    var(--ring) calc(var(--pct) * 1%),
+    transparent 0
+  );
+
+  -webkit-mask: radial-gradient(circle, transparent 58%, #000 59%);
+          mask: radial-gradient(circle, transparent 58%, #000 59%);
+}
+
+/* Center card */
 .donut-center{
   position: absolute;
   inset: 22%;
@@ -141,7 +163,6 @@ h1, h2, h3, h4{
   height: 7px;
   border-radius: 999px;
 }
-
 .dot-1{ background: rgba(11,79,122,0.95); }
 .dot-2{ background: rgba(200, 60, 210, 0.85); }
 
@@ -149,13 +170,11 @@ h1, h2, h3, h4{
   font-size: 0.88rem;
   opacity: 0.8;
 }
-
 .donut-value{
   font-weight: 700;
   font-size: 0.95rem;
   color: #063a5c;
 }
-
 
 
 /* =========================
