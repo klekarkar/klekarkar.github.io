@@ -6,7 +6,7 @@
     });
   }
 
-  function animateCount(el, target, decimals, prefix, suffix, duration = 1400) {
+  function animateCount(el, target, decimals, prefix, suffix, duration = 2100) {
     const reduceMotion = window.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches;
 
     if (reduceMotion) {
