@@ -64,55 +64,96 @@ h1, h2, h3, h4{
 }
 
 
-/* ===== Industry tile live metrics ===== */
-#tile-industry .tile-metrics{
-  margin-top: 10px;
+/* =========================
+   INDUSTRY TILE: donut + counters
+========================= */
+
+.tile-stats{
   display: grid;
+  place-items: center;
+  background: radial-gradient(circle at 30% 20%, rgba(11,79,122,0.08), rgba(255,255,255,0.0) 60%),
+              #ffffff;
+}
+
+/* Donut container */
+.donut{
+  position: relative;
+  width: min(240px, 80%);
+  aspect-ratio: 1 / 1;
+  border-radius: 999px;
+}
+
+/* Rings */
+.ring{
+  position: absolute;
+  inset: 0;
+  border-radius: 999px;
+  --pct: 0;
+  transition: --pct 900ms ease;
+}
+
+/* Outer ring */
+.ring-1{
+  background:
+    conic-gradient(from 180deg,
+      rgba(11,79,122,0.95) calc(var(--pct) * 1%),
+      rgba(0,0,0,0.08) 0
+    );
+  -webkit-mask: radial-gradient(circle, transparent 58%, #000 59%);
+          mask: radial-gradient(circle, transparent 58%, #000 59%);
+}
+
+/* Inner ring */
+.ring-2{
+  inset: 16%;
+  background:
+    conic-gradient(from 180deg,
+      rgba(200, 60, 210, 0.85) calc(var(--pct) * 1%),
+      rgba(0,0,0,0.08) 0
+    );
+  -webkit-mask: radial-gradient(circle, transparent 58%, #000 59%);
+          mask: radial-gradient(circle, transparent 58%, #000 59%);
+}
+
+/* Center content */
+.donut-center{
+  position: absolute;
+  inset: 22%;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.92);
+  border: 1px solid rgba(0,0,0,0.06);
+  display: grid;
+  align-content: center;
+  gap: 10px;
+  padding: 14px 12px;
+  z-index: 2;
+}
+
+.donut-row{
+  display: grid;
+  grid-template-columns: 10px 1fr auto;
+  align-items: center;
   gap: 10px;
 }
 
-#tile-industry .metric-top{
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 10px;
+.dot{
+  width: 7px;
+  height: 7px;
+  border-radius: 999px;
 }
 
-#tile-industry .metric-label{
-  font-size: 0.9rem;
-  opacity: 0.78;
+.dot-1{ background: rgba(11,79,122,0.95); }
+.dot-2{ background: rgba(200, 60, 210, 0.85); }
+
+.donut-label{
+  font-size: 0.88rem;
+  opacity: 0.8;
 }
 
-#tile-industry .metric-value{
+.donut-value{
   font-weight: 700;
   font-size: 0.95rem;
-  white-space: nowrap;
-}
-
-#tile-industry .metric-bar{
-  height: 8px;
-  border-radius: 999px;
-  background: rgba(11,79,122,0.10);
-  overflow: hidden;
-}
-
-#tile-industry .metric-fill{
-  display: block;
-  height: 100%;
-  width: 0%;
-  border-radius: 999px;
-  background: rgba(11,79,122,0.65);
-  transition: width 900ms ease;
-}
-
-/* Animate bars when tile becomes active */
-#tile-industry.is-metrics-animated .metric-fill{
-  width: var(--fill, 90%);
-}
-
-/* Reduced motion */
-@media (prefers-reduced-motion: reduce){
-  #tile-industry .metric-fill{ transition: none; }
+  color: #063a5c;
 }
 
 

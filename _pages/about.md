@@ -20,40 +20,39 @@ redirect_from:
 ## What I do
 <div class="home-tiles">
 
+  <!-- Industry tile: donut + counters -->
   <a id="tile-industry" class="home-tile" href="{{ '/portfolio/' | relative_url }}">
-    <div class="home-tile-media">
-      <video autoplay muted loop playsinline preload="metadata">
-        <source src="{{ '/images/water_river.mp4' | relative_url }}" type="video/mp4">
-      </video>
-    </div>
+    <div class="home-tile-media tile-stats" data-animate="true">
+      <div class="donut" aria-label="Industry summary">
+        <div class="ring ring-1" data-pct="92" aria-hidden="true"></div>
+        <div class="ring ring-2" data-pct="85" aria-hidden="true"></div>
 
-    <div class="home-tile-body">
-      <div class="home-tile-title">Industry Experience</div>
+        <div class="donut-center">
+          <div class="donut-row">
+            <span class="dot dot-1" aria-hidden="true"></span>
+            <span class="donut-label">Projects</span>
+            <span class="donut-value">
+              <span class="countup" data-target="20" data-decimals="0" data-suffix="+">0</span>
+            </span>
+          </div>
 
-      <div class="tile-metrics" aria-label="Industry metrics">
-        <div class="metric">
-          <div class="metric-top">
-            <span class="metric-label">Projects completed</span>
-            <span class="metric-value"><span class="countup" data-target="20">0</span>+</span>
-          </div>
-          <div class="metric-bar">
-            <span class="metric-fill" style="--fill: 92%"></span>
-          </div>
-        </div>
-
-        <div class="metric">
-          <div class="metric-top">
-            <span class="metric-label">Total value delivered</span>
-            <span class="metric-value">$<span class="countup" data-target="1" data-decimals="0">0</span>M+</span>
-          </div>
-          <div class="metric-bar">
-            <span class="metric-fill" style="--fill: 85%"></span>
+          <div class="donut-row">
+            <span class="dot dot-2" aria-hidden="true"></span>
+            <span class="donut-label">Value</span>
+            <span class="donut-value">
+              $<span class="countup" data-target="1" data-decimals="0" data-suffix="M+">0</span>
+            </span>
           </div>
         </div>
       </div>
     </div>
+
+    <div class="home-tile-body">
+      <div class="home-tile-title">Industry Experience</div>
+    </div>
   </a>
 
+  <!-- Your other tiles -->
   <a id="tile-education" class="home-tile" href="{{ '/cv/' | relative_url }}">
     <div class="home-tile-media">
       <img src="{{ '/images/education.png' | relative_url }}" alt="Education">
@@ -83,52 +82,11 @@ redirect_from:
 
 </div>
 
+<!-- Load homepage interactions (clean) -->
+<script defer src="{{ '/assets/js/home-metrics.js' | relative_url }}"></script>
+
+
 <!-- ########################################### -->
-
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-  const tile = document.getElementById("tile-industry");
-  if (!tile) return;
-
-  const counters = tile.querySelectorAll(".countup");
-  let ran = false;
-
-  function animateCount(el, target, decimals = 0, duration = 900){
-    const start = 0;
-    const startTime = performance.now();
-
-    function tick(now){
-      const t = Math.min(1, (now - startTime) / duration);
-      const value = start + (target - start) * t;
-      el.textContent = Number(value).toFixed(decimals);
-
-      if (t < 1) requestAnimationFrame(tick);
-    }
-    requestAnimationFrame(tick);
-  }
-
-  function run(){
-    if (ran) return;
-    ran = true;
-
-    tile.classList.add("is-metrics-animated");
-
-    counters.forEach(el => {
-      const target = Number(el.dataset.target || 0);
-      const decimals = Number(el.dataset.decimals || 0);
-      animateCount(el, target, decimals);
-    });
-  }
-
-  // Run when tile scrolls into view
-  const io = new IntersectionObserver((entries) => {
-    if (entries.some(e => e.isIntersecting)) run();
-  }, { threshold: 0.4 });
-
-  io.observe(tile);
-});
-</script>
-
 <!-- ##################################################################### -->
 
 
