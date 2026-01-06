@@ -10,18 +10,19 @@ redirect_from:
 
 <div class="intro-card">
   <p>
-    I am a PhD researcher in the Water and Climate Research Group at Vrije Universiteit Brussel. In my research, I quantify climate impacts on soil moisture and groundwater recharge, and evaluate how nature-based solutions can mitigate drought risk.
+    I am a PhD researcher in the Water and Climate Research Group at Vrije Universiteit Brussel.
+    In my research, I quantify climate impacts on soil moisture and groundwater recharge, and evaluate
+    how nature-based solutions can mitigate drought risk.
   </p>
   <p>
-    I have 4 years of professional experience in the water sector, developing climate resilience strategies, supervising water supply infrastructure, and supporting investment planning for water projects.
+    I have 4 years of professional experience in the water sector, developing climate resilience strategies,
+    supervising water supply infrastructure, and supporting investment planning for water projects.
   </p>
 </div>
 
 ## What I do
+
 <div class="home-tiles">
-
-  <div class="home-tiles">
-
   <!-- Industry tile: donut + counters -->
   <a id="tile-industry" class="home-tile" href="{{ '/portfolio/' | relative_url }}">
     <div class="home-tile-media tile-stats" data-animate="true">
@@ -57,7 +58,7 @@ redirect_from:
     </div>
   </a>
 
-  !-- Your other tiles -->
+  <!-- Education -->
   <a id="tile-education" class="home-tile" href="{{ '/cv/' | relative_url }}">
     <div class="home-tile-media">
       <img src="{{ '/images/education.png' | relative_url }}" alt="Education">
@@ -67,6 +68,7 @@ redirect_from:
     </div>
   </a>
 
+  <!-- Research -->
   <a id="tile-research" class="home-tile" href="https://scholar.google.com/citations?user=_rBmLxQAAAAJ&hl=en">
     <div class="home-tile-media">
       <img src="{{ '/images/research.png' | relative_url }}" alt="Research">
@@ -76,6 +78,7 @@ redirect_from:
     </div>
   </a>
 
+  <!-- Updates -->
   <a id="tile-updates" class="home-tile" href="{{ '/year-archive/' | relative_url }}">
     <div class="home-tile-media">
       <img src="{{ '/images/news.png' | relative_url }}" alt="Updates">
@@ -84,44 +87,10 @@ redirect_from:
       <div class="home-tile-title">Updates</div>
     </div>
   </a>
-
-  <!-- Other tiles -->
-  <a id="tile-education" class="home-tile" href="{{ '/cv/' | relative_url }}">
-    <div class="home-tile-media">
-      <img src="{{ '/images/education.png' | relative_url }}" alt="Education">
-    </div>
-    <div class="home-tile-body">
-      <div class="home-tile-title">Education</div>
-    </div>
-  </a>
-
-  <a id="tile-research" class="home-tile" href="https://scholar.google.com/citations?user=_rBmLxQAAAAJ&hl=en">
-    <div class="home-tile-media">
-      <img src="{{ '/images/research.png' | relative_url }}" alt="Research">
-    </div>
-    <div class="home-tile-body">
-      <div class="home-tile-title">Research</div>
-    </div>
-  </a>
-
-  <a id="tile-updates" class="home-tile" href="{{ '/year-archive/' | relative_url }}">
-    <div class="home-tile-media">
-      <img src="{{ '/images/news.png' | relative_url }}" alt="Updates">
-    </div>
-    <div class="home-tile-body">
-      <div class="home-tile-title">Updates</div>
-    </div>
-  </a>
-
 </div>
 
-<!-- Load homepage interactions (clean) -->
+<!-- Load homepage interactions -->
 <script defer src="{{ '/assets/js/home-metrics.js' | relative_url }}"></script>
-
-
-<!-- ########################################### -->
-<!-- ##################################################################### -->
-
 
 ## Highlights
 
@@ -132,21 +101,33 @@ redirect_from:
       Explore my projects in an interactive map.
     </div>
     <div style="margin-top:10px;">
-      <a href="/project-atlas/" style="text-decoration:none; font-weight:600;">Explore the Atlas →</a>
+      <a href="{{ '/project-atlas/' | relative_url }}" style="text-decoration:none; font-weight:600;">
+        Explore the Atlas →
+      </a>
     </div>
   </div>
 </div>
 
 <script>
   document.addEventListener("mousemove", (e) => {
-    const ids = ["tile-industry","tile-education","tile-research","tile-updates"];
+    const ids = ["tile-industry", "tile-education", "tile-research", "tile-updates"];
+
     ids.forEach((id) => {
       const el = document.getElementById(id);
       if (!el) return;
+
       const r = el.getBoundingClientRect();
-      if (e.clientX < r.left || e.clientX > r.right || e.clientY < r.top || e.clientY > r.bottom) return;
+      const inside =
+        e.clientX >= r.left &&
+        e.clientX <= r.right &&
+        e.clientY >= r.top &&
+        e.clientY <= r.bottom;
+
+      if (!inside) return;
+
       const x = ((e.clientX - r.left) / r.width) * 100;
       const y = ((e.clientY - r.top) / r.height) * 100;
+
       el.style.setProperty("--mx", x + "%");
       el.style.setProperty("--my", y + "%");
     });
