@@ -40,6 +40,16 @@ redirect_from:
       <div class="home-tile-title">Project Portfolio</div>
     </div>
   </a>
+  
+  <!-- Research -->
+  <a id="tile-research" class="home-tile" href="https://scholar.google.com/citations?user=_rBmLxQAAAAJ&hl=en">
+    <div class="home-tile-media">
+      <img src="{{ '/images/research.png' | relative_url }}" alt="Research">
+    </div>
+    <div class="home-tile-body">
+      <div class="home-tile-title">Research</div>
+    </div>
+  </a>
 
   <!-- Education -->
   <a id="tile-education" class="home-tile" href="{{ '/cv/' | relative_url }}">
@@ -48,16 +58,6 @@ redirect_from:
     </div>
     <div class="home-tile-body">
       <div class="home-tile-title">Education</div>
-    </div>
-  </a>
-
-  <!-- Research -->
-  <a id="tile-research" class="home-tile" href="https://scholar.google.com/citations?user=_rBmLxQAAAAJ&hl=en">
-    <div class="home-tile-media">
-      <img src="{{ '/images/research.png' | relative_url }}" alt="Research">
-    </div>
-    <div class="home-tile-body">
-      <div class="home-tile-title">Research</div>
     </div>
   </a>
 
