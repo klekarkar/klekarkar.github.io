@@ -6,7 +6,7 @@
     });
   }
 
-  function animateCount(el, target, decimals, prefix, suffix, duration = 900) {
+  function animateCount(el, target, decimals, prefix, suffix, duration = 1400) {
     const reduceMotion = window.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches;
 
     if (reduceMotion) {
@@ -24,12 +24,13 @@
       if (p < 1) requestAnimationFrame(frame);
     }
 
+    // start at 0 (no flicker)
     el.textContent = prefix + formatNumber(0, decimals) + suffix;
     requestAnimationFrame(frame);
   }
 
-  function run() {
-    const els = document.querySelectorAll(".countup[data-target]");
+  function runCountups(root = document) {
+    const els = root.querySelectorAll(".countup[data-target]");
     if (!els.length) return;
 
     els.forEach((el) => {
@@ -41,13 +42,48 @@
       const prefix = el.dataset.prefix || "";
       const suffix = el.dataset.suffix || "";
 
-      animateCount(el, target, decimals, prefix, suffix);
+      animateCount(el, target, decimals, prefix, suffix, 1400);
     });
   }
 
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", run);
-  } else {
-    run();
+  function init() {
+    // Animate only on homepage tile (so it doesn’t run elsewhere)
+    const tile = document.getElementById("tile-industry");
+    if (!tile) return;
+
+    // Observe the media area (better threshold)
+    const targetEl = tile.querySelector(".tile-stats-simple") || tile;
+
+    if (!("IntersectionObserver" in window)) {
+      runCountups(tile);
+      return;
+    }
+
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          runCountups(tile);
+          io.disconnect();
+        });
+      },
+      { threshold: 0.35 }
+    );
+
+    io.observe(targetEl);
   }
+
+  // run on first paint of the page
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", init);
+  } else {
+    init();
+  }
+
+  // If you navigate with back/forward cache
+  window.addEventListener("pageshow", init);
+
+  // If you ever use Turbo/Turbolinks
+  document.addEventListener("turbo:load", init);
+  document.addEventListener("turbolinks:load", init);
 })();
