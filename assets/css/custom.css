@@ -196,93 +196,35 @@ h1, h2, h3, h4{
 }
 
 
-/* =========================
-   INDUSTRY TILE: donut + synced counters
-========================= */
-
-.home-tile-media.tile-stats{
+.tile-stats-simple{
   display: grid;
-  place-items: center;
+  place-content: center;
+  gap: 12px;
   height: 210px;
-  overflow: hidden;
   padding: 14px;
   background:
     radial-gradient(circle at 30% 20%, rgba(11,79,122,0.08), rgba(255,255,255,0) 60%),
     #fff;
 }
 
-.donut{
-  position: relative;
-  width: min(190px, 78%);
-  aspect-ratio: 1 / 1;
-  border-radius: 999px;
+.stat-chip{
+  border: 1px solid rgba(0,0,0,0.10);
+  border-radius: 14px;
+  padding: 12px 14px;
+  background: rgba(255,255,255,0.85);
+  backdrop-filter: blur(6px);
+  min-width: 170px;
 }
 
-/* One ring draws TRACK + PROGRESS */
-.ring{
-  position: absolute;
-  inset: 0;
-  border-radius: 999px;
-
-  --pct: 0; /* animated 0 -> data-pct */
-  --ring: rgba(11,79,122,0.95);
-  --track: rgba(0,0,0,0.08);
+.stat-num{
+  font-weight: 800;
+  font-size: 1.4rem;
+  color: #0b4f7a;
+  line-height: 1.1;
 }
 
-.ring::before,
-.ring::after{
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-
-  /* ring cutout */
-  -webkit-mask: radial-gradient(circle, transparent 58%, #000 59%);
-          mask: radial-gradient(circle, transparent 58%, #000 59%);
-}
-
-/* Track */
-.ring::before{
-  background: var(--track);
-}
-
-/* Progress */
-.ring::after{
-  background: conic-gradient(
-    from 180deg,
-    var(--ring) calc(var(--pct) * 1%),
-    transparent 0
-  );
-}
-
-/* Center card */
-.donut-center{
-  position: absolute;
-  inset: 22%;
-  border-radius: 999px;
-  background: rgba(255,255,255,0.92);
-  border: 1px solid rgba(0,0,0,0.06);
-  display: grid;
-  align-content: center;
-  gap: 10px;
-  padding: 14px 12px;
-  z-index: 2;
-}
-
-.donut-row{
-  display: grid;
-  grid-template-columns: 1fr auto;
-  align-items: center;
-  gap: 10px;
-}
-
-.donut-label{
-  font-size: 0.88rem;
-  opacity: 0.8;
-}
-
-.donut-value{
-  font-weight: 700;
+.stat-label{
+  margin-top: 4px;
+  opacity: 0.75;
   font-size: 0.95rem;
-  color: #063a5c;
 }
