@@ -2,8 +2,7 @@
    GLOBAL TYPOGRAPHY
 ========================= */
 
-html,
-body{
+html, body{
   font-family: "Poppins", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial !important;
   color: #000 !important;
 }
@@ -29,18 +28,12 @@ h1, h2, h3, h4{
   line-height: 1.6 !important;
 }
 
+.page__content li{ margin-bottom: 0.4rem; }
+
 .page__content ul,
-.page__content ol{
-  padding-left: 1.2rem;
-}
+.page__content ol{ padding-left: 1.2rem; }
 
-.page__content li{
-  margin-bottom: 0.4rem;
-}
-
-.page__content li::marker{
-  font-size: 1em;
-}
+.page__content li::marker{ font-size: 1em; }
 
 
 /* =========================
@@ -57,7 +50,7 @@ h1, h2, h3, h4{
 
 
 /* =========================
-   HOME TILES GRID (2x2)
+   HOME TILES (2x2 grid)
 ========================= */
 
 .home-tiles{
@@ -70,11 +63,6 @@ h1, h2, h3, h4{
 @media (max-width: 700px){
   .home-tiles{ grid-template-columns: 1fr; }
 }
-
-
-/* =========================
-   HOME TILE BASE
-========================= */
 
 .home-tile{
   position: relative;
@@ -119,17 +107,7 @@ h1, h2, h3, h4{
   position: relative;
 }
 
-.home-tile-title{
-  font-weight: 600;
-}
-
-
-/* =========================
-   HOME TILE EFFECTS
-   - Explore pill
-   - Hologram shimmer
-   - Spotlight
-========================= */
+.home-tile-title{ font-weight: 600; }
 
 /* Explore pill (bottom-right) */
 .home-tile::after{
@@ -190,7 +168,7 @@ h1, h2, h3, h4{
   transform: translateY(18%) rotate(12deg);
 }
 
-/* Spotlight (uses --mx/--my set by JS on the tile) */
+/* Spotlight (uses --mx/--my set by JS) */
 .home-tile .home-tile-media::after{
   content: "";
   position: absolute;
@@ -206,9 +184,7 @@ h1, h2, h3, h4{
   z-index: 2;
 }
 
-.home-tile:hover .home-tile-media::after{
-  opacity: 1;
-}
+.home-tile:hover .home-tile-media::after{ opacity: 1; }
 
 @media (prefers-reduced-motion: reduce){
   .home-tile,
@@ -220,37 +196,24 @@ h1, h2, h3, h4{
 }
 
 
-/* =========================
-   INDUSTRY TILE: SIMPLE STATS (no donut)
-========================= */
-
 .tile-stats-simple{
   display: grid;
+  place-content: center;
   gap: 12px;
   height: 210px;
   padding: 14px;
-
   background:
     radial-gradient(circle at 30% 20%, rgba(11,79,122,0.08), rgba(255,255,255,0) 60%),
     #fff;
-
-  /* Center the stack nicely */
-  place-items: center;
-  justify-items: center;
-  align-content: center;
 }
 
 .stat-chip{
-  min-width: 180px;
   border: 1px solid rgba(0,0,0,0.10);
   border-radius: 14px;
   padding: 12px 14px;
-
   background: rgba(255,255,255,0.85);
   backdrop-filter: blur(6px);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.06);
-
-  text-align: left;
+  min-width: 170px;
 }
 
 .stat-num{
@@ -258,32 +221,10 @@ h1, h2, h3, h4{
   font-size: 1.4rem;
   color: #0b4f7a;
   line-height: 1.1;
-
-  display: flex;
-  align-items: baseline;
-  gap: 2px;
-  letter-spacing: -0.01em;
-}
-
-/* Helps count animation look stable */
-.stat-num .countup{
-  font-variant-numeric: tabular-nums;
 }
 
 .stat-label{
-  margin-top: 6px;
+  margin-top: 4px;
   opacity: 0.75;
   font-size: 0.95rem;
-}
-
-/* Optional: subtle lift on hover, matches tile hover feel */
-#tile-industry:hover .stat-chip{
-  transform: translateY(-1px);
-  transition: transform 180ms ease;
-}
-
-@media (prefers-reduced-motion: reduce){
-  #tile-industry:hover .stat-chip{
-    transition: none;
-  }
 }
