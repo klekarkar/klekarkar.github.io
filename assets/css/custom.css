@@ -218,18 +218,15 @@ h1, h2, h3, h4{
   border-radius: 999px;
 }
 
+/* One ring draws TRACK + PROGRESS */
 .ring{
   position: absolute;
   inset: 0;
   border-radius: 999px;
-  --pct: 0;
+
+  --pct: 0; /* animated 0 -> data-pct */
   --ring: rgba(11,79,122,0.95);
   --track: rgba(0,0,0,0.08);
-}
-
-.ring-2{
-  inset: 16%;
-  --ring: rgba(200, 60, 210, 0.85);
 }
 
 .ring::before,
@@ -238,12 +235,16 @@ h1, h2, h3, h4{
   position: absolute;
   inset: 0;
   border-radius: inherit;
+
+  /* ring cutout */
   -webkit-mask: radial-gradient(circle, transparent 58%, #000 59%);
           mask: radial-gradient(circle, transparent 58%, #000 59%);
 }
 
 /* Track */
-.ring::before{ background: var(--track); }
+.ring::before{
+  background: var(--track);
+}
 
 /* Progress */
 .ring::after{
@@ -254,9 +255,34 @@ h1, h2, h3, h4{
   );
 }
 
+/* Center card */
 .donut-center{
   position: absolute;
   inset: 22%;
   border-radius: 999px;
   background: rgba(255,255,255,0.92);
-  border: 1
+  border: 1px solid rgba(0,0,0,0.06);
+  display: grid;
+  align-content: center;
+  gap: 10px;
+  padding: 14px 12px;
+  z-index: 2;
+}
+
+.donut-row{
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 10px;
+}
+
+.donut-label{
+  font-size: 0.88rem;
+  opacity: 0.8;
+}
+
+.donut-value{
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: #063a5c;
+}

@@ -25,38 +25,33 @@ redirect_from:
 <div class="home-tiles">
   <!-- Industry tile: donut + counters -->
   <a id="tile-industry" class="home-tile" href="{{ '/portfolio/' | relative_url }}">
-    <div class="home-tile-media tile-stats" data-animate="true">
-      <div class="donut" aria-label="Project Portfolio">
-        <!-- outer ring: Projects -->
-        <div class="ring ring-1" data-pct="88" aria-hidden="true"></div>
+  <div class="home-tile-media tile-stats" data-animate="true">
+    <div class="donut" aria-label="Industry metrics">
+      <div class="ring" data-pct="88" aria-hidden="true"></div>
 
-        <!-- inner ring: Value -->
-        <div class="ring ring-2" data-pct="85" aria-hidden="true"></div>
+      <div class="donut-center">
+        <div class="donut-row">
+          <span class="donut-label">Projects</span>
+          <span class="donut-value">
+            <span class="countup" data-target="20" data-decimals="0" data-suffix="+">0</span>
+          </span>
+        </div>
 
-        <div class="donut-center">
-          <div class="donut-row">
-            <span class="dot dot-1" aria-hidden="true"></span>
-            <span class="donut-label">Projects</span>
-            <span class="donut-value">
-              <span class="countup" data-target="20" data-decimals="0" data-suffix="+">0</span>
-            </span>
-          </div>
-
-          <div class="donut-row">
-            <span class="dot dot-2" aria-hidden="true"></span>
-            <span class="donut-label">Value</span>
-            <span class="donut-value">
-              $<span class="countup" data-target="1" data-decimals="0" data-suffix="M+">0</span>
-            </span>
-          </div>
+        <div class="donut-row">
+          <span class="donut-label">Value</span>
+          <span class="donut-value">
+            $<span class="countup" data-target="1" data-decimals="0" data-suffix="M+">0</span>
+          </span>
         </div>
       </div>
     </div>
+  </div>
 
-    <div class="home-tile-body">
-      <div class="home-tile-title">Industry Experience</div>
-    </div>
-  </a>
+  <div class="home-tile-body">
+    <div class="home-tile-title">Industry Experience</div>
+  </div>
+</a>
+
 
   <!-- Education -->
   <a id="tile-education" class="home-tile" href="{{ '/cv/' | relative_url }}">
