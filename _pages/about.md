@@ -96,4 +96,3 @@ redirect_from:
   </div>
 </div>
 <!-- ##################### -->
-<script src="{{ '/assets/js/countup.js' | relative_url }}"></script>
