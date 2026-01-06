@@ -96,43 +96,4 @@ redirect_from:
   </div>
 </div>
 <!-- ##################### -->
-
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-  const reduceMotion = window.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches;
-
-  document.querySelectorAll(".countup[data-target]").forEach((el) => {
-    const target = Number(el.dataset.target || 0);
-    const decimals = Number(el.dataset.decimals || 0);
-    const prefix = el.dataset.prefix || "";
-    const suffix = el.dataset.suffix || "";
-    const duration = 900;
-
-    const format = (n) =>
-      Number(n).toLocaleString(undefined, {
-        minimumFractionDigits: decimals,
-        maximumFractionDigits: decimals
-      });
-
-    if (reduceMotion) {
-      el.textContent = prefix + format(target) + suffix;
-      return;
-    }
-
-    const t0 = performance.now();
-    const easeOutCubic = (t) => 1 - Math.pow(1 - t, 3);
-
-    function frame(now) {
-      const p = Math.min(1, (now - t0) / duration);
-      const v = target * easeOutCubic(p);
-      el.textContent = prefix + format(v) + suffix;
-      if (p < 1) requestAnimationFrame(frame);
-    }
-
-    // start at 0
-    el.textContent = prefix + format(0) + suffix;
-    requestAnimationFrame(frame);
-  });
-});
-</script>
-
+<script src="{{ '/assets/js/countup.js' | relative_url }}"></script>
