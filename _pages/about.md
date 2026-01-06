@@ -20,6 +20,8 @@ redirect_from:
 ## What I do
 <div class="home-tiles">
 
+  <div class="home-tiles">
+
   <!-- Industry tile: donut + counters -->
   <a id="tile-industry" class="home-tile" href="{{ '/portfolio/' | relative_url }}">
     <div class="home-tile-media tile-stats" data-animate="true">
@@ -55,12 +57,73 @@ redirect_from:
     </div>
   </a>
 
-  <!-- other tiles unchanged... -->
+  !-- Your other tiles -->
+  <a id="tile-education" class="home-tile" href="{{ '/cv/' | relative_url }}">
+    <div class="home-tile-media">
+      <img src="{{ '/images/education.png' | relative_url }}" alt="Education">
+    </div>
+    <div class="home-tile-body">
+      <div class="home-tile-title">Education</div>
+    </div>
+  </a>
+
+  <a id="tile-research" class="home-tile" href="https://scholar.google.com/citations?user=_rBmLxQAAAAJ&hl=en">
+    <div class="home-tile-media">
+      <img src="{{ '/images/research.png' | relative_url }}" alt="Research">
+    </div>
+    <div class="home-tile-body">
+      <div class="home-tile-title">Research</div>
+    </div>
+  </a>
+
+  <a id="tile-updates" class="home-tile" href="{{ '/year-archive/' | relative_url }}">
+    <div class="home-tile-media">
+      <img src="{{ '/images/news.png' | relative_url }}" alt="Updates">
+    </div>
+    <div class="home-tile-body">
+      <div class="home-tile-title">Updates</div>
+    </div>
+  </a>
 
 </div>
 
+<!-- Load homepage interactions (clean) -->
 <script defer src="{{ '/assets/js/home-metrics.js' | relative_url }}"></script>
 
+
+
+  <!-- Your other tiles -->
+  <a id="tile-education" class="home-tile" href="{{ '/cv/' | relative_url }}">
+    <div class="home-tile-media">
+      <img src="{{ '/images/education.png' | relative_url }}" alt="Education">
+    </div>
+    <div class="home-tile-body">
+      <div class="home-tile-title">Education</div>
+    </div>
+  </a>
+
+  <a id="tile-research" class="home-tile" href="https://scholar.google.com/citations?user=_rBmLxQAAAAJ&hl=en">
+    <div class="home-tile-media">
+      <img src="{{ '/images/research.png' | relative_url }}" alt="Research">
+    </div>
+    <div class="home-tile-body">
+      <div class="home-tile-title">Research</div>
+    </div>
+  </a>
+
+  <a id="tile-updates" class="home-tile" href="{{ '/year-archive/' | relative_url }}">
+    <div class="home-tile-media">
+      <img src="{{ '/images/news.png' | relative_url }}" alt="Updates">
+    </div>
+    <div class="home-tile-body">
+      <div class="home-tile-title">Updates</div>
+    </div>
+  </a>
+
+</div>
+
+<!-- Load homepage interactions (clean) -->
+<script defer src="{{ '/assets/js/home-metrics.js' | relative_url }}"></script>
 
 
 <!-- ########################################### -->
