@@ -42,7 +42,7 @@
       const prefix = el.dataset.prefix || "";
       const suffix = el.dataset.suffix || "";
 
-      animateCount(el, target, decimals, prefix, suffix, 1400);
+      animateCount(el, target, decimals, prefix, suffix, 2100);
     });
   }
 
