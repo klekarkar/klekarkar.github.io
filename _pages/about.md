@@ -31,14 +31,14 @@ redirect_from:
 
         <div class="donut-center">
           <div class="donut-row">
-            <span class="donut-label">Projects</span>
+            <span class="donut-label">Projects:</span>
             <span class="donut-value">
               <span class="countup" data-target="20" data-decimals="0" data-suffix="+">0</span>
             </span>
           </div>
 
           <div class="donut-row">
-            <span class="donut-label">Value</span>
+            <span class="donut-label">Value:</span>
             <span class="donut-value">
               $<span class="countup" data-target="1" data-decimals="0" data-suffix="M+">0</span>
             </span>
