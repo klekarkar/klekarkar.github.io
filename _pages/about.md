@@ -37,7 +37,7 @@ redirect_from:
     </div>
 
     <div class="home-tile-body">
-      <div class="home-tile-title">Industry Experience</div>
+      <div class="home-tile-title">Project Portfolio</div>
     </div>
   </a>
 
