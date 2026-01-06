@@ -24,14 +24,20 @@ redirect_from:
 
 <div class="home-tiles">
   <!-- Industry tile: donut + counters -->
+  <!-- Industry tile: stat chips + animated numbers -->
   <a id="tile-industry" class="home-tile" href="{{ '/portfolio/' | relative_url }}">
     <div class="home-tile-media tile-stats-simple">
       <div class="stat-chip">
-        <div class="stat-num">20+</div>
+        <div class="stat-num">
+          <span class="countup" data-target="20" data-decimals="0" data-suffix="+">0</span>
+        </div>
         <div class="stat-label">Projects</div>
       </div>
+
       <div class="stat-chip">
-        <div class="stat-num">$1M+</div>
+        <div class="stat-num">
+          <span class="countup" data-target="1" data-decimals="0" data-prefix="$" data-suffix="M+">0</span>
+        </div>
         <div class="stat-label">Value</div>
       </div>
     </div>
@@ -40,6 +46,7 @@ redirect_from:
       <div class="home-tile-title">Project Portfolio</div>
     </div>
   </a>
+
   
   <!-- Research -->
   <a id="tile-research" class="home-tile" href="https://scholar.google.com/citations?user=_rBmLxQAAAAJ&hl=en">
@@ -72,8 +79,6 @@ redirect_from:
   </a>
 </div>
 
-<!-- Load homepage interactions -->
-<script defer src="{{ '/assets/js/home-metrics.js' | relative_url }}"></script>
 
 ## Highlights
 
@@ -90,29 +95,44 @@ redirect_from:
     </div>
   </div>
 </div>
+<!-- ##################### -->
 
 <script>
-  document.addEventListener("mousemove", (e) => {
-    const ids = ["tile-industry", "tile-education", "tile-research", "tile-updates"];
+document.addEventListener("DOMContentLoaded", () => {
+  const reduceMotion = window.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches;
 
-    ids.forEach((id) => {
-      const el = document.getElementById(id);
-      if (!el) return;
+  document.querySelectorAll(".countup[data-target]").forEach((el) => {
+    const target = Number(el.dataset.target || 0);
+    const decimals = Number(el.dataset.decimals || 0);
+    const prefix = el.dataset.prefix || "";
+    const suffix = el.dataset.suffix || "";
+    const duration = 900;
 
-      const r = el.getBoundingClientRect();
-      const inside =
-        e.clientX >= r.left &&
-        e.clientX <= r.right &&
-        e.clientY >= r.top &&
-        e.clientY <= r.bottom;
+    const format = (n) =>
+      Number(n).toLocaleString(undefined, {
+        minimumFractionDigits: decimals,
+        maximumFractionDigits: decimals
+      });
 
-      if (!inside) return;
+    if (reduceMotion) {
+      el.textContent = prefix + format(target) + suffix;
+      return;
+    }
 
-      const x = ((e.clientX - r.left) / r.width) * 100;
-      const y = ((e.clientY - r.top) / r.height) * 100;
+    const t0 = performance.now();
+    const easeOutCubic = (t) => 1 - Math.pow(1 - t, 3);
 
-      el.style.setProperty("--mx", x + "%");
-      el.style.setProperty("--my", y + "%");
-    });
+    function frame(now) {
+      const p = Math.min(1, (now - t0) / duration);
+      const v = target * easeOutCubic(p);
+      el.textContent = prefix + format(v) + suffix;
+      if (p < 1) requestAnimationFrame(frame);
+    }
+
+    // start at 0
+    el.textContent = prefix + format(0) + suffix;
+    requestAnimationFrame(frame);
   });
+});
 </script>
+
