@@ -27,7 +27,7 @@ redirect_from:
   <a id="tile-industry" class="home-tile" href="{{ '/portfolio/' | relative_url }}">
     <div class="home-tile-media tile-stats" data-animate="true">
       <div class="donut" aria-label="Industry metrics">
-        <div class="ring" data-pct="88" aria-hidden="true"></div>
+        <div class="ring" data-pct="90" aria-hidden="true"></div>
 
         <div class="donut-center">
           <div class="donut-row">
