@@ -85,14 +85,7 @@ redirect_from:
     </div>
   </a>
 
-</div>
-
-<!-- Load homepage interactions (clean) -->
-<script defer src="{{ '/assets/js/home-metrics.js' | relative_url }}"></script>
-
-
-
-  <!-- Your other tiles -->
+  <!-- Other tiles -->
   <a id="tile-education" class="home-tile" href="{{ '/cv/' | relative_url }}">
     <div class="home-tile-media">
       <img src="{{ '/images/education.png' | relative_url }}" alt="Education">
