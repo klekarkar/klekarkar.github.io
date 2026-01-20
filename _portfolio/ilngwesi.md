@@ -1,15 +1,15 @@
 ---
-title: "Ol-Pejeta Conservancy Water masterplan"
+title: "Loiragai Spring Water Supply Project"
 date: 2019-01-15
 thumb: /images/opc/opc_cover_new.JPG
-excerpt: "20-year masterplan to improve water security for staff housing, tourism and wildlife."
+excerpt: "Design requirements to upgrade a water supply system."
 # tags: [Water planning, Hydrology, Kenya]
 
 location: "Laikipia, Kenya"
-lat: -0.0500
-lon: 36.8000
-start: 2018-01-01
-end: 2019-12-31
+lat: 0.29022
+lon: 37.320548
+start: 2020-08-15
+end: 2020-09-12
 ---
 
 Ol-Pejeta Conservancy needed a long-term plan to improve water security for staff housing, tourism facilities, livestock, and wildlife under increasing climate variability and growing competing demands. The goal was to develop a practical 20-year masterplan that prioritized interventions that are cost-effective and environmentally responsible.
