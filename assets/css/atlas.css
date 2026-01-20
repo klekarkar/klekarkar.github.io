@@ -30,6 +30,7 @@
   align-items: stretch;
 }
 
+/* Panels */
 .atlas-shell .atlas-side,
 .atlas-shell .atlas-mapWrap{
   border: var(--atlas-border);
@@ -38,10 +39,25 @@
   overflow: hidden;
 }
 
-/* Sidebar */
+/* =========================
+   SIDEBAR (fixed column + scroll list)
+========================= */
+
 .atlas-shell .atlas-side{
   padding: 14px;
-  min-height: calc(100vh - var(--atlas-vh-offset));
+
+  /* fixed height area beside map */
+  height: calc(100vh - var(--atlas-vh-offset));
+
+  /* flex column so the list can take remaining space */
+  display: flex;
+  flex-direction: column;
+
+  /* IMPORTANT for scroll behavior inside flex children */
+  min-height: 0;
+
+  /* keep scrolling inside the list */
+  overflow: hidden;
 }
 
 .atlas-shell .atlas-heading{ margin: 0 0 6px 0; }
@@ -81,19 +97,42 @@
   cursor: pointer;
   font-size: .9rem;
 }
-.atlas-shell .atlas-clear:hover{ background: #f8fafc; }
 
-/* List */
+.atlas-shell .atlas-clear:hover{
+  background: #f8fafc;
+}
+
+/* List (fills remaining sidebar height and scrolls) */
 .atlas-shell .atlas-list{
   margin-top: 12px;
   display: flex;
   flex-direction: column;
   gap: 10px;
-  max-height: calc(100vh - var(--atlas-vh-offset) - 150px);
-  overflow: auto;
-  padding-right: 4px;
+
+  flex: 1 1 auto;
+  min-height: 0;
+
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  padding-right: 6px; /* room for scrollbar */
 }
 
+/* Optional: nicer scrollbar (WebKit) */
+.atlas-shell .atlas-list::-webkit-scrollbar{
+  width: 10px;
+}
+.atlas-shell .atlas-list::-webkit-scrollbar-thumb{
+  background: rgba(0,0,0,0.18);
+  border-radius: 999px;
+  border: 3px solid transparent;
+  background-clip: content-box;
+}
+.atlas-shell .atlas-list::-webkit-scrollbar-track{
+  background: transparent;
+}
+
+/* Items */
 .atlas-shell .atlas-item{
   display: flex;
   gap: 10px;
@@ -104,7 +143,15 @@
   background: #fff;
   cursor: pointer;
 }
-.atlas-shell .atlas-item:hover{ background: #f8fafc; }
+
+.atlas-shell .atlas-item:hover{
+  background: #f8fafc;
+}
+
+.atlas-shell .atlas-item.is-active{
+  box-shadow: 0 0 0 2px rgba(11,79,122,0.35);
+  background: rgba(11,79,122,0.04);
+}
 
 .atlas-shell .atlas-thumb{
   width: 86px;
@@ -159,12 +206,10 @@
   opacity: .9;
 }
 
-.atlas-shell .atlas-item.is-active{
-  box-shadow: 0 0 0 2px rgba(11,79,122,0.35);
-  background: rgba(11,79,122,0.04);
-}
+/* =========================
+   MAP
+========================= */
 
-/* Map height (Leaflet needs real height) */
 .atlas-shell .atlas-map{
   height: calc(100vh - var(--atlas-vh-offset));
   min-height: 520px;
@@ -177,10 +222,27 @@
 .atlas-shell .popup-sub{ opacity: .75; margin-bottom: 8px; }
 .atlas-shell .popup-link{ text-decoration: none; font-weight: 600; }
 
-/* Mobile */
+/* =========================
+   MOBILE
+========================= */
+
 @media (max-width: 980px){
-  .atlas-shell .atlas{ grid-template-columns: 1fr; }
-  .atlas-shell .atlas-side{ min-height: auto; }
-  .atlas-shell .atlas-map{ height: 60vh; min-height: 420px; }
-  .atlas-shell .atlas-list{ max-height: 340px; }
+  .atlas-shell .atlas{
+    grid-template-columns: 1fr;
+  }
+
+  .atlas-shell .atlas-side{
+    height: auto;     /* let it size naturally above map */
+    min-height: auto;
+    overflow: visible;
+  }
+
+  .atlas-shell .atlas-list{
+    max-height: 340px; /* controlled scrolling on mobile */
+  }
+
+  .atlas-shell .atlas-map{
+    height: 60vh;
+    min-height: 420px;
+  }
 }
