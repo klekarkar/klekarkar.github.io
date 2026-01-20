@@ -2,7 +2,7 @@
 title: "FAO, Feasibility of agriculture on drylands"
 collection: portfolio
 
-date: 2017-11-30   # used for sorting + display (pick end date)
+date: 2017-08-30   # used for sorting + display (pick end date)
 thumb: /images/kalobeyei_wfp.jpeg
 # tags: [Food security, drylands, Kenya]
 excerpt: "Feasibility study into the viability of several water supply options for dryland agriculture for Kalobeyei settlement scheme."
@@ -10,8 +10,10 @@ excerpt: "Feasibility study into the viability of several water supply options f
 location: "Turkana, Kenya"
 lat: 3.764409
 lon: 34.736055
-start: 2017-11-01
-end: 2018-01-31
+
+start: 2020-06-21
+end: 2020-10-15
+duration: Jun 2017 – Oct 2017
 ---
 
 This project entailed a feasibility study into the viability of several water supply options for dryland agriculture for Kalobeyei settlement scheme that hosts close to 200,000 refugees, mainly from conflict- torn countries including South Sudan, Ethiopia, and other eastern African countries.
