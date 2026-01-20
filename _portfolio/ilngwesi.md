@@ -3,7 +3,7 @@ title: "Loiragai Spring Water Supply Project"
 # You can keep date if you want it for sorting, but it won't show on portfolio pages after your layout change
 date: 2020-09-12
 thumb: /images/ilngwesi/intake.JPG
-excerpt: "Technical assessment and rehabilitation design for a gravity-fed spring water supply serving community and wildlife in Il Ngwesi Conservancy."
+excerpt: "Technical assessment and rehabilitation design for a gravity-fed spring water supply serving community and wildlife"
 # tags: [Water supply, Rehabilitation design, Kenya]
 
 location: "Il Ngwesi Conservancy, Laikipia, Kenya"
@@ -44,4 +44,4 @@ This assignment delivered a technical assessment and rehabilitation plan to rest
 </div>
 
 ## About the Client
-The work was submitted to **Laikipia Wildlife Forum (LWF)** in partnership with the local community, **Il Ngwesi Conservancy**, and **Ilmaamusi CFA**, to guide rehabilitation of the Loiragai spring water supply system for community use and wildlife needs.
+The work was submitted to **Laikipia Wildlife Forum (LWF)** in partnership with the local community, **Il Ngwesi Conservancy**, and **Ilmaamusi Community Forest Association**, to guide rehabilitation of the Loiragai spring water supply system for community use and wildlife needs.
