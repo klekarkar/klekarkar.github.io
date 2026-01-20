@@ -2,7 +2,7 @@
 title: "Loiragai Spring Water Supply Project"
 # You can keep date if you want it for sorting, but it won't show on portfolio pages after your layout change
 date: 2020-09-12
-thumb: /images/ilngwesi/intake.JPG
+thumb: /images/ilngwesi/cover.jpg
 excerpt: "Technical assessment and rehabilitation design for a gravity-fed spring water supply serving community and wildlife"
 # tags: [Water supply, Rehabilitation design, Kenya]
 
@@ -37,9 +37,10 @@ This assignment delivered a technical assessment and rehabilitation plan to rest
 
 <div class="auto-carousel" data-interval="4000">
   <div class="slides">
-    <img src="/images/ilngwesi/intake.JPG" alt="Loiragai spring intake" loading="lazy">
+    <img src="/images/ilngwesi/cwp.JPG" alt="Loiragai spring intake" loading="lazy">
     <img src="/images/ilngwesi/inspection.JPG" alt="System inspection" loading="lazy">
     <img src="/images/ilngwesi/leak.JPG" alt="Pipeline leakage/damage" loading="lazy">
+    <img src="/images/ilngwesi/pipe.JPG" alt="Pipeline leakage/damage" loading="lazy">
   </div>
 </div>
 
