@@ -15,19 +15,19 @@ end: 2020-09-12
 duration: Aug 2020 – Sep 2020
 ---
 
-Loiragai Spring Water Supply Project is a gravity supply scheme originally constructed in **1986** and located in **Siang’a sub-location, Il Ngwesi (Laikipia North, Laikipia County)**. Over time, inadequate maintenance and flood/wildlife damage caused the system to deteriorate and nearly stop functioning, even though much of the infrastructure remained in place. 
+Loiragai Spring Water Supply Project is a gravity supply scheme. Over time, inadequate maintenance, flood and wildlife damage caused the system to deteriorate and nearly stop functioning, even though much of the infrastructure remained in place. 
 
 This assignment delivered a technical assessment and rehabilitation plan to restore reliable supply for **domestic use, livestock, and wildlife**, with specific measures to comply with **environmental (reserve) flow requirements** under water resources regulations. 
 
 ### Outcomes
-* A prioritized **rehabilitation scope** for the intakes, pipeline network, storage tank, community water points, and troughs—excluding the downstream section from the elephant trough to Siang’a School (served by an alternative source). 
-* Practical design recommendations to ensure **reserve/environmental flow (Q95)** is passed (about **150 m³/day**), and to support compliance for abstraction approvals.
-* A costed rehabilitation estimate of **~KSh 2.84M (incl. contingencies + VAT)** for the proposed works (short-term demand scenario).  
-* System diagnostics and guidance to improve robustness against damage (better anchorage at lagga crossings, concrete bedding/haunching, replacing degraded PVC with suitable buried pipe).
+* A prioritized **rehabilitation scope** for the intakes, pipeline network, storage tank, community water points, and troughs
+* Practical design recommendations to ensure **reserve/environmental flow** is passed, and to support compliance for abstraction approvals.
+* A costed rehabilitation estimate for the proposed works to meet short-term demand scenario.  
+* System diagnostics and guidance to improve robustness against damage (better anchorage at river crossings, concrete bedding/haunching, replacing degraded PVC with suitable buried pipe).
 
 ## What we did
-* Conducted a field assessment (site visit on **15 Aug 2020**) covering: intake condition, reticulation damage points, crossings, storage condition, and consumer points; and surveyed a site for a new wildlife trough.  
-* Assessed system components (two intakes, GI trunk line and branches, community water points, troughs, masonry storage tank) and documented failure modes (silting, leakage, broken joints, flood impact at crossings, wildlife damage).  
+* Conducted a field assessment (site visit on 15 Aug 2020) covering: intake condition, reticulation damage points, crossings, storage condition, and consumer points; and surveyed a site for a new wildlife trough.  
+* Assessed system components (two intakes, main distribution line and branches, community water points, troughs, masonry storage tank) and documented failure modes (silting, leakage, broken joints, flood impact at crossings, wildlife damage).  
 * Defined rehabilitation actions:
   - **Intakes:** desilting, plastering to reduce leakage, erosion protection downstream, vegetation management, outlet modifications for environmental flows.  
   - **Pipelines:** replace missing/corroded sections, restore joints, add/repair anchor blocks, reinforce crossings with concrete bedding/haunching, replace vulnerable PVC segments with appropriate buried pipe. 
