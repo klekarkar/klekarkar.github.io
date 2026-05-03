@@ -1,7 +1,7 @@
 ---
 title: "UNESCO Chair on Open Water Science and Education"
 date: 2023-02-02
-thumb: /images/unesco-chair/cover.jpg
+thumb: /images/unesco/cover.png
 excerpt: "Project coordination for open water science, low-cost soil moisture monitoring, citizen science water-quality data, open hydrological datasets, and SWAT+ capacity building"
 
 location: "Brussels, Belgium / International"
